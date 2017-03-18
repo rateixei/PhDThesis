@@ -1,0 +1,120 @@
+\section{Introduction}
+This Analysis Note describes the inclusive search for the double Higgs production process in the decay
+mode $\HH \to \bbgg$ at $\sqrt{s}=13\TeV$, with $36.5$ fb$^{-1}$ from the 2016 data taking period. 
+This analysis is based on the search at 8\TeV performed in the same final state, recently published by CMS in
+Ref.~\cite{HIG-13-032} (the internal CMS documentation of this analysis can be found in Refs.~\cite{AN-13-075,AN-14-118}), and 
+on the earlier 13\TeV search using 2015 data HIG-16-032.
+
+Many theories beyond the SM (BSM) suggest the existence of new physics potentially manifested in the detection of a pair of Higgs bosons. 
+The simplest signal we can look for is in the form of a resonant contribution to the invariant mass of the HH system (resonant search). 
+%If the new particles are too heavy to be observed through a direct search, that we will call the resonant serach.
+If the BSM new particles are not directly detectable (either too heavy or too light to be in the HH invariant mass spectrum), but still couple to HH, their virtual contribution to the non-resonant HH production can still be measured (as shown, e.g., in Refs.~\cite{Dawson:2015oha,Cao:2013si}). Additionally, the fundamental couplings of the Higgs boson to other SM particles (including itself) can be modified as well in BSM theories (as shown, e.g., in Refs.~\cite{Mangano:2002ea,Grober:2015cwa}). Both of these cases can be studied via the non-resonant HH process.
+
+In order to study the HH production, the Higgs bosons' final states must be carefully chosen. On one hand, the overall cross section of the process must be kept high enough for a good sensitivity. On the other hand, a good selection efficiency, online and offline, is important for a well performing analysis. This is achieved with the $\bbgg$ final state. The $\Hbb$ leg provides a high branching ratio ($57.7\%$), while the $\Hgg$ leg provides an efficient way to correctly identify the interesting events and a high mass resolution. The total branching ratio of the $\HH\to\bbgg$  channel is $0.26\%$.
+
+%If however those are not directly detectable (too heavy ot too light) they may be sensed in the HH production through their virtual contributions (as shown, e.g., in Refs.~\cite{Dawson:2015oha,Heng:2013cya}); also, the fundamental couplings of the model can be modified relative to their SM values (as shown, e.g., in Refs.~\cite{Grober:2010yv,Moretti:2004wa}); in both cases, a nonresonant enhancement of the HH production could be observed.  
+%The $\bbgg$ final state has the advantages of a large branching fraction of the $\Hbb$ decay and a good mass resolution of
+%the $\Hgg$ decay. The total branching fraction of this channel,
+%$\mathcal{B}(\HH\to\bbgg)$, is 0.26\%.
+
+The resonant analysis is dedicated to the search of a generic narrow width resonance (both spin-0 and spin-2).
+In this note, we will use a Warped Extra Dimensions (WED) theory\footnote{Based in the Randall-Sundrum (RS) setup~\cite{Randall:1999ee}. } as a benchmark model for resonant HH search. It provides candidates for both spin-0 (radion) and spin-2 (graviton\footnote{The graviton can be interpreted either as the first Kaluza-Klein (KK) excitation, or the graviton in the bulk RS scenario~\cite{Davoudiasl:2000wi,Csaki:2000zn, Agashe:2007zd} }) that decay into HH. 
+
+%To modelate the resonant search we search for a generic 1$\GeV$ narrow resonance with both spin-0 and spin-2 
+%that would be produced by gluon fusion. 
+%The interpretations for the scalar particle can range from extended Higgs sectors to metric fluctuations of a 
+%Warped extra dimension (WED), based in the Randall-Sundrum (RS) setup~\cite{Randall:1999ee}, so called radions~\cite{Goldberger:1999uk,DeWolfe:1999cp,Csaki:1999mp}. A gluon fusion produced spin-2 particle that decays to a Higgs boson pair can be interpreted as the first Kaluza--Klein (KK) excitation of the graviton in the bulk RS scenario~\cite{Davoudiasl:1999jd,Csaki:2000zn, Agashe:2007zd}. 
+%In this note we perform interpretations only for the WED case, leaving alternative interpretations to a later stage. 
+
+In the non-resonant search, we investigate explicitly the case of anomalous couplings in the Higgs boson potential, 
+following the same model parametrization used in Ref.~\cite{HIG-13-032}. 
+In the 13$\TeV$ analysis however we study the parameter space of anomalous couplings 
+using the approach suggested in~\cite{Dall'Osso:2015aia}, where physics benchmarks are defined based in basic signal kinematics. 
+We also put limits in the Standard Model like HH production, a process that has a cross section of $\sigma_{HH}(SMNNLO) = 33.70$~fb~ at 13 TeV \cite{MelladoGarcia:2150771}.
+
+%, where $X$ denotes a Radion or a Graviton particle. (We now know that the waves of the gravitational field
+%exist~\cite{ligo}, so there must be a particle, right?)  
+%The plus  e begin with the approach taken previously
+%, and try to enhance the analysis in a few ways.  
+
+%In short, the analysis strategy can be summarized as follows:
+%\begin{itemize}
+%\item Select a pair of photons which pass the identification criteria
+ % (Section~\ref{sec:photons}), and consisten with $\Hgg$ decay.
+%\item Select two jets in the barrel region of the detector (for which the b-tagging
+ % algorithms can be used). Out of the jets passed the ID criteria choose two with the
+ % highest b-tag score. This is described in more detail in Section~\ref{sec:jets}.
+%\item After selecting the photons and jets we make use of the \Mgg and \Mjj varaibles to
+%  perform the statistical analysis. The background distributions of these varaiables are
+%  obtained from fitting the data, and they are smooth falling functions. While the signal
+%  either has peaks at $\MH=125\GeV$ (in the resonant case), or has a distinctly predicted
+ % shape, which is obtained from a fit of the MC signal samples. (Do we also make use of the
+%  $\acosthetastar$ yet?)
+%\item We asses the systematics and do bias study, as all good guys do these days. This is
+%  described in Section~\ref{sec:systematics}.
+%\item We utilize the magic of the \textit{Higgs Combination Tool}~\cite{combine-twiki} to get
+%  our limits, see Section~\ref{sec:results}.
+%\end{itemize}
+
+%{\bf Update with the structure when fixed}
+This note is organized as follows.
+In section \ref{sec:samples}, we describe the data and Monte Carlo samples used in the analysis, both for signal and background.
+In section \ref{sec:trigger}, the online selection used in this analysis is described.
+Sections \ref{sec:photons} and \ref{sec:jets} are dedicated to the object reconstruction and selection in the analysis.
+The categorization procedure for the resonant and non-resonant analyses is defined in section \ref{sec:cats}
+Section \ref{sec:masswindow} described a new variable $\Mtilde$ that is a better proxy to the true 4-body invariant mass than the standard $\Mjjgg$, and how it is used to create signal mass dependent selections.
+The selection efficiencies are shown in section \ref{sec:selection}.
+The limits and signal extraction are defined in section \ref{sec:modeling}, along with the signal and background modeling procedures.
+The systematic uncertainties for this analysis are defined in section \ref{sec:systematics}.
+Finally, the results are shown in sections \ref{sec:results} and \ref{sec:nonresonant-results}, for the resonant and non-resonant analyses respectively.
+Section \ref{sec:summary} provides a summary of this analysis note.
+
+%This note is organized as follows: in section \ref{sec:samples} we describe the Monte Carlo samples used. 
+%In section \ref{sec:data_sim} we describe the simulated signal and background event samples used in the analysis. 
+%Section \ref{section:reconstruction} is dedicated to the discussion of event selection and Higgs boson reconstruction. 
+%The signal extraction procedure is discussed in Section \ref{sec::AnalysisMethods}. In section  \ref{section:sys} we present the systematic uncertainties impacting each analysis method. Section \ref{section:results} contains the results of resonant and nonresonant searches, and section 8 provides a summary.
+
+\subsection{Strategy Summary}
+
+The main strategy upgrades with respect to the Run-I analysis are:
+\begin{itemize}
+\item We make use of MVA ID for the photon selection, which improves the selection
+  efficiency, see section~\ref{sec:photons}
+\item Using \Mtilde variable instead of 4-body mass, $\Mjjgg$. This allows to cancel the
+  effects of the low dijet mass resolution (compared to $\Mgg$).
+  uncertainties in the jet energy scale, see Section~\ref{sec:masswindow}
+\item An improved version of the Combined Secondary Vertex algorithm (CSVv2) for b-tagging
+  was developed in CMS.
+\item A new categorization method was developed to deal with signal categories and phase spaces 
+with not enough events for a reliable background description.
+\item A dedicated b-jet energy regression is being developed for Run-II analysis, see
+  Section~\ref{sec:b-reg}.
+\item The main part of the analysis is performed in a framework based on top of the one developed
+ by the $\Hgg$ group \cite{flashgg-twiki}, so we benefit from the latest and greatest photon selection tools
+  available.
+\end{itemize}
+In the new version of the analysis we also profit from a better description of the signal in the MC
+samples (Section~\ref{sec:samples}), and a higher statistics of the MC events. The
+description of the simulated background is also improved. We observe a good agreement in
+the shapes of the basic distributions between data and MC in all control regions, see
+Section~\ref{sec:control}.
+
+There are however a few new challenges in Run-II analysis.  We utilize the double-photon
+trigger to select event for the analysis. Compared to the 8\TeV data-taking the $E_{T}$
+thresholds of the L1 seeds of those triggers were increased, which reduces the selection
+efficiency of the signal.  Smaller distance parameter in the jet clustering algorithm is
+used by CMS ($D=0.4$ in Run-II vs $D=0.5$ in Run-I), which introduces a larger bias and decreased resolution in the
+reconstruction of the \Mjj variable. Another challenge of the CMS running conditions in
+Run-II is higher pile-up environment, specially during the 2016 data taking. 
+
+With respect to the 2015 version of the analysis, many improvements have been implemented focusing on 
+maximizing the S/B, given the larger amount of data available. 
+New categorization schemes have been developed and the mass window selection has been re-optimized. 
+A new training for the b jet energy regression has also been developed, with a better performance both 
+regarding the jet energy scale and resolution. 
+
+
+
+%We are glad you have stumbled upon this article, we hope you'll enjoy reading it, or at
+%very least learn something from it.
+

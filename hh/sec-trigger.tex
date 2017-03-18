@@ -1,0 +1,30 @@
+\section{Analysis objects and selection}
+This analysis uses general purpose reconstruction of the photons and jets for which we
+have brief descriptions below.
+
+\subsection{Triggers And Pre-Selection}
+\label{sec:trigger}
+Exploiting the high online performance of the CMS ECAL to reconstruct photons and electrons, the dataset used in this analysis is constructed with a selection that requires two photons at High Level Trigger (HLT) level.
+
+For the 2016 data taking period, the online strategy was based on a single HLT trigger path:
+\begin{itemize}
+\item HLT$\_$Diphoton30$\_$18$\_$R9Id$\_$OR$\_$IsoCaloId$\_$AND$\_$HE$\_$R9Id$\_$Mass90;
+\end{itemize}
+
+In order to achieve a good data/simulation comparison, a pre-selection that is tighter than the online selection is applied on data and Monte Carlo. This pre-selection is described on table \ref{tab:preselection}. It is based on shower shape variables ($R9$, the ratio between the energy deposited on a 3x3 ECAL crystal matrix around the most energetic crystal in the supercluster, and the supercluster energy), isolation variables (charged hadron isolation, CHI, the sum of all charged hadron particle flow candidates energies inside a cone of $\Delta R < 0.3$ around the photon axis), identification variables (H/E, the ratio between the photon's energy deposit on HCAL and on ECAL), and kinematic variables ($E_{T}$ and the photon supercluster $\eta$). Only events that have at least one diphoton candidate passing the pre-selection requirements are considered in the analysis.
+
+ \begin{table}[h]
+\centering
+\small{
+\begin{tabular}{rcc}
+Requirements & Leading Photon & Subleading Photon \\ \hline
+$E_{T}$ & $30 \gev$ & $20 \gev$ \\ \hline
+$|\eta|$ & \multicolumn{2}{c}{ $< 2.5$ and outside $1.442  |\eta| < 1.566$ } \\ \hline
+Shower shape and Isolation & \multicolumn{2}{c}{ $R9 > 0.8$ or CHI $< 20$ or CHI/$E_{T} < 0.3$} \\ \hline
+Identification & \multicolumn{2}{c}{ H/E $< 0.08$} \\ \hline
+\end{tabular}
+}
+\caption{\small Trigger based pre-selection applied on diphoton candidates.  \label{tab:preselection}}
+\end{table}
+
+The central $\Hgg$ analysis provides scale factors and uncertainties related to those scale factors due to this HLT selection, which we also apply in the analysis and take into account in our final list of systematics. 

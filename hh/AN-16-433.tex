@@ -1,0 +1,216 @@
+% Customizable fields and text areas start with % >> below.
+% Lines starting with the comment character (%) are normally removed before release outside the collaboration, but not those comments ending lines
+
+% svn info. These are modified by svn at checkout time.
+% The last version of these macros found before the maketitle will be the one on the front page,
+% so only the main file is tracked.
+% Do not edit by hand!
+%\RCS$Revision: 383466 $
+%\RCS$HeadURL: svn+ssh://svn.cern.ch/reps/tdr2/notes/AN-16-433/trunk/AN-16-433.tex $
+%\RCS$Id: AN-16-433.tex 383466 2017-01-27 18:37:45Z andrey $
+%%%%%%%%%%%%% local definitions %%%%%%%%%%%%%%%%%%%%%
+% This allows for switching between one column and two column (cms@external) layouts
+% The widths should  be modified for your particular figures. You'll need additional copies if you have more than one standard figure size.
+\newlength\cmsFigWidth
+\ifthenelse{\boolean{cms@external}}{\setlength\cmsFigWidth{0.85\columnwidth}}{\setlength\cmsFigWidth{0.4\textwidth}}
+\ifthenelse{\boolean{cms@external}}{\providecommand{\cmsLeft}{top\xspace}}{\providecommand{\cmsLeft}{left\xspace}}
+\ifthenelse{\boolean{cms@external}}{\providecommand{\cmsRight}{bottom\xspace}}{\providecommand{\cmsRight}{right\xspace}}
+%%%%%%%%%%%%%%%  Title page %%%%%%%%%%%%%%%%%%%%%%%%
+\cmsNoteHeader{AN-16-433} % This is over-written in the CMS environment: useful as preprint no. for export versions
+% >> Title: please make sure that the non-TeX equivalent is in PDFTitle below
+\title{Search for two Higgs bosons in final states containing two photons and two bottom quarks with the full 2016 dataset}
+\graphicspath{{figures/}{figures/sec-photons/}{figures/sec-efficiency_plots/NR/}{figures/sec-efficiency_plots/Radion/}{figures/sec-efficiency_plots/Graviton/}{figures/NR_limits/}}
+
+% >> Authors
+%Author is always "The CMS Collaboration" for PAS and papers, so author, etc, below will be ignored in those cases
+%For multiple affiliations, create an address entry for the combination
+%To mark authors as primary, use the \author* form
+\address[louvain]{Universite Catholique de Louvain (BE)}
+\address[cea]{CEA/IRFU (FR)}
+\address[ipnl]{Institut de Physique Nucl\'eaire de Lyon (FR)}
+\address[ncu]{National Central University (TW)}
+\address[milano]{Universita e INFN, Milano-Bicocca (IT)}
+\address[padova]{INFN Padova (IT)}
+\address[neu]{Northeastern University, Boston (US)}
+
+%\address[princeton]{Princeton University}
+%\address[str]{Universite Hubert Curien, Strasbourg}
+%\address[roma]{INFN Roma I}
+%\address[pisa]{Scuola Normale Superiore , Pisa and INFN}
+%\address[cern]{CERN}
+%\address[cukurova]{Cukurova University, (TU)}
+%\address[bra]{UNESP - Universidade Estadual Paulista (BR)}
+%\address[pisa]{Universita di Pisa}
+
+\author[louvain]{O.~Bondu}
+\author[cea]{S.~Ganjour}
+\author[ipnl]{M.~Gouzevitch}
+\author[ncu]{C.-M.~Kuo}
+\author[ipnl]{F.~Lagarde}
+\author[neu]{A.~Massironi}
+\author[milano]{B.~Marzocchi}
+\author[padova]{A.~Carvalho}
+\author[neu]{T.~Orimoto}
+\author[ncu]{A.~Pozdnyakov}
+\author[neu]{R.~Teixeira~De~Lima}
+\author[ncu]{C.-W.~Yeh}
+\author[cea]{A.~Zghiche}
+
+% Summer students
+
+% Ponctual contributors
+
+% >> Date
+% The date is in yyyy/mm/dd format. Today has been
+% redefined to match, but if the date needs to be fixed, please write it in this fashion.
+% For papers and PAS, \today is taken as the date the head file (this one) was last modified according to svn: see the RCS Id string above.
+% For the final version it is best to "touch" the head file to make sure it has the latest date.
+\date{\today}
+
+% >> Abstract
+% Abstract processing:
+% 1. **DO NOT use \include or \input** to include the abstract: our abstract extractor will not search through other files than this one.
+% 2. **DO NOT use %**                  to comment out sections of the abstract: the extractor will still grab those lines (and they won't be comments any longer!).
+% 3. For PASs: **DO NOT use tex macros**         in the abstract: CDS MathJax processor used on the abstract doesn't understand them _and_ will only look within $$. The abstracts for papers are hand formatted so macros are okay.
+\abstract{
+
+A search is presented for the production of two Higgs bosons in final states containing two photons and two bottom quarks.
+Both resonant and nonresonant hypotheses are investigated.
+The analyzed data correspond to an integrated luminosity of 36.50 fb$^{−1}$  of proton-proton collisions at  $\sqrt{s} = 13$ TeV collected with the CMS detector in 2016.
+Good agreement is observed between data and predictions of the standard model (SM).
+Upper limits are set at $95\%$ confidence level on the production cross section of new spin-0 and spin-2 particles and compared to the prediction of warped extra dimension models.
+An upper limit on the nonresonant two-Higgs production is also set and compared to the SM two-Higgs production cross section in gluon-gluon fusion.
+Moreover, the parameter space for anomalous Higgs boson couplings in the nonresonant production is investigated.% using the clusterisation method.
+
+%A search is presented for the production of two Higgs bosons in final
+%states containing two photons and two bottom quarks.  Both resonant
+%and nonresonant hypotheses are investigated.  The analyzed data
+%correspond to an integrated luminosity of 2.3\fbinv of proton-proton
+%collisions at $\sqrt{s}=13$\TeV collected with the CMS detector.  Good
+%agreement is observed between data and predictions of the standard
+%model (SM).  Upper limits are set at 95\% confidence level on the
+%production cross section of new particles and compared to the
+%prediction for the existence of a warped extra dimension.
+%When the decay to two Higgs bosons is kinematically allowed, assuming a mass scale $\LambdaR = 1$\TeV for the model, the data exclude a radion scalar
+%at masses below 980\GeV.
+%The first Kaluza--Klein excitation mode of the graviton in Randall--Sundrum models is excluded for masses between 325 and 450\GeV.
+%Limits set on nonresonant production constrain the
+%parameter space for anomalous Higgs boson couplings.
+}
+% >> PDF Metadata
+% Do not comment out the following hypersetup lines (metadata). They will disappear in NODRAFT mode and are needed by CDS.
+% Also: make sure that the values of the metadata items are sensible and are in plain text:
+% (1) no TeX! -- for \sqrt{s} use sqrt(s) -- this will show with extra quote marks in the draft version but is okay).
+% (2) no %.
+% (3) No curly braces {}.
+\hypersetup{%
+pdfauthor={O.~Bondu, S.~Ganjour, M.~Gouzevitch, R.~Teixeira~De~Lima, A.~Pozdnyakov, A.~Zghiche},%
+pdftitle={Search for production of two Higgs bosons in the final state with two photons and two bottom quarks with 2016 data},%
+pdfsubject={CMS},%
+pdfkeywords={di-Higgs, Higgs self-coupling, resonance, anomalous couplings, non-resonant production}}
+\maketitle %maketitle comes after all the front information has been supplied
+% >> Text
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Begin text %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% **DO NOT REMOVE THE BIBLIOGRAPHY** which is located before the appendix.
+%% You can take the text between here and the bibiliography as an example which you should replace with the actual text of your document.
+%% If you include other TeX files, be sure to use "\input{filename}" rather than "\input filename".
+%% The latter works for you, but our parser looks for the braces and will break when uploading the document.
+%%%%%%%%%%%%%%
+\clearpage
+\tableofcontents
+
+% USER-DEFINED STUFF
+\newcommand{\HH}{\ensuremath{\PH\PH}}
+\newcommand{\mHH}{\ensuremath{M_{\PH\PH}}\xspace}
+\newcommand{\Hgg}{\ensuremath{\PH\to\gamma\gamma}}
+\newcommand{\Hbb}{\ensuremath{\PH\to b\bar{b}}}
+\newcommand{\ggbb}{\ensuremath{b\bar{b}\gamma\gamma}}
+\newcommand{\bbgg}{\ensuremath{b\bar{b}\gamma\gamma }}
+\newcommand{\bbbb}{\ensuremath{b\bar{b}b\bar{b}}}
+\newcommand{\ggjj}{\ensuremath{\gamma\gamma jj}}
+\newcommand{\jjgg}{\ensuremath{jj\gamma\gamma}}
+\newcommand{\gjjj}{\ensuremath{\gamma jjj}}
+%\newcommand{\Mggjjk}{\ensuremath{m_{\gamma\gamma {\rm jj}}^{\rm kin}}}
+\newcommand{\pT}{\ensuremath{p_{T}}\xspace}
+\newcommand{\Mx}{\ensuremath{M_{\mathrm{X}}}\xspace}
+\newcommand{\Mtilde}{\ensuremath{\tilde{M}_{\mathrm{X}}}\xspace}
+\newcommand{\Mgg}{\ensuremath{M(\gamma\gamma)}\xspace}
+\newcommand{\Mjj}{\ensuremath{M(jj)}\xspace}
+\newcommand{\Mjjr}{\ensuremath{M_(jj)^{r}}}
+%\newcommand{\Mjjr}{\ensuremath{M_{\rm jj}^{\rm r}}}
+\newcommand{\thetastar}{\ensuremath{\theta^{\rm CS}_{\rm HH}}}
+\newcommand{\acosthetastar}{\ensuremath{|\cos {\theta^{\rm CS}_{\rm HH}}|}}
+\newcommand{\Mggjj}{\ensuremath{M(jj\gamma\gamma)}}
+\newcommand{\Mjjgg}{\ensuremath{M(jj\gamma\gamma)}}
+%\newcommand{\Mggjj}{\ensuremath{M_{\gamma\gamma {\rm jj}}}}
+\newcommand{\Mggjjk}{\ensuremath{M(\gamma\gammajj)_{kin}}}
+\newcommand{\Mjjggk}{\ensuremath{M(jj\gamma\gamma)_{kin}}}
+%\newcommand{\Mggjjk}{\ensuremath{M_{\gamma\gamma {\rm jj}}^{\rm kin}}}
+\newcommand{\Mggjjrk}{\ensuremath{M(\gamma\gammajj)_{kin}^{r}}}
+\newcommand{\Mjjggrk}{\ensuremath{M(jj\gamma\gamma)_{kin}^{r}}}
+%\newcommand{\Mggjjrk}{\ensuremath{M_{\gamma\gamma {\rm jj}}^{\rm r, kin}}}
+\newcommand{\pTj}{\ensuremath{p_{T, {\rm jet}}}}
+\newcommand{\pTjr}{\ensuremath{p_{T, {\rm jet}}^r}}
+\newcommand{\kapt}{\ensuremath{\kappa_{t}}}
+\newcommand{\kapl}{\ensuremath{\kappa_{\lambda}}}
+\newcommand{\ctwo}{\ensuremath{c_2}}
+\newcommand{\sieie}{\ensuremath{\sigma_{i\eta i\eta}}}
+\newcommand{\ctwog}{\ensuremath{c_{2g}}\xspace}
+\newcommand{\cg}{\ensuremath{c_g}\xspace}
+\newcommand{\sigmaHH}{\ensuremath{\sigma_{\PH\PH}}\xspace}
+
+\clearpage
+\input{sec-intro}
+
+\clearpage
+\input{sec-samples}
+
+\clearpage
+\section{Analysis objects and selection}
+This analysis uses general purpose reconstruction of the photons and jets for which we
+have brief descriptions below.
+\input{sec-trigger}
+\clearpage
+\input{sec-photons}
+\clearpage
+\input{sec-jets}
+\clearpage
+\input{sec-categorization}
+\clearpage
+\input{sec-masswindow}
+\clearpage
+\input{sec-selection}
+\clearpage
+\input{sec-control}
+\clearpage
+\input{sec-backgroundstudies}
+%\input{sec-2D}
+%\input{sec-resonant}
+%\input{sec-nonresonant}
+\clearpage
+\input{sec-systematics}
+\clearpage
+\input{sec-systematics-clustering}
+\clearpage
+\input{sec-results}
+\clearpage
+\input{sec-nonresonant-results}
+\clearpage
+\input{sec-summary}
+%\input{sec-interpolation}
+%\clearpage
+%\input{pas-16-433}
+%\appendix
+%\input{app-ph}
+%\clearpage
+%\appendix
+\clearpage
+\appendix
+%%\section{Lala}
+\input{sec-regression}
+
+\clearpage
+\bibliography{auto_generated}
+
+%%% DO NOT ADD \end{document}!
+
