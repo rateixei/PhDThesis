@@ -1,25 +1,182 @@
 \chapter{The CMS Electromagnetic Calorimeter}
+\graphicspath{{ecal/figures/}{ecal/}}
 
-The CMS ECAL is a high-resolution, hermetic, and homogeneous electromagnetic calorimeter made of 75,848 scintillating lead tungstate crystals divided among a barrel ($|\eta| < 1.48$) and two endcaps ($1.48 < |\eta| < 3.0$) \cite{ECALTDR}.
-These crystals are characterized by fast light emission ($80\%$ of light emitted in 25 ns), short radiation length ($X_0 = 0.89$ cm) and small Moliere radius ($R_M = 2.10$ cm). The light emitted by these crystals is detected with avalanche photodiodes (APDs) in the barrel and vaccuum photontriodes (VPTs) in the endcaps. The signal readout is performed with two avalanche photodiodes (APDs) per crystal in the barrel, and one vacuum phototriode (VPT) in the endcaps. These characteristics, translated into precise energy and timing resolutions, are an invaluable tool for the CMS physics program.
+
+The CMS ECAL is a high-resolution, hermetic, and homogeneous electromagnetic calorimeter made of 75,848 scintillating lead tungstate crystals divided among a barrel ($|\eta| < 1.48$) and two endcaps ($1.48 < |\eta| < 3.0$) \cite{ECALTDR}, as shown in Figure \ref{fig:ecal_sheme}. 
+%These crystals are characterized by fast light emission, short radiation length ($X_0 = 0.89$ cm) and small Moliere radius ($R_M = 2.10$ cm). 
+The light emitted by these crystals is detected with avalanche photodiodes (APDs) in the barrel and vaccuum photontriodes (VPTs) in the endcaps. The signal readout is performed with two avalanche photodiodes (APDs) per crystal in the barrel, and one vacuum phototriode (VPT) in the endcaps. These characteristics, translated into precise energy and timing resolutions, are an invaluable tool for the CMS physics program.
+
+\begin{figure*}[bh]
+\centering 
+\includegraphics[width=0.7\textwidth]{figures/ECAL_scheme}\hfil
+\caption{The CMS ECAL scheme highlighting a barrel supermodule (green), the ECAL endcaps (blue) and the ECAL preshower (red). }
+\label{fig:ecal_scheme}
+\end{figure*}
+
 
 Completing the CMS electromagnetic calorimeter system is a preshower detector (ES), based on lead absorbers equipped with silicon strip sensors. It is installed in front of the ECAL endcaps, covering the region $1.65 < |\eta| < 2.6$. The fine granularity of the ES strips (2 mm wide) can resolve the signals of high-energy photons from the decays of neutral pions into two photons, when the separation angle between the photons is small, and can determine precisely the position of the electromagnetic deposits.
 
 During the first year of Run II data taking at 13 TeV, the LHC provided a challenging environment, with one bunch crossing every 25 ns and an average of 10 interactions per crossing (pile up). This is expected to be even more challenging in 2016, with up to 40 pile up interactions. In the 2015 data taking period, the CMS ECAL operated with more than $98\%$ of its channels active, and was responsible for less than $7\%$ of CMS downtime during physics runs.
 
 
-\section{Detector Components}
-\subsection{PbWO$_4$ Crystals and In-detector Electronics}
-\subsection{Trigger and Data Acquisition Systems}
+%\section{Detector Components}
+\section{PbWO$_4$ Crystals and In-detector Electronics}
+
+The main component of the ECAL are the lead tungstate crystals, that serve as both active material and absorber, constituting a homogeneous calorimeter. 
+The barrel and endcap crystals are shaped as trapezoidal prisms, with 23 and 22 cm of length, respectively. 
+The crystal's front face (facing the interaction point) has an area of approximately $22\times22$ mm$^{2}$ (about $\Delta\eta\times\Delta\phi = 0.0175\times0.0175$) for the barrel and $25\times25$ mm$^{2}$ (about $\Delta\eta\times\Delta\phi = 0.02\times0.02$). 
+
+The ECAL crystals are arranged to provide an off-pointing, pseudo-projective geometry, shown in the left of Figure \ref{fig:ecal_geometry}. 
+In the barrel, the crystals are mounted in submodules ($2\times5$ crystals in $\phi\times\eta$), which are then mounted into modules and grouped into supermodules. 
+Each supermodule contains 4 modules, three with $10\times4$ submodules in $\phi\times\eta$ and one with $10\times5$. An ECAL supermodule is shown on the right of Figure \ref{fig:ecal_geometry}. 
+
+\begin{figure*}[h]
+\centering 
+\includegraphics[width=0.45\textwidth]{figures/geometry_barrel}\hfil
+\includegraphics[width=0.45\textwidth]{figures/supermodule}\hfil
+\caption{On the left, the CMS ECAL scheme highlighting a barrel supermodule (green), the ECAL endcaps (blue) and the ECAL preshower (red). On the right, the details of a barrel supermodule structure. }
+\label{fig:ecal_geometry}
+\end{figure*}
+
+An energy deposit is measured in the crystal through a scintillation process, in which the lattice atoms are excited and de-excite by the emission of photons. 
+The emission scintillation peak for the ECAL crystals is at about $425$ nm, with $80\%$ of the light emission happening within 25 ns. 
+The PbWO$_4$ crystals are also characterized by a small radiation length ($X_{0} = 0.89$ cm), the mean length of that path that takes a high energy electron to lose $(1 - 1/e)$ of its energy in that medium, and a small Molière radius ($R_{M} = 2.19$ cm), the radius of a cylinder that contains $90\%$ of the shower energy. 
+
+On the other hand, the ECAL crystals have a low light output yield (about 10 photo-electrons per MeV), and therefore must be coupled to high gain light detectors. 
+These detectors must also be radiation hard, to cope with the LHC environment, and be stable under a 4T magnetic field (the CMS solenoid magnet). 
+For the ECAL barrel, avalanche photodiodes (APDs) were chosen due to their high gain (50), despite their temperature dependence, which requires ECAL to have a temperature control with a precision better than $0.1^{o}$C (the PbWO$_4$ crystals light yield is also dependent on temperature, with lower light yields for lower temperatures). 
+The ECAL APDs are also characterized by their fast, 2 ns rise time, which allows time measurement with the crystals scintillation pulse shape. 
+By the time of the ECAL construction, APDs were generally produced in small sizes in comparison to the crystal's rear side area, where they must be attached. For this, two APDs were used for each crystal. 
+On the endcaps, the radiation dose incoming is much higher than in the barrel, which does not allow the usage of APDs in the high $\eta$ region. For this reason, vacuum photo-triodes (VPTs) are used instead. While more resistant to radiation, these light detectors have generally a smaller gain (8-10).
+
+\section{Trigger and Data Acquisition Systems}
+
+The ECAL trigger and data acquisition system (Trigger and DAQ) takes care of the the entire data flow from the crystals to the central CMS Trigger and DAQ systems, a schematic version of the system is shown in Figure \ref{fig:ecal_daq}. 
+
+\begin{figure*}[h]
+\centering 
+\includegraphics[width=0.7\textwidth]{figures/ecal_daq}\hfil
+\caption{ECAL DAQ simplified scheme. }
+\label{fig:ecal_daq}
+\end{figure*}
+
+\subsection{Data Flow}
+
+The ECAL data flow starts right after the signal is detected by the photo detectors attached to the crystals. 
+The first step in the chain is the amplification and digitization of the analog signal coming from the APDs and VPTs. 
+This is performed with multi-gain pre-amplifiers (MGPAs). 
+The ECAL MGPAs work with amplification gains: gain-12, gain-6 and gain-1. 
+The shaping time associated with this amplification process is of about 40 ns. 
+The signal is then sampled and digitized at a rate of 40 MHz. 
+One pulse shape is then reconstructed using 10 of these samples. 
+The electronics responsible for the amplification and digitization step is generally called very-front-end electronics (VFE). 
+
+The VFE sends information to the front-end electronics at the sampling rate. 
+The FE is responsible for creating trigger primitives, basic information such as energy and position, from arrays of $5\times5$ crystals (trigger towers). 
+The trigger primitives are sent from the FE to the trigger concentrator cards (TCCs) at sampling rate, and passed to the CMS Level-1 trigger (L1A signal). 
+During the time it takes for a decision to be made by the L1 trigger, the trigger primitives are stored at the TCCs. 
+In case the event is not accepted, these trigger primitives and the full crystal information stored at the FE are flushed from memory. 
+If an event is accepted, the FE sends the serialized full individual crystals information to the data concentrator cards (DCCs), that will pack the event in a format readable by the CMS central DAQ. 
+
+In parallel, the TCC sends the trigger primitive information to the selective readout units (SRPs) after an L1A arrives. 
+The SRP selects which portions of the detector should be unpacked by the DCCs based on an algorithm called Selective Readout (SR), reducing the load of processing by the DCCs. 
+The DCCs load is limited by the current electronics architecture and can be trespassed when the average activity per event is increased, such as in high pile up LHC runs.  
+The SR algorithm classifies trigger towers as low interest ($E_{TT} < 1.5$ GeV), medium interest ($1.5 < E_{TT} < 2.5 $ GeV) or high interest ($E_{TT} > 2.5$ GeV). 
+If a trigger tower is classified as low interest, only the crystals with energy higher than 4.5 (6.5) ADC in the barrel (endcap). 
+If a trigger tower is classified as medium interest, all crystals are unpacked, regardless of their energies. 
+If a trigger tower is classified as high interest, all crystals in that trigger tower, and the 8 trigger towers around it are fully read.
+
+\subsection{Timing and Control Distribution}
+
+In order to ensure a synchronized working of all different parts of the ECAL DAQ system, a precise distribution of clock and control signals must be achieved. 
+This is performed via a combination of different ECAL and central CMS electronics. 
+For Run 2, CMS installed a new subsystem dedicated to distributing these signals among all CMS partitions, the Timing and Control Distribution System (TCDS). 
+TCDS communicates timing/synchronization signals coming from the LHC and CMS (clock), L1As coming from the CMS Level-1 trigger, and configuration and control commands synchronously to all CMS components. 
+These signals are then distributed among ECAL components via the clock and control system (CCS), including to the front-end electronics (through control token rings). 
+
+\subsubsection{TCDS}
+
+The TCDS subsystem was installed on CMS during the Long Shutdown 1 in order to cope with the new running conditions for Run 2. 
+Specifically, new detector subsystems were being installed in the experiment (such as the new pixel inner tracker layers). 
+Instead of expanding the old system, a choice was made to construct a new infrastructure with updated hardware, firmware and software. 
+The TCDS system consists on three types of boards: the Central Partition Manager (CPM), the CMS Interface boards (iCI) and the Partition Interface boards (PI). 
+
+The TCDS CPM is fully controlled by the central TCDS system, and has information regarding the type of runs to be started by the central DAQ. 
+This information defines, for example, at which point of the LHC orbit to send specific signals to the subdetectors. 
+The iCIs must work as a library that translates the CPM signals into specific actions to be taken by the different subdetectors. This means that the iCIs must be configured properly and individually by each subdetector. 
+In order to achieve that on ECAL, a new software interface to TCDS was written to configure and monitor the ECAL iCIs. 
+The PIs act as fan-out boards to distribute the iCI messages among different subdetector components.
+
+\subsection{Software Architecture}
+
+The ECAL DAQ software architecture controls, configures and monitors the readout and trigger electronics described in the previous sections. 
+The framework implementation is based on a CMS common framework developed by the central Trigger and DAQ group, mostly consisting of  C++ xDAQ framework \cite{xdaq}, while the top layer of the system is based on the JAVA RCMS \cite{rcms} framework.
+
+The overall system accomplishes several different tasks. It configures and monitors the different components of the FE and and off-detector electronics. 
+It communicates with the central CMS TCDS, both sending the correct configuration parameters for the dedicated TCDS ECAL boards and receiving and translating these commands to the off-detector electronics. 
+It is also able to perform different types of runs dedicated to calibration and detector developments, such as "MiniDAQ" and "local" runs.
+
+With the xDAQ framework, the ECAL software communicates to the ECAL boards through SOAP (Simple Object Access Protocol) messages. 
+SOAP messages are also used to communicate issues with the off-detector electronics directly to the central DAQ system. 
+
+There are five main components to the ECAL DAQ software architecture:
+\begin{description}
+\item[ECAL Function Manager] Function managers (FM) work as the overall controller of actions happening to the ECAL software. It has the power to send commands to the ECAL supervisor to cause state transitions, triggering actions such as the beginning of a run. During global CMS runs, the central DAQ function communicates such actions to the ECAL function manager. In specific runs in which ECAL controls its own sequence, the ECAL function manager works by itself.
+\item[ECAL Supervisor] The ECAL supervisor is at the top of software control and coordinates all other working pieces. It receives the commands from the ECAL function manager and, to any given command, proceeds with the specific steps to ensure the state transitions of the different com ECAL components.
+\item[Services Supervisors] For each different services described in the previous sections (TCC, DCC, DCS and SRP), a dedicated software exists in order to perform the actions related to specific state transitions.
+\item[TCDS Supervisor] A specific supervisor was developed to communicate with the central TCDS service. It sends the proper configuration parameters to the TCDS ECAL boards, with the list of commands to be passed to the ECAL electronics when certain state transitions happen and during specific run conditions.
+\item[Monitoring Services] In order to retrieve and display information about the status of the off-detector electronics, specific services based on xDAQ capabilities are used. These services also monitor the ECAL DAQ computing capabilities to make sure all machines are working properly. Depending on what type of error is detected by the monitoring services, SMS's and e-mails are sent to ECAL DAQ experts.
+\end{description}
+
+\subsubsection{ECAL DAQ Finite State Machine}
+
+One of the main goals of the ECAL Supervisor is to ensure the proper state transitions of the different DAQ components through the allowed states of the ECAL DAQ Finite State Machine (FSM), summarized in Figure \ref{fig:ecal_fsm}.
+
+\begin{figure*}[h]
+\centering 
+\includegraphics[width=0.7\textwidth]{figures/ecal_fsm}\hfil
+\caption{Simplified view of the ECAL Finite State Machine and its transitions. }
+\label{fig:ecal_fsm}
+\end{figure*}
+
+ 
+Similarly to the central CMS FSM, the transitions are: 
+
+\begin{description}
+\item[Initialization] The Initialization procedure tests the connection between the ECAL Supervisor and the different off-detector components and initializes all required drivers. The information about the hardware resources is then propagated back to the supervisor and the ECAL FM. The initialization transition takes the FSM to Halted state and makes it ready to be configured.
+\item[Configuration] When the configuration signal is received, it reads the configuration parameters from the ECAL Configurations DataBase (ConfDB) and sends to the off-detector electronics, which are then loaded accordingly. Each different Service Supervisor independently ensures their components have been successfully configured and communicate it back to the ECAL Supervisor. This action takes the FSM to Configured state and is now ready to start producing data (running). It also enables the monitoring services. 
+\item[Start] The start command kicks-off the full data flow described at the beginning of this section, including trigger primitive production and delivery to the L1 trigger, and the delivery of the full data information upon an L1A. It also starts the delivery of monitoring data from the off-detector electronics to the monitoring services. This action takes the FSM to Running state.
+\item[Stop/Halt] These actions take the system either from Running state to Configured state, or from Running or Configured states to Halted state, respectively. The Stop command  interrupts the ECAL DAQ data flow, while the the Halt command interrupts the data flow and flushes the database parameters from the off-detector electronics. 
+\item[Error] Any error during the previous transitions will take the FSM to Failed state.
+\end{description}
+
+\subsubsection{Types of Running Conditions with the ECAL}
+
+\begin{description}
+\item[Global Runs] A global run is the usual working condition of ECAL with the full CMS central DAQ infrastructure. In global runs, the ECAL FM receives commands directly from the central DAQ FM, including all state transition actions. These runs happen when the LHC is running, when CMS is taking cosmics data (with its magnetic field on or off) or when specific tests must be performed with the full central DAQ infrastructure. 
+\item[MiniDAQ Runs] These runs happen with a dedicated central DAQ infrastructure that is independent of global runs, and therefore can run in parallel. They are used on ECAL to test the state of the off-detector electronics and investigate possible errors seen in global runs. MiniDAQ runs have also been used in 2015 and 2016 to measure the response of the ECAL electronics to noise (pedestals) and to test pulses generated by the on-detector electronics.
+\item[Local Runs] Local runs are completely independent from the central DAQ infrastructure. They rely on ECAL software to both directly configure the off-detector electronics and process the data that is produced by the DCCs. This freedom allows for more complex types of running conditions, such as the ones needed for more coherent measurements of ECAL pedestals (to be used in 2017).
+\end{description}
+
+
 \section{Electron and Photon Energy Reconstruction}
 
 The photon and electron energy reconstruction based on ECAL energy deposits is based on the formula: $E_{e,\gamma} = \left[ \sum_{i}\left( S_i(t)\times c_{i} \times A_{i}\right)\times G(\eta) + E_{ES} \right]\times F_{e,\gamma}$, with $A_{i}$, $c_i$ and $S_i(t)$ as, respectively, the per individual channel amplitude, intercalibration constant and light monitoring constant, $G(\eta)$ is the ADC to GeV absolute scale, $E_{ES}$ is the energy deposit in the preshower, and $F_{e,\gamma}$ are the cluster corrections (different for photons and electrons). These terms will be detailed in the next sections.
 
 \subsection{Online Reconstruction}
 
-The online reconstruction of ECAL deposits starts with the amplification and digitization of the signal from the photodetectors attached to the crystals. This is performed by a multi-gain preamplifier (MGPA), and a 12 bit ADC running at 40 MHz. Ten consecutive samples are recorded and used to perform the pulse reconstruction and amplitude extraction.
+%The online reconstruction of ECAL deposits starts with the amplification and digitization of the signal from the photodetectors attached to the crystals. This is performed by a multi-gain preamplifier (MGPA), and a 12 bit ADC running at 40 MHz. Ten consecutive samples are recorded and used to perform the pulse reconstruction and amplitude extraction.
 
 The time spacing between two consecutive samples from the ECAL readout electronics is 25 ns, which is the same time spacing between two colliding bunches in the LHC. This implies that, during the readout of one pulse, another scintillation process might start in the same crystal, compromising the in-time amplitude reconstruction. To mitigate this effect, also called out-of-time (OOT) pile up, a new online pulse reconstruction method (multifit) was developed to replace the Run I method \cite{weights}.
+
+\begin{figure*}[h]
+\centering 
+\includegraphics[width=0.45\textwidth]{figures/multifit_pulses}\hfil
+\includegraphics[width=0.45\textwidth]{figures/multifit_oot}\hfil
+\caption{(Left) Fitted pulse shapes with the multifit method. (Right) In-time and out-of-time contributions to energy reconstruction with weights method (red) and multifit (blue).}
+\label{fig:ecal_daq}
+\end{figure*}
+
 
 In the multifit method, the pulse shape is reconstructed based on a fit to the time samples, minimizing $\chi^2 = \sum_{i=1}^{10}{\left( \sum_j^MA_jp_{ij} - S_i \right)^2}/{\sigma^2_{S_i}}$. The samples ($S_i$) are fitted with one in-time pulse shape template, plus up to 9  out-of-time templates ($p_{ij}$) times their respective amplitudes ($A_j$). $\sigma_{S_i}$ is noise generated by electronics associated with the crystal readout chain. The OOT templates have the same shape as the in time one, but are shifted in time by multiples of 1 bunch crossing (1 BX = 25 ns), within a range of -5 to +4 BX around the in time signal (BX = 0). The pulse shapes have been measured in early 2015, in special runs in which the LHC delivered isolated bunches (no OOT pile up).
 
@@ -42,20 +199,12 @@ A light monitoring system is used to monitor the overall changes in response in 
 
 The history of response change measurements is summarized in Figure \ref{fig_laser}. The changes are up to $6\%$ in the barrel and  reach up to $30\%$ at $|\eta| \approx 2.5$, the limit of the tracker acceptance. For high $|\eta|$ regions, changes are up to $70\%$. The recovery of the crystal response during the long shutdown period is visible. The response was not fully recovered, however, particularly in the region closest to the beam pipe. The monitoring corrections are validated by comparing isolated electron energy as measured by ECAL ($E$) and momentum as measured by the CMS Tracker ($p$), before and after light monitoring corrections. It is seen that the measured corrections bring stability to energy measurements with ECAL.
 
-\begin{figure}[h]
-\centerline{\begin{minipage}{16pc}
-%\includegraphics[width=16pc]{figs/laser_history.png}
-\caption{\label{fig_laser} History of channel response changes as measured by the light monitoring system.}
-\end{minipage}\hspace{2pc}%
-%\begin{minipage}{11pc}
-%\includegraphics[width=11pc]{figs/ICs.pdf}
-%\caption{\label{fig_miscalib} Residual miscalibration for individual intercalibration methods %and for combination.}
-%\end{minipage}\hspace{2pc}%
-\begin{minipage}{16pc}
-%\includegraphics[width=16pc]{figs/EcalEnergyResolutionGolden.png}
-\caption{\label{fig_res} ECAL energy resolution measured with $Z\rightarrow ee$ events for low bremsstrahlung electrons in the ECAL barrel.}
-\end{minipage}}
-\end{figure}
+\begin{figure*}[tbh]
+\centering 
+\includegraphics[width=0.8\textwidth]{figures/transparency}\hfil
+\caption{History of channel response changes as measured by the light monitoring system.}
+\label{fig:fig_laser}
+\end{figure*}
 
 \subsection{Intercalibration}
 
