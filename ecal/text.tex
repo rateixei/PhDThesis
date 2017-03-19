@@ -25,6 +25,16 @@ During the first year of Run II data taking at 13 TeV, the LHC provided a challe
 The main component of the ECAL are the lead tungstate crystals, that serve as both active material and absorber, constituting a homogeneous calorimeter. 
 The barrel and endcap crystals are shaped as trapezoidal prisms, with 23 and 22 cm of length, respectively. 
 The crystal's front face (facing the interaction point) has an area of approximately $22\times22$ mm$^{2}$ (about $\Delta\eta\times\Delta\phi = 0.0175\times0.0175$) for the barrel and $25\times25$ mm$^{2}$ (about $\Delta\eta\times\Delta\phi = 0.02\times0.02$). 
+Examples of such crystals are seen in Figure \ref{fig:ecal_crystals}.
+
+\begin{figure*}[h]
+\centering 
+\includegraphics[width=0.45\textwidth]{figures/ecal_crystal_eb}\hfil
+\includegraphics[width=0.45\textwidth]{figures/ecal_crystal_ee}\hfil
+\caption{Example of lead tungstate crystals as present on the ECAL barrel (left) and on the ECAL endcap (right). }
+\label{fig:ecal_crystals}
+\end{figure*}
+
 
 The ECAL crystals are arranged to provide an off-pointing, pseudo-projective geometry, shown in the left of Figure \ref{fig:ecal_geometry}. 
 In the barrel, the crystals are mounted in submodules ($2\times5$ crystals in $\phi\times\eta$), which are then mounted into modules and grouped into supermodules. 
@@ -71,9 +81,20 @@ The signal is then sampled and digitized at a rate of 40 MHz.
 One pulse shape is then reconstructed using 10 of these samples. 
 The electronics responsible for the amplification and digitization step is generally called very-front-end electronics (VFE). 
 
-The VFE sends information to the front-end electronics at the sampling rate. 
+
+The VFE sends information to the front-end electronics (FE) at the sampling rate. 
 The FE is responsible for creating trigger primitives, basic information such as energy and position, from arrays of $5\times5$ crystals (trigger towers). 
 The trigger primitives are sent from the FE to the trigger concentrator cards (TCCs) at sampling rate, and passed to the CMS Level-1 trigger (L1A signal). 
+The VFE and the FE, known as the in-detector electronics, are placed right at the detector, close to the crystals, which is schematically shown in Figure \ref{fig:ecal_vfe}. 
+In Figure \ref{fig:ecal_vfe}, the chips dedicated to generating and transmitting the serialized trigger primitives (FENIX chips) are shown, along with the gigabit optical hybrids (GOH) chips dedicated to data transmission and the chips dedicated to receiving and distributing timing and control data (CCU). 
+
+\begin{figure*}[h]
+\centering 
+\includegraphics[width=0.7\textwidth]{figures/ecal_vfe}\hfil
+\caption{ECAL in-detector electronics simplified scheme. }
+\label{fig:ecal_vfe}
+\end{figure*}
+
 During the time it takes for a decision to be made by the L1 trigger, the trigger primitives are stored at the TCCs. 
 In case the event is not accepted, these trigger primitives and the full crystal information stored at the FE are flushed from memory. 
 If an event is accepted, the FE sends the serialized full individual crystals information to the data concentrator cards (DCCs), that will pack the event in a format readable by the CMS central DAQ. 
@@ -161,13 +182,19 @@ Similarly to the central CMS FSM, the transitions are:
 
 \section{Electron and Photon Energy Reconstruction}
 
-The photon and electron energy reconstruction based on ECAL energy deposits is based on the formula: $E_{e,\gamma} = \left[ \sum_{i}\left( S_i(t)\times c_{i} \times A_{i}\right)\times G(\eta) + E_{ES} \right]\times F_{e,\gamma}$, with $A_{i}$, $c_i$ and $S_i(t)$ as, respectively, the per individual channel amplitude, intercalibration constant and light monitoring constant, $G(\eta)$ is the ADC to GeV absolute scale, $E_{ES}$ is the energy deposit in the preshower, and $F_{e,\gamma}$ are the cluster corrections (different for photons and electrons). These terms will be detailed in the next sections.
+The photon and electron energy reconstruction based on ECAL energy deposits is based on the formula: 
+\begin{equation}
+E_{e,\gamma} = \left[ \sum_{i}\left( S_i(t)\times c_{i} \times A_{i}\right)\times G(\eta) + E_{ES} \right]\times F_{e,\gamma},
+\end{equation}
+ with $A_{i}$, $c_i$ and $S_i(t)$ as, respectively, the per individual channel amplitude, intercalibration constant and light monitoring constant, $G(\eta)$ is the ADC to GeV absolute scale, $E_{ES}$ is the energy deposit in the preshower, and $F_{e,\gamma}$ are the cluster corrections (different for photons and electrons). The methods used to obtain the different terms in this equation will be detailed in the next sections. 
 
 \subsection{Online Reconstruction}
 
 %The online reconstruction of ECAL deposits starts with the amplification and digitization of the signal from the photodetectors attached to the crystals. This is performed by a multi-gain preamplifier (MGPA), and a 12 bit ADC running at 40 MHz. Ten consecutive samples are recorded and used to perform the pulse reconstruction and amplitude extraction.
 
-The time spacing between two consecutive samples from the ECAL readout electronics is 25 ns, which is the same time spacing between two colliding bunches in the LHC. This implies that, during the readout of one pulse, another scintillation process might start in the same crystal, compromising the in-time amplitude reconstruction. To mitigate this effect, also called out-of-time (OOT) pile up, a new online pulse reconstruction method (multifit) was developed to replace the Run I method \cite{weights}.
+The time spacing between two consecutive samples from the ECAL readout electronics is 25 ns, which is the same time spacing between two colliding bunches in the LHC. 
+This implies that, during the readout of one pulse, another scintillation process might start in the same crystal, compromising the in-time amplitude reconstruction. 
+To mitigate this effect, also called out-of-time (OOT) pile up, a new online pulse reconstruction method (multifit) was developed to replace the Run I method \cite{weights}.
 
 \begin{figure*}[h]
 \centering 
@@ -186,18 +213,22 @@ It has been observed in both data and simulation that, with the multifit method,
 \subsection{Response Monitoring}
 
 Time dependent corrections must be applied to the reconstructed amplitude due to changes in detector response with radiation exposure. These changes in response are due to decreases in crystal transparency and variations in VPT response in endcaps.
-%This change in response is a convolution of two effects: change in crystal transparency and change in VPT response in endcaps.
 
 The changes in the crystal transparency is due to ionizing radiation creating color centers in the lead tungstate. While the scintillation process remains intact, the amount of light detected by the photodetectors decreases. This effect is partially mitigated through thermal annealing, causing the transparency to increase in the absence of radiation.
 
-A light monitoring system is used to monitor the overall changes in response in the ECAL \cite{laser}. It consists of a system of lasers (operating at 447 nm, close to the wavelength of peak emission for lead tungstate) that injects light in each ECAL crystal, which is then read by the standard ECAL readout. The difference between input and read laser amplitudes are then used to calculate correction factors. %The change in transparency per crystal ($R/R_0$) is then related to the ratio between reconstructed amplitude and the injected light amplitude ($S/S_0$) through the formula:
+A light monitoring system is used to monitor the overall changes in response in the ECAL \cite{laser}. It consists of a system of lasers (operating at 447 nm, close to the wavelength of peak emission for lead tungstate) that injects light in each ECAL crystal, which is then read by the standard ECAL readout. The change in transparency per crystal ($R/R_0$) is then related to the ratio between reconstructed amplitude and the injected light amplitude ($S/S_0$) through the formula:
 
-%\begin{equation}
-%\frac{S}{S_0} = \left(\frac{R}{R_0} \right)^{\alpha},
-%\end{equation}
-%where $\alpha$ has been measured in beam tests and is $\approx 1.5$. $S/S_0$ is then used as a correction factor to account for the response changes.
+\begin{equation}
+\frac{S}{S_0} = \left(\frac{R}{R_0} \right)^{\alpha},
+\end{equation}
+where $\alpha$ has been measured in beam tests and is $\approx 1.5$. $S/S_0$ is then used as a correction factor to account for the response changes.
 
-The history of response change measurements is summarized in Figure \ref{fig_laser}. The changes are up to $6\%$ in the barrel and  reach up to $30\%$ at $|\eta| \approx 2.5$, the limit of the tracker acceptance. For high $|\eta|$ regions, changes are up to $70\%$. The recovery of the crystal response during the long shutdown period is visible. The response was not fully recovered, however, particularly in the region closest to the beam pipe. The monitoring corrections are validated by comparing isolated electron energy as measured by ECAL ($E$) and momentum as measured by the CMS Tracker ($p$), before and after light monitoring corrections. It is seen that the measured corrections bring stability to energy measurements with ECAL.
+The light monitoring infrastructure is an integral part of the ECAL DAQ. 
+It works alongside of the main data flow, in specific periods in which the LHC bunches are empty (orbit gaps). 
+During the orbit gaps, the laser system is shown in different parts of the ECAL barrel and endcaps. 
+In about 40 minutes, one reading of the full ECAL is performed. 
+
+The history of response change measurements is summarized in Figure \ref{fig:fig_laser}. The changes are up to $6\%$ in the barrel and  reach up to $30\%$ at $|\eta| \approx 2.5$, the limit of the tracker acceptance. For high $|\eta|$ regions, changes are up to $70\%$. The recovery of the crystal response during the long shutdown period is visible. The response was not fully recovered, however, particularly in the region closest to the beam pipe. The monitoring corrections are validated by comparing isolated electron energy as measured by ECAL ($E$) and momentum as measured by the CMS Tracker ($p$), before and after light monitoring corrections. It is seen that the measured corrections bring stability to energy measurements with ECAL.
 
 \begin{figure*}[tbh]
 \centering 
@@ -206,16 +237,44 @@ The history of response change measurements is summarized in Figure \ref{fig_las
 \label{fig:fig_laser}
 \end{figure*}
 
+In Figure \ref{fig:laser_eop}, it can be seen how the laser corrections impact the stability of the ECAL energy measurement. 
+In this plot, the ratio between the energy of an isolated electron as measured by the ECAL (E) and by the CMS Tracker (p) is shown as a function of time. 
+Due to the response changes in the crystals and photon detectors, the ratio decreases when left uncorrected. 
+After the laser correction is applied, ECAL achieves a stable energy measurement in time.  
+
+\begin{figure*}[tbh]
+\centering 
+\includegraphics[width=0.8\textwidth]{figures/laser_eop}\hfil
+\caption{Stability of electron energy measurement with and without applying laser monitoring corrections.}
+\label{fig:laser_eop}
+\end{figure*}
+
 \subsection{Intercalibration}
 
 A relative calibration procedure in all ECAL channels is performed to ensure uniformity across the detector. Different and independent methods are used to calculate intercalibration constants (ICs), which are then combined to achieve the desired precision of $<0.5\%$. The final 2015 version of the ICs have been calculated with the full $2.6$ fb$^{-1}$ dataset recorded by CMS with B=3.8 T. The following methods are the same as in Run I \cite{calibration}.
 
-The $\phi$-symmetry method is based on the expected uniformity of the energy flux along $\phi$ rings (region with fixed $\eta$). The ICs are calculated to correct non-uniformities in this flux. This method was used in 2015 to translate the latest ICs, calculated with the full 2012 dataset, to the 2015 detector conditions. This was done by scaling the 2012 ICs by the ratio between 2015 and 2012 $\phi$-symmetry ICs.
-The $\pi^0/\eta$ method consists of measuring the invariant mass of these resonances' decays to two photons and maximizing their resolutions by varying the ICs iteratively. %This method does not utilize the absolute value of the  $\pi^0$ and $\eta$ resonances not to interfere with the absolute scale calibration.
-The $E/p$ method employs the same logic as the light monitoring validation method, comparing isolated electron energy and momentum. An iterative method is used to minimize the spread of the $E/p$ distribution.
+\begin{description}
+
+\item [$\phi$-Symmetry] The $\phi$-symmetry method is based on the expected uniformity of the energy flux along $\phi$ rings (region with fixed $\eta$). The ICs are calculated to correct non-uniformities in this flux. This method was used in 2015 to translate the latest ICs, calculated with the full 2012 dataset, to the 2015 detector conditions. This was done by scaling the 2012 ICs by the ratio between 2015 and 2012 $\phi$-symmetry ICs.
+
+\item [$\pi^{0}/\eta$] The $\pi^0/\eta$ method consists of measuring the invariant mass of these resonances' decays to two photons and maximizing their resolutions by varying the ICs iteratively. This method does not utilize the absolute value of the  $\pi^0$ and $\eta$ resonances not to interfere with the absolute scale calibration. 
+
+\item [E/p] The $E/p$ method employs the same logic as the light monitoring validation method, comparing isolated electron energy and momentum. An iterative method is used to minimize the spread of the $E/p$ distribution.
+
+\end{description}
+
 The combined intercalibration was obtained from the mean of the individual ICs at a fixed value of $\eta$, weighted by their respective precisions. The residual miscalibration of an intercalibration method, which is related to the final method precision, is calculated as the spread of the difference between the method's ICs and the other methods' ICs at a fixed value of $\eta$. 
-%This residual miscalibration can be seen in Figure \ref{fig_miscalib} for the ECAL barrel, where it is shown that 
-The combination of ICs achieves the desired goal of less than $0.5\%$ precision.% for the central barrel region. 
+This residual miscalibration can be seen in Figure \ref{fig:ecal_miscalib}  (left) for the ECAL barrel, where it is shown that 
+The combination of ICs achieves the desired goal of less than $0.5\%$ precision for the central barrel region. 
+The overall impact of applying the intercalibration constants and the response monitoring corrections can be seen in Figure \ref{fig:ecal_miscalib} (right), in $Z\rightarrow ee$ events.
+
+\begin{figure*}[tbh]
+\centering 
+\includegraphics[width=0.45\textwidth]{figures/ecal_miscalib}\hfil
+\includegraphics[width=0.45\textwidth]{figures/ecal_ic_lm}\hfil
+\caption{Residual mis-intercalibration with the different ECAL intercalibration methods and their combination.}
+\label{fig:ecal_miscalib}
+\end{figure*}
 
 
 \subsection{Absolute Calibration}
@@ -230,15 +289,117 @@ The validation was performed by comparing data and Monte Carlo simulations for h
 
 \subsection{High Level Calibrations}
 
-The amount of material in front of ECAL, up to $2X_0$ in the barrel outer regions, produces a high rate of bremsstrahlung radiation from electrons and a high probability of photon conversions. To mitigate this effect, a clustering algorithm is used to recombine energy deposits that come from those processes. The cluster energy is corrected via a multivariate technique, separately for photons \cite{photons} and electrons \cite{electrons}. It also aims to correct other effects, such as in time pile up.
+The amount of material in front of ECAL, up to $2X_0$ in the barrel outer regions as seen in Figure \ref{fig:ecal_cluster} (left), produces a high rate of bremsstrahlung radiation from electrons and a high probability of photon conversions. To mitigate this effect, a clustering algorithm is used to recombine energy deposits that come from those processes. The cluster energy is corrected via a multivariate technique, separately for photons \cite{photons} and electrons \cite{electrons}. It also aims to correct other effects, such as in time pile up. The effect of these high level cluster corrections on the resolution of the $Z\rightarrow ee$ peak can be seen in Figure \ref{fig:ecal_cluster} (right).
 
-\section{ECAL Performance with Run II data}
+\begin{figure*}[tbh]
+\centering 
+\includegraphics[width=0.45\textwidth]{figures/cms_material}\hfil
+\includegraphics[width=0.45\textwidth]{figures/ecal_clustercorr}\hfil
+\caption{Material budget between the ECAL and the collision point on CMS (left). Effect of high level cluster corrections on the resolution of the $Z\rightarrow ee$ peak.}
+\label{fig:ecal_cluster}
+\end{figure*}
 
-The ECAL energy resolution is measured using $Z\rightarrow ee$ events, from an unbinned fit with a Breit-Wigner function convoluted with a Gaussian as signal model. Degradation effects come from the amount of material in front of ECAL and cracks between modules. The resolution, as a function of $\eta$, for low bremsstrahlung electrons in the barrel can be seen in Figure \ref{fig_res}.
-%The energy resolution achieved with reprocessed data, which includes the latest intercalibration and calibration constants derived with 2015 data, achieves a resolution that is less than 2$\%$ for $Z\rightarrow ee$ low bremsstrahlung electrons in the central barrel region.
-The energy resolution achieved using the latest 2015 calibration constants is less than $2\%$ for low bremsstrahlung electrons in the barrel.
-%The reprocessed data is especially better performing in the endcaps, when comparing to processed data with 2012 values for intercalibration and calibration. When ported to physics analysis, this energy resolution implies, for example, in a $\sigma_{eff}/M_h \approx 1.5\%$ (from simulation) in the $H\rightarrow\gamma\gamma$ analysis, where $\sigma_{eff}$ is the smallest interval in $M(\gamma\gamma)$ with $68.5\%$ coverage \cite{hgg}.
 
-\subsection{Performance}
+\section{ECAL Energy Resolution}
+
+\subsection{Energy Resolution of a Calorimeter}
+
+The intrinsic energy resolution of an electromagnetic calorimeter can be parametrized in terms of three sources, as in the following equation:
+
+\begin{equation}
+\frac{\sigma}{E}  = \frac{A}{E} \oplus \frac{B}{\sqrt{E}} \oplus C,
+\end{equation}
+
+where the first term on the right-side of the equation is called the noise term, the second is called the stochastic term and the third, the constant term. 
+A brief explanation of the physical nature of these uncertainties follows:
+
+\begin{description}
+\item [Noise term] The noise term is the contribution to the energy resolution from the electronic noise in the readout chain. In the case of ECAL, this noise comes from the VFE and FE part of the detector, specially in the light detection phase by the photo-detectors and on the amplification and sampling phase by the MGPA. 
+\item [Stochastic term] This contribution to the resolution comes from the physical development of the shower shape inside the detector. For homogeneous detectors, such as ECAL, this term is usually small, since the full shower development is contained within the active medium. 
+\item [Constant term] Differently from the other two terms, this one is independent of the energy of the incoming particle in the detector. This uncertainty is related to geometrical and static features of the detector, such as non-uniformities and random instabilities in response that are independent on energy. On ECAL, this contribution is largely mitigated by the intercalibration and laser monitoring calibration.
+\end{description}
+
+During the ECAL test-beam commissioning period, these terms were measured directly as: A = 128 MeV, B = 2.8 $\sqrt{\text{GeV}}$ and C = 0.3 \%.
+
+\subsection{ECAL Energy Resolution with Run II data}
+
+The ECAL energy resolution is measured using $Z\rightarrow ee$ events, from an unbinned fit with a Breit-Wigner function convoluted with a Gaussian as signal model. Degradation effects come from the amount of material in front of ECAL and cracks between modules. The resolution, as a function of $\eta$, for low bremsstrahlung electrons in the barrel can be seen in Figure \ref{fig:ecal_res}.
+
+\begin{figure*}[tbh]
+\centering 
+\includegraphics[height=0.45\textwidth, angle=270]{figures/ecal_res_HighR9.pdf}\hfil
+\includegraphics[height=0.45\textwidth, angle=270]{figures/ecal_res_LowR9.pdf}\hfil
+\caption{Energy resolution for low (left) and high (right) brehmsstrahlung $Z\rightarrow ee$ electrons as a function of $\eta$.}
+\label{fig:ecal_res}
+\end{figure*}
+
+
+The energy resolution achieved with reprocessed data, which includes the latest intercalibration and calibration constants derived with 2015 data, achieves a resolution that is less than 2$\%$ for $Z\rightarrow ee$ low bremsstrahlung electrons in the central barrel region.
+%The energy resolution achieved using the latest 2015 calibration constants is less than $2\%$ for low bremsstrahlung electrons in the barrel.
+The reprocessed data is especially better performing in the endcaps, when comparing to processed data with 2012 values for intercalibration and calibration. When ported to physics analysis, this energy resolution implies, for example, in a $\sigma_{eff}/M_h \approx 1.5\%$ (from simulation) in the $H\rightarrow\gamma\gamma$ analysis, where $\sigma_{eff}$ is the smallest interval in $M(\gamma\gamma)$ with $68.5\%$ coverage \cite{hgg}.
+
+
 \section{The CMS ECAL Barrel Upgrade}
-Einstein's paper: \cite{Einstein}
+\subsection{The High Luminosity LHC}
+
+The performance of the Large Hadron Collider, and the physics program carried by ALTAS and CMS, has started remarkably. With the discovery of the Higgs boson in 2012, and the expected 40 fb$^{-1}$ to be delivered in 2016 with record high instantaneous luminosity, the program has exceeded experimental expectations. The current LHC setup, with bunch spacing of 25 ns and peak instantaneous luminosity of the order of $10^{34}$ cm$^{-2}$s$^{-1}$, is expected to deliver around 300 fb$^{-1}$ until the end of 2022, when the Long Shutdown 3 (LS3) is planned to start.
+
+During LS3, which is planned to last until 2025, the LHC is expected to replace the quadrupoles that focus the beam for ATLAS and CMS. Additionally, upgrades will be performed to optimize the bunch overlap at the interaction region. These improvements are expected to allow the LHC peak luminosity to reach $2\times10^{35}$ cm$^{-2}$s$^{-1}$ (High Luminosity LHC, HL-LHC). During the following 10 years, 250 fb$^{-1}$/year are expected to be delivered. This full dataset of around 2500 fb$^{-1}$ will open a brand new physics program at the LHC, involving precise measurements of the Higgs properties and rarer standard model phenomena, such as the standard model Higgs pair production. 
+
+The new LHC configuration will also bring new experimental challenges. With the increased peak luminosity, a higher dose of radiation will be reaching the inner detectors of ATLAS and CMS, causing unrecoverable losses of efficiency in tracking reconstruction and calorimetry, for example. It will also challenge the online performance of the detectors, forcing the trigger systems to cope with higher event rates. To recover their performances to comparable or higher levels of the previous data taking periods, ATLAS and CMS have planned hardware upgrades to be deployed during LS3.
+
+
+\subsection{ECAL Electronics Upgrade}
+
+As mentioned in the previous section, the impact of incoming radiation on ECAL is to form color centers on the crystals that damage its transparency. 
+With the incoming dose of radiation at the HL-LHC, the endcap crystals are expected to completely lose their transparencies. 
+This prompted the CMS community to entirely replace the ECAL endcaps for its HL-LHC upgrade. 
+The new ECAL endcap will be based on silicon technology, as a sampling calorimeter (HGCal). 
+
+On the ECAL barrel, the crystals are expected to robustly cope with the incoming dose of radiation, and will therefore be kept in the detector. 
+However, the new levels of radiation will also represent a challenge to the in-detector electronics. 
+For example, the dark current on the APDs (the electric current flowing through the photo-detector even in the absence of signal, created by random processes) is expected to increase, given the higher ionizing radiation dosage hitting the detector. 
+This dark current is a large contributor to the noise term in the energy resolution formula, specially to homogeneous calorimeters, and upgrades must be devised to keep it under control. 
+
+\subsubsection{VFE Upgrade}
+
+For the HL-LHC upgrade, two ways to mitigate the increased detector noise have been investigated: replacing the VFE and cooling the ECAL crystals and APDs from 18$^{o}$C to 8$^{o}$C. 
+The APDs cooling works reducing the dark current expected at high integrated luminosities scenario. 
+The downside of this upgrade is the decreased light yields from scintillation from the lead tungstate crystals. 
+The VFE upgrade intends to reduce the electronics noise by reducing the shaping time attached to the amplifying process, currently is 40 ns. 
+This reduction limits the impact of electronics noise in the amplitude reconstruction, while also allowing for a more precise time resolution from ECAL. 
+These improvements can be seen in Figure \ref{fig:ecal_noise_intlumi} (left). 
+Figure \ref{fig:ecal_noise_intlumi} (left) also shows that, in the scenario with no HL-LHC upgrades, the noise present on the ECAL barrel would reach levels almost 10 times higher than the current value (1.5 ADC counts). 
+The upgrade reduces the noise at 3000 fb$^{-1}$ by a factor of almost 2. 
+
+\begin{figure*}[tbh]
+\centering 
+\includegraphics[width=0.45\textwidth]{figures/ecal_noise_intlumi}\hfil
+\includegraphics[width=0.45\textwidth]{figures/ecal_upgrade_performance}\hfil
+\caption{Noise levels on the upgraded ECAL barrel assuming different upgrade scenarios.}
+\label{fig:ecal_noise_intlumi}
+\end{figure*}
+
+The noise reduction is translated into physics performance, for example, in $H\rightarrow\gamma\gamma$ searches, as seen in Figure \ref{fig:ecal_noise_intlumi} (right). 
+Figure \ref{fig:ecal_noise_intlumi} (right) shows the energy resolution of good quality  $H\rightarrow\gamma\gamma$ photons under different integrated luminosity scenarios, with and without the ECAL barrel upgrade. 
+
+\subsubsection{Trigger Upgrade}
+
+Another important issue arising from the HL-LHC environment is the increase in electronic spikes in the APDs. 
+These spikes are created when a high energy hadron hits the APDs directly, without showering in the ECAL crystals. 
+This creates an energy discharge in the APD that can fake a signal from a regular particle shower. 
+Spikes are problematic when they happen with high frequency because they enhance L1 trigger rates. 
+These trigger must then have high energy thresholds in order for the rates to be acceptable by the CMS L1 trigger. 
+
+Another way currently implemented to suppress spikes at trigger level is through coarse geometric variables. 
+These variables are computed at the trigger primitive generation step, at the front-end electronics. 
+Due to computational limits of the FE boards, these variables use limited information about the crystal array. 
+This can be changed if the TP generation happened at the off-detector electronics instead. 
+However, this would mean transmitting the full crystal information of the whole ECAL to the off-detector electronics at collision rate (40 MHz). 
+By the time of the ECAL commissioning period, the data links could not cope with such requirements, and so the trigger tower based TP generation was implemented. 
+
+One of the foreseen ECAL barrel upgrades is aimed at mitigating those constraints by moving the TP generation step to the off-detector electronics. 
+New data links will be used to transmit all crystal data directly from the VFE, instead of being stored waiting for an L1A. 
+With extra computing power based on modern FPGAs, new strategies can be investigated to reduce the impact of spikes at L1 trigger level. 
+One of these strategies is based on analyzing the signal pulse shape coming from the crystals. 
+Given the smaller shaping time from the upgraded VFE, differences in pulse shapes from regular energy showers and spikes can become visible for ECAL.
