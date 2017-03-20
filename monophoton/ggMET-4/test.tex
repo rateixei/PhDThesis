@@ -1,0 +1,864 @@
+\documentclass[11pt]{article}
+\usepackage{authblk}
+\usepackage{multirow}
+%\usepackage{times}
+%\pagestyle{empty}
+\pagestyle{plain}
+
+
+%\parindent 0.5in
+
+\parskip 0.1cm
+%\parskip \baselineskip
+%\topmargin 1in
+%\oddsidemargin 0 in
+%\textwidth 6.5in
+%\textheight 9.0in
+
+%%\oddsidemargin -0.5pt
+%%\evensidemargin -0.25in
+%%\textwidth 7.0in
+%%\textheight 9.5in
+%%\headheight 0.0in
+%%\footheight 0.0in
+%
+%
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{xspace}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{adjustbox}
+
+\usepackage[margin=1.0in]{geometry}
+\pdfpagewidth 8.5in
+\pdfpageheight 11.0in
+
+\renewcommand{\refname}{}
+
+\usepackage{amsmath}
+\usepackage{bm}
+
+
+%%%%%%
+%%%%%% DEFINITIONS
+%%%%%%
+\def\etal{{\em et al.}}
+\def\HZg{$H\to Z\gamma$\xspace}
+\def\Hgg{$H\to\gamma\gamma$\xspace}
+\def\HWWllnn{$H\to WW \to ll \nu\nu$\xspace}
+\def\HWW{$H\to WW$\xspace}
+
+\newcommand{\fbinv} {\,{fb}$^{-1}$\xspace}
+\newcommand{\pb} {\,\mathrm{pb}\xspace}
+\newcommand{\ET}{\ensuremath{E_{\mathrm{T}}}\xspace}
+\newcommand{\MeV}{{\,{Me\hspace{-.08em}V}}\xspace}
+\newcommand{\GeV}{{\,{Ge\hspace{-.08em}V}}\xspace}
+\newcommand{\TeV}{{\,{Te\hspace{-.08em}V}}\xspace}
+\newcommand{\pt}{\ensuremath{p_\mathrm{T}}\xspace}
+\newcommand{\pT}{\ensuremath{p_\mathrm{T}}\xspace}
+\newcommand{\MET}{\ensuremath{E_{\mathrm{T}}^{\mathrm{miss}}}\xspace}
+\newcommand{\PXXG}{\ensuremath{G}\xspace} % graviton
+\newcommand{\PXXSG}{\ensuremath{\widetilde{\PXXG}}\xspace} % gravitino
+\newcommand{\PSGc}{\ensuremath{\widetilde{\chi}}\xspace} % neutralino
+
+
+\title{\vspace{-5ex}$\gamma\gamma + \MET$ Study}
+\author[1]{Shikma Bressler\thanks{Shikma.Bressler@cern.ch}}
+\author[2]{Stefania Gori\thanks{sgori@perimeterinstitute.ca}}
+\author[3]{Rafael Teixeira de Lima\thanks{rafael.teixeira.de.lima@cern.ch}}
+\author[4]{Abdollah Mohammadi\thanks{Abdollah.Mohammadi@cern.ch}}
+\author[3]{Toyoko Orimoto\thanks{Toyoko.Orimoto@cern.ch}}
+\author[5]{Jessie Shelton\thanks{jshelton137@gmail.com}}
+\affil[1]{Weizmann Institute of Science, Israel}
+\affil[2]{Perimeter Institute for theoretical physics, Canada and Cincinnati University, USA}
+\affil[3]{Northeastern University, USA}
+\affil[4]{Kansas State University, USA}
+\affil[5]{University of Illinois at Urbana-Champaign, USA}
+\date{\vspace{-5ex}}
+\renewcommand\Authands{ and }
+%
+\begin{document}
+%
+
+\maketitle
+
+%%%%%%
+%%%%%% TITLE
+%%%%%%
+%\large\rm
+%\begin{center}
+%{\bf $\gamma\gamma + \MET$ Study} 
+%\\ 
+%\vspace{0.5 cm}
+
+%{Shikma Bressler (Weizmann Institute of Science), Stefania Gori, Rafael Texeira de Lima (Northeastern University), Abdollah Mohammadi (Kansas State University), Toyoko Orimoto (Northeastern University), Jessie Shelton (University of Illinois at Urbana-Champaign)}
+%\end{center}
+
+%\begin{spacing}{0.05}
+%\setcounter{tocdepth}{1}
+%\tableofcontents
+%\end{spacing}
+
+%\new page
+ 
+%%%%
+%%%% Introduction
+%%%% 
+
+%\tableofcontents
+
+\section{Introduction}
+
+Exotic decays of the Higgs boson can produce the final state consisting of two photons and missing transverse energy (\MET)~\cite{Curtin:2013fra}. 
+%
+In the non-resonant case, the photons arise from opposite sides of the initial two-body decay: $h\to XX, X\to\gamma Y$, where $Y$ is a stable neutral particle. For instance, such a decay can occur within general gauge mediation models of supersymmetry, in which the $X$ corresponds to a neutralino NLSP with mass less than half the Higgs mass, and the $Y$ corresponds to a gravitino LSP~\cite{Djouadi:1997gw, Mason:2009qh, Petersson:2012dp}.
+%
+In the resonant case, the photons are produced through an intermediate resonance: $h\to S_1 S_2$, with $S_1 \to\gamma\gamma$ on one side of the decay, while $S_2$ escapes detection, appearing as \MET in the detector. The resonant signal benefits from a peak in the diphoton invariant mass spectrum. 
+The Feynman diagrams for the non-resonant and resonant decays can be seen in Figure~\ref{fig:FEYN_SIG}.
+
+Previous searches for the $\gamma\gamma+\MET$ final state in the low energy regime include searches for the non-resonant decay in the supersymmetric scenario described above. CMS and ATLAS have set upper limits on the branching ratio of this decay, with the Higgs boson produced in association with a $Z$ boson \cite{low-monophoton} and through vector boson fusion \cite{ATLAS:2015bra}.
+
+In this study, we devise a search strategy for the $\gamma\gamma+\MET$ final state, motivated by the exotic decays of the Higgs described above. We estimate the sensitivity of this search for $100$ fb$^{-1}$ of $\sqrt{s}=14$ TeV $pp$ data from the LHC.
+
+
+%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.2]{figs/feyn/feyn_nonres.pdf}
+\hspace{1cm}
+\includegraphics[scale=0.2]{figs/feyn/feyn_res.pdf}
+\caption{Feynman diagrams for the (left) the non-resonant and (right) resonant signal scenarios.}
+\label{fig:FEYN_SIG}
+\end{figure}
+
+\section{Methodology}
+\subsection{Simulation Samples \label{sub:simulation}}
+
+Signal and background Monte Carlo (MC) samples were generated with Madgraph 5~\cite{madgraph} and hadronized with PYTHIA 8~\cite{pythia}, with the detector simulation provided by DELPHES 3~\cite{delphes}.
+%The detector card used in DELPHES was based on the CMS detector card, but updated to currently used parameters, such as isolation cone sizes and jet algorithm parameters.
+The samples were produced at $\sqrt{s} = 14$ TeV.
+
+The object reconstruction and identification are performed with DELPHES, according to the information provided in the detector configuration card. For the photons reconstruction and identification, we assume an efficiency of $95\%$ in the electromagnetic calorimeter barrel ($|\eta| < 1.5$) and $85\%$ in the endcap ($1.5 < |\eta| < 2.5$). We also impose an isolation cut on the photons by requiring all particle flow candidates within a cone of $\Delta R < 0.3$ to have an energy ratio less than 0.1 with respect to the photon candidate. For muons, we assume an efficiency of $95\%$ for the whole detector acceptance ($|\eta| < 2.5$). An isolation cut similar to the photons is also applied. Jets are reconstructed with the anti-$k_T$ algorithm with $R = 0.4$.
+
+\subsubsection{Signal MC Samples}
+
+The signal for the non-resonant case was based on the supersymmetric cascade decay of the Higgs boson into two neutralinos, which subsequently decay into two gravitinos and two photons (Figure \ref{fig:FEYN_SIG}, left). This class of models has been implemented in FeynRules \cite{Christensen:2013aua} and generated via Madgraph 5. We assume a gravitino mass close to zero, which is consistent with gauge mediated low-scale SUSY breaking models with $\sqrt{f} \approx$ TeV \cite{Petersson:2012dp}. We simulate neutralino masses in the range $[10,60]$ GeV in steps of $5$ GeV, with 100,000 events per mass point.
+
+For the resonant case, we assume the Higgs boson decays into two scalar particles, $S_1$ and $S_2$ (Figure \ref{fig:FEYN_SIG}, right). One of the scalars then decays into two photons, while the other escapes detection. For this study, we assume the masses of these two particles are the same; this choice was made for simplicity, but for detailed studies, more combinations should be investigated. We generate samples with $M_{1} = M_{2} = [10,60]$ GeV, in steps of $5$ GeV, with 100,000 events per mass point.
+
+We investigate the production of the Higgs boson through both gluon fusion and associated production with a $Z$ boson ($ZH$), with the $Z$ boson decaying to two muons. The inclusion of the dielectron decay of the $Z$ can also be considered for future studies.
+%As such, the signal production cross section
+%
+A branching ratio of ${B}(H\to\gamma\gamma+\MET) = 10\%$ is assumed for the signal. This value of the branching ratio was chosen to be within the current bounds on the Higgs boson width, yet close to the 8 TeV limits from the search for Higgs decays to the monophoton final state ($H\to\gamma+\MET$)~\cite{low-monophoton}.
+
+
+\subsubsection{Background MC Samples}
+
+Although this analysis is not guaranteed to be entirely free from QCD multi-jet backgrounds, it has been shown in similar analyses (such as \cite{low-monophoton}) that it is possible to reduce the QCD to a sub-dominant contribution. As such, the remaining backgrounds for this analysis arise predominantly from the single boson ($\gamma$/$Z$/$W$) plus jets and diboson processes.
+
+The background samples were modeled using the Snowmass LHE simulation samples~\cite{Anderson:2013kxz}. They consist of single boson samples ($\gamma/Z/W$) with at least one jet and inclusive diboson ($\gamma\gamma/Z\gamma/W\gamma/$ $WW/ZZ/WZ$) samples. The samples include both hadronic and leptonic decays of the $W$ and $Z$ bosons. The cross sections used for normalizing the single boson samples were estimated with MCFM~\cite{mcfm}, assuming an efficiency of $15\%$ for the 1 jet requirement (obtained with Madgraph). For the diboson samples, the cross sections used were estimated from the reference \cite{Campbell:2011bn}. The cross sections and number of events in the samples are shown in Table \ref{tab:sel_eff}.
+
+%\begin{table}[]
+%\centering
+%\begin{tabular}{|c|c|c|}
+%\hline
+%Process & Cross Section (pb) & Number of Events \\ 
+%\hline
+%$\gamma$ + Jets & $1.0\times10^{5}$ & 5425448 \\
+%$Z$ + Jets & $0.94\times10^{4}$  & 1888446 \\
+%$W$ + Jets & $2.96\times10^{4}$ & 5263872 \\
+%$\gamma\gamma$ & $10.8\times10^{1}$ & 4268781 \\
+%$Z\gamma$ & $6.30\times10^{2}$ & 3406151 \\
+%$W\gamma$ & $1.03\times10^{3}$  & 5258034 \\
+%$WW$ & $1.24\times10^{2}$ & 8059829 \\
+%$ZZ$ & $1.8\times10^{1}$& 1101611 \\
+%$WZ$ & $5.1\times10^{1}$& 3319770\\
+%\hline
+%\end{tabular}
+%\caption{Cross sections for background processes at $\sqrt{s}=$14 TeV and number of events produced for each process.}
+%\label{tab:bkg}
+%\end{table}
+
+%\begin{table}[]
+%\centering
+%\begin{tabular}{c|c}
+%Process & Number of Events \\ \hline
+%$\gamma$ + Jets & 32633 \\
+%$Z$ + Jets & 3556 \\
+%$W$ + Jets & 14371 \\
+%$\gamma\gamma$ & 3067 \\
+%$Z\gamma$ & 1869 \\
+%$W\gamma$ & 43778 \\
+%$WW$ & 170 \\
+%$ZZ$ & 71 \\
+%$ZW$ & 69 \\ \hline
+%Total & 99584 \\ \hline
+%\end{tabular}
+%\caption{Cross section of background processes at 14 TeV.}
+%\label{tab:expected_ggh}
+%\end{table}
+
+%\begin{table}[]
+%\centering
+%\begin{tabular}{c|c}
+%Process & Number of Events \\ \hline
+%$\gamma$ + Jets &	0 \\ 
+%$Z$ + Jets &	2 \\ 
+%$W$ + Jets &	0 \\ 
+%$\gamma\gamma$ &	0 \\ 
+%$Z\gamma$ &	1 \\ 
+%$W\gamma$ &	3 \\
+%$WW$ &	1 \\ 
+%$ZZ$ &	2 \\ 
+%$ZW$ &	2 \\ \hline
+%Total & 11 \\  \hline
+%\end{tabular}
+%\caption{Cross section of background processes at 14 TeV.}
+%\label{tab:expected_zh}
+%\end{table}
+
+
+% \begin{table}[]
+% \centering
+% \begin{tabular}{|c|c|c|}
+% \hline
+% Non-Resonant Signal Mass & Number of Events & Number of Events  \\ 
+%  & & (after selection) \\
+% \hline
+% $10$ GeV &      4280   &        1  \\
+% $15$ GeV &      9700   &        3  \\
+% $20$ GeV &      17340  &        5  \\
+% $25$ GeV &      25330  &        7  \\
+% $30$ GeV &      31710  &        9  \\
+% $35$ GeV &      39230  &        11 \\
+% $40$ GeV &      43760  &        12 \\
+% $45$ GeV &      49650  &        14 \\
+% $50$ GeV &      58140  &        16 \\
+% $55$ GeV &      66460  &        17 \\
+% $60$ GeV &      84340  &        19 \\
+% \hline
+% \end{tabular}
+% \caption{Number of events produced for non-resonant signal mass points and number of events remaining after selection.}
+% \label{tab:expected_NR_ggh}
+% \end{table}
+
+% \begin{table}[]
+% \centering
+% \begin{tabular}{|c|c|c|}
+% \hline
+% Resonant Signal Mass & Number of Events & Number of Events\\ 
+%  & & (after selection) \\
+% \hline
+% $10$ GeV &      26040 &         3  \\
+% $15$ GeV &      55560 &         9  \\
+% $20$ GeV &      60980 &         12 \\
+% $25$ GeV &      60360 &         13 \\
+% $30$ GeV &      57260 &         13 \\
+% $35$ GeV &      52860 &         14 \\
+% $40$ GeV &      49760 &         14 \\
+% $45$ GeV &      46320 &         13 \\
+% $50$ GeV &      46640 &         15 \\
+% $55$ GeV &      50100 &         18 \\
+% $60$ GeV &      59470 &         20 \\
+% \hline
+% \end{tabular}
+% \caption{Number of events produced for resonant signal mass points and number of events remaining after selection.}
+% \label{tab:expected_R_ggh}
+% \end{table}
+
+%\begin{table}[]
+%\centering
+%\begin{tabular}{c|c}
+%Non-Resonat Signal Mass & Number of Events \\ \hline
+%$10$ GeV &	1 \\
+%$15$ GeV &	3 \\
+%$20$ GeV &	5 \\
+%$25$ GeV &	7 \\
+%$30$ GeV &	9 \\
+%$35$ GeV &	11 \\
+%$40$ GeV &	12 \\
+%$45$ GeV &	14 \\
+%$50$ GeV &	16 \\
+%$55$ GeV &	17 \\
+%$60$ GeV &	19
+%\end{tabular}
+%\caption{Cross section of background processes at 14 TeV.}
+%\label{tab:expected_NR_zh}
+%\end{table}
+
+%\begin{table}[]
+%\centering
+%\begin{tabular}{c|c}
+%Resonat Signal Mass & Number of Events \\ \hline
+%$10$ GeV & 	3 \\
+%$15$ GeV & 	9 \\
+%$20$ GeV & 	12 \\
+%$25$ GeV & 	13 \\
+%$30$ GeV & 	13 \\
+%$35$ GeV & 	14 \\
+%$40$ GeV & 	14 \\
+%$45$ GeV & 	13 \\
+%$50$ GeV & 	15 \\
+%$55$ GeV & 	18 \\
+%$60$ GeV & 	20 \\
+%\end{tabular}
+%\caption{Cross section of background processes at 14 TeV.}
+%\label{tab:expected_R_zh}
+%\end{table}
+
+\subsection{Event Selection}
+
+\subsubsection{Trigger Projections}
+
+For the $ZH$ channel, the trigger strategy is expected to be straightforward and can be based on the decay of the $Z$ to two muons.
+%
+%The trigger projections for the ZH channel should be straightforward, given its use of the leptonic decay of the Z boson for triggering. Triggering on the Z boson is a safe assumption, since it's used for several physics analysis, including Standard Model Higgs searches and measurements.
+%
+On the other hand, triggering is one of the main challenges for the gluon fusion channel, since the final state consists of two soft photons plus missing energy. The standard triggers used for $H\rightarrow\gamma\gamma$ analyses typically have a diphoton invariant mass cut which makes it incompatible with the low energy spectrum of this analysis. However, we have identified three possible trigger strategies for this channel, based on  unprescaled triggers used by the CMS experiment in Run-2:
+
+\begin{itemize}
+\item Asymmetric Diphoton Trigger: This trigger requires two photons with different $E_{T}$ and trigger-level identification requirements, plus a diphoton invariant mass cut. This type of trigger usually has a non-negligible turn-on curve in the leading and subleading photon  $E_{T}$.
+\item Symmetric Diphoton Trigger: This trigger requires two photons with the same $E_{T}$ requirement, without any extra requirement.
+\item $\gamma+\MET$ Trigger: This trigger requires only one barrel photon passing identification requirements and a $E_{T}$ requirement that is usually higher than the previous two triggers. In addition, there is a calorimetric \MET requirement. We expect non-negligible turn-on curves with respect to both photon and \MET for this trigger.
+\end{itemize}
+
+The three triggers described here represent different selection strategies that were investigated and will be described below.
+
+
+\subsubsection{Offline Selection}
+
+The gluon fusion selection is based on the diphoton selection and must reflect the chosen trigger strategy, while maintaining a good signal efficiency. 
+%The final selections for each trigger scenario investigated are shown in Table \ref{tab:sel_ggh}.
+%
+%\begin{table}[]
+%\centering
+%\begin{tabular}{| r | l | l | l|}
+%\hline
+%Variable & Asymmetric Diphoton & Symmetric Diphoton & %\gamma+\MET \\ \hline
+%Number of photons & $> 1$ & $> 1$ & $> 1$ \\
+%$p_{T}(\gamma_{1})$ & $ > 45$ GeV & $ > 40$ GeV & $ > 55$ GeV \\
+%$|\eta(\gamma_{1})|$ & $ < 2.5 & $ < 2.5 & $ < 1.4 \\
+%$p_{T}(\gamma_{2})$ & $ > 30$ GeV & $ > 40$ GeV & $ > 15$ GeV \\
+%$|\eta(\gamma_{2})|$ & $ < 2.5 & $ < 2.5 & $ < 2.5 \\
+%$M(\gamma\gamma)$ & $< 100$ GeV & $< 100$ GeV & $< 100$ GeV \\
+%$M(\gamma\gamma)$ & $> 15$ GeV & - & - \\
+%$\MET$ & $> 40$ GeV & $> 40$ GeV & $> 50$ GeV\\
+%\hline
+%\end{tabular}
+%\caption{Analysis selection for the gluon fusion channel, for each trigger scenario.}
+%\label{tab:sel_ggh}
+%\end{table}
+%
+%\subsubsection{Selection: $ZH$ Channel}
+%
+The $ZH$-produced signal events are tagged through the decay of the $Z$ boson to muons, minimizing the largest backgrounds. 
+%so the starting point is the selection of two well isolated muons peaking around the $Z$ mass. 
+The photon selection is chosen to maximize the signal acceptance in the $ZH$ case, with $E_{T}$ thresholds as low as possible. 
+%The final $ZH$ event selection is show in Table \ref{tab:sel_zh}.
+%
+The final event selection requirements for the gluon fusion  and $ZH$ channels are summarized in Table~\ref{tab:sel_all}. On this table, we use the following definitions for transverse mass:
+%\begin{equation}
+\begin{align}
+M_{T}(\gamma\gamma,\MET) &= \sqrt{2E_{T}(\gamma\gamma)\MET(1-\cos(\Delta\phi(\gamma\gamma,\MET))}, \\
+M_{T}(\gamma\gamma+\MET, \mu\mu) &= \sqrt{2E_{T}(\gamma\gamma+\MET)p_{T}(\mu\mu)(1-\cos(\Delta\phi(\gamma\gamma+\MET,\mu\mu))}.
+\end{align}
+%\end{equation}
+
+%\begin{table}[]
+%\centering
+%\begin{tabular}{| r | l|}
+%\hline
+%Variable & Requirement \\ \hline
+%Number of photons & $> 1$ \\
+%$p_{T}(\gamma_{1,2})$ & $ > 15$ GeV \\
+%$|\eta(\gamma_{1,2})|$ & $ < 2.5 \\
+%$M(\gamma\gamma)$ & $< 100$ GeV \\
+%$\MET$ & $> 40$ GeV \\ 
+%Number of muons & $> 1$ \\
+%$p_{T}(\mu_{1,2})$ & $ > 20$ GeV \\
+%$|\eta(\mu_{1,2})|$ & $ < 2.5 \\
+%$M(\mu\mu)$ & $\in [70,110]$ GeV\\
+%\hline
+%\end{tabular}
+%\caption{Analysis selection for the $ZH$ channel.}
+%\label{tab:sel_zh}
+%\end{table}
+
+\begin{table}[]
+\centering
+\begin{tabular}{| r | l | l | l| l|}
+\hline
+ & \multicolumn{3}{|c|}{gluon Fusion} & \multicolumn{1}{|c|}{$ZH$} \\ 
+\hline
+Variable & Asymmetric $\gamma\gamma$ & Symmetric $\gamma\gamma$ &$ \gamma+\MET$ & \\ \hline
+Number of photons       & $> 1$         & $> 1$         & $> 1$         & $> 1$\\
+$p_{T}(\gamma_{1})$     & $ > 45$ GeV   & $ > 40$ GeV   & $ > 55$ GeV   & $ > 20$ GeV\\
+$|\eta(\gamma_{1})|$    & $ < 2.5$      & $ < 2.5$      & $ < 1.4$      & $< 2.5$ \\
+$p_{T}(\gamma_{2})$     & $ > 30$ GeV   & $ > 40$ GeV   & $ > 20$ GeV   & $ > 20$ GeV\\
+$|\eta(\gamma_{2})|$    & $ < 2.5$      & $ < 2.5$      & $ < 2.5$      & $ < 2.5$ \\
+$M(\gamma\gamma)$       & $\in [15, 100]$ GeV & $< 100$ GeV & $< 100$ GeV & $< 100$ GeV \\
+$\MET$                  & $> 90$ GeV    & $> 90$ GeV    & $> 90$ GeV    & $> 60$ GeV \\
+$M_{T}(\gamma\gamma,\MET)$                    & $< 140$ GeV   & $< 140$ GeV   & $< 140$ GeV   & $< 140$ GeV \\
+$\Delta\phi(\gamma\gamma,\MET)$ & $< 1.5$ & $< 1.5$ & $< 1.5$ & $< 1.5$ \\
+Number of leptons       & $< 1$         & $< 1$         & $< 1$         & 2 muons \\
+\hline
+%Number of muons & - & - & - & $> 1$ \\
+$p_{T}(\mu_{1,2})$ & -  & - & - & $ > 20$ GeV \\
+$|\eta(\mu_{1,2})|$ & - & - & - & $ < 2.5$ \\
+$M(\mu\mu)$ & - & - & - & $\in [75,115]$ GeV\\
+$M_{T}(\gamma\gamma+\MET, \mu\mu)$ & - & - & - & $> 400$ GeV\\
+\hline
+\end{tabular}
+\caption{Analysis selection for the gluon fusion channel (for each trigger scenario) and the $ZH$ channel.}
+\label{tab:sel_all}
+\end{table}
+
+To exploit the topology of the resonant signature, we apply an additional requirement of a $20$ GeV mass window, in the diphoton invariant mass distribution ($M(\gamma\gamma)$), around the signal mass ($M_1$). The efficiencies for each individual process and the different searches, after the full selection (without the $M(\gamma\gamma)$ mass window requirement), are shown in Table \ref{tab:sel_eff}.
+
+\begin{table}[]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{| c | c | c | c | c | c| c| }
+\hline
+ \multirow{ 2}{*}{Process} &  \multirow{ 2}{*}{$\sigma$ (pb)} & \multirow{ 2}{*}{$N_\text{Generated}$} & \multicolumn{3}{|c|}{gluon Fusion} & \multirow{ 2}{*}{$ZH$} \\ 
+ & & & Asymmetric $\gamma\gamma$ & Symmetric $\gamma\gamma$ & $\gamma+\MET$ & \\ \hline
+\multicolumn{7}{|c|}{Backgrounds} \\
+\hline
+$\gamma$ + Jets    & $1.0\times10^{5}$  &    5425448    &    $1.9\times10^{-6}$  &   $4.7\times10^{-7}$  &   $8.9\times10^{-7}$  &   $\approx 0$   \\
+$Z$ + Jets         & $0.94\times10^{4}$   &    1888446    &  $5.6\times10^{-4}$    & $1.5\times10^{-4}$    & $5.0\times10^{-5}$    & $\approx 0$     \\
+$W$ + Jets         & $2.96\times10^{4}$  &    5263872    &   $6.2\times10^{-4}$   &  $1.9\times10^{-4}$   &  $2.7\times10^{-5}$   &  $\approx 0$    \\
+$\gamma\gamma$     & $10.8\times10^{1}$  &    4268781    &   $3.1\times10^{-5}$   &  $1.0\times10^{-5}$   &  $1.1\times10^{-5}$   &  $\approx 0$             \\
+$Z\gamma$          & $6.30\times10^{2}$  &    3406151    &   $4.3\times10^{-4}$   &  $1.4\times10^{-4}$   &  $5.7\times10^{-5}$   &  $\approx 0$    \\
+$W\gamma$          & $1.03\times10^{3}$   &    5258034    &  $1.4\times10^{-4}$    & $4.6\times10^{-5}$    & $5.4\times10^{-5}$    & $\approx 0$     \\
+$WW$               & $1.24\times10^{2}$  &    8059829    &   $2.6\times10^{-1}$   &  $8.4\times10^{-2}$   &  $9.8\times10^{-5}$   &  $8.2\times10^{-8}$    \\
+$ZZ$               & $1.8\times10^{1}$ &    1101611    &     $1.4\times10^{-2}$ &    $4.7\times10^{-3}$ &    $6.7\times10^{-4}$ &    $7.3\times10^{-6}$ \\
+$WZ$               & $5.1\times10^{1}$ &    3319770    &     $3.6\times10^{-1}$ &    $1.2\times10^{-1}$ &    $2.5\times10^{-4}$ &    $2.9\times10^{-6}$  \\
+
+\hline
+\multicolumn{7}{|c|}{Signals} \\
+\hline
+Res., M = 10 GeV     &  $10.8\times10^{1}$   &    4268781    &  $2.5\times10^{-4}$   &  $2.2\times10^{-4}$   &  $1.7\times10^{-4}$   &  $5.7\times10^{-4}$       \\
+Res., M = 40 GeV     &  $6.30\times10^{2}$   &    3406151    &  $8.7\times10^{-3}$   &  $5.7\times10^{-3}$   &  $5.0\times10^{-3}$   &  $6.9\times10^{-3}$      \\
+Res., M = 60 GeV     &  $1.03\times10^{3}$    &    5258034    & $1.6\times10^{-2}$    & $1.1\times10^{-2}$    & $1.1\times10^{-2}$    & $9.2\times10^{-3}$         \\
+Non-Res., M = 10 GeV &  $1.24\times10^{2}$   &    8059829    &  $1.5\times10^{-3}$   &  $9.5\times10^{-4}$   &  $1.1\times10^{-3}$   &  $1.1\times10^{-3}$       \\
+Non-Res., M = 40 GeV &  $1.8\times10^{1}$  &    1101611    &    $8.0\times10^{-3}$ &    $5.5\times10^{-3}$ &    $5.2\times10^{-3}$ &    $6.3\times10^{-3}$     \\
+Non-Res., M = 60 GeV &  $5.1\times10^{1}$  &    3319770    &    $1.1\times10^{-2}$ &    $7.6\times10^{-3}$ &    $6.9\times10^{-3}$ &    $8.1\times10^{-3}$     \\
+\hline
+\end{tabular}
+}
+\caption{Cross sections, numbers of events generated per process, and selection efficiencies for background processes and signal points, for gluon fusion and $ZH$ production mechanisms.}
+\label{tab:sel_eff}
+\end{table}
+
+\subsection{Background Estimation for Misidentified Photons}
+
+Background processes with mis-identified (or "fake") photons, such as jets and electrons misidentified as photons, that pass the final selection generally have very low efficiency at the LHC. Nonetheless, such backgrounds may be non-negligible since the production cross-sections can be large. Such mis-identification rates are typically measured with data-driven methods at the LHC.
+%
+%Because of that, it's costumary for analysis involving a large amount of background events with fake objects to estimate those processes with data driven approaches. Otherwise, the amount of MC events needed to have a good description of the background after selection would be too large. 
+Although this study was limited by MC statistics in measuring fake photon backgrounds, a method was developed to mitigate this problem, which we describe below.
+
+The object reconstruction and selection is done at DELPHES level, where, given the photon identification requirements described in Section \ref{sub:simulation}, we obtain an associated fake rate. These fake rates are accounted for in the overall efficiencies in Table \ref{tab:sel_eff}. In order to bypass the efficiency loss due to the small fake rates, we select jets and electrons as fake photon candidates. For the background processes with one prompt photon ($\gamma$+jets, $W\gamma$ and $Z\gamma$), we select one fake photon candidate. For the processes with no prompt photons ($W/Z$+jets, $WW$, $WZ$ and $ZZ$), we select two fake photon candidates. No fake photon selection is done for the $\gamma\gamma$+jets sample.
+
+With the assumption of a flat fake rate for both jets and electrons, the fake photon candidates are randomly selected from the jets and electrons that passed the photon acceptance requirements. One extra assumption is that the electron-to-photon fake rate is set to be order of magnitude larger than the jets-to-photon fake rate. Therefore, electrons are set to have a probability of being selected to be a misidentified photon that is ten times higher than for jets.
+
+After the choice of fake photon candidates, we calculate weights for the individual samples based on the $E_{T}$ spectrum of the selected photons (prompt and fake) to match the spectrum found with the photon candidates reconstructed directly from DELPHES. This reweighting is done on the sum of $E_{T}$ of the two leading photons for samples with at least one prompt photon, and on the $E_{T}$ of the leading photon for samples with no prompt photon. An independent reweighting is also done in $\eta$. Both reweightings reflect the different reconstruction efficiencies and energy resolutions of objects that are not reconstructed as photons. After applying the weights, we observe a good agreement between the kinematic distributions of interest arising from photons reconstructed by DELPHES and from our fake photon candidates.
+
+\section{Results}
+
+We present the expected sensitivity of this search in terms of the necessary $h\rightarrow\gamma\gamma+\MET$ branching ratio to reach a $5\sigma$ sensitivity for an assumed integrated luminosity of $100$ fb$^{-1}$, with the sensitivity defined as:
+%
+\begin{equation}
+\mathcal{S} = \frac{N_\text{Signal}}{\sqrt{N_\text{Background}}}.
+\end{equation}
+
+In Figure \ref{fig:triggers}, we show the sensitivity plot for the different trigger scenarios of the gluon fusion case.
+%$5\sigma$ branching ratios for the different trigger scenarios in the gluon fusion analysis, in the resonant (left) and non-resonant (right) final states. 
+This plot shows that, after the full selection, the performance of the triggers is comparable. Although it's safe to assume that a diphoton trigger with a low $M(\gamma\gamma)$ cut will be present in the future trigger menus of CMS and ATLAS, we choose to perform the analysis in the $\gamma+\MET$ case. We make this choice as an effort to make the case for the existence of such a trigger strategy for the following runs of the LHC. While the diphoton triggers are designed with specific usages that are already well stablished, the $h\rightarrow\gamma\gamma+\MET$ analysis could be viwed as a benchmark for the $\gamma+\MET$ trigger for three reasons:
+\begin{itemize}
+    \item It's a trigger that is already present at the LHC experiments, but can be retuned with a specific analysis as benchmark;
+    \item A dedicated trigger for this analysis requiring two photons might not be as efficient at trigger legel, given the soft spectrum of the second photon;
+    \item This trigger can also be used for other exotic searches, such as the extension to low energies of the dark matter searches in the monophoton channel.
+\end{itemize}
+%assumption to have the diphoton trigger in the future trigger menus for CMS and ATLAS for different searches that involve low energy diphotons, the \gamma+\MET trigger outperforms the other two possibilities, for both resonant and non-resonant topologies. This is due to the fact that the subleading photon $E_{T}$ requirement can be very low since we trigger on the leading photon and there is no trigger-level requirement on the subleading photon.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[height=2.5in]{triggerplots/Significance.pdf}\caption{Significance plots for different trigger scenarios in the gluon fusion analysis.}
+\label{fig:triggers}
+\end{figure}
+
+In Figure \ref{fig:branching_5sigma}, on the left, we show the branching ratio of $h\rightarrow\gamma\gamma+\MET$ needed for a significance of $5\sigma$, assuming the Standard Model Higgs cross section, for the gluon fusion analysis (assuming the $\gamma+\MET$ trigger strategy and selection). On the right, we show the branching ratio $h\rightarrow\gamma\gamma+\MET$ needed for a significance of $2\sigma$, which represents the $95\%$ confidence level for exclusion, assuming SM $ZH$ production. We assume the channel in which the Z decays to electrons to have efficiencies and background composition that are similar to the muon case, therefore, we multiply the significance by a factor of $1.4$ to obtain the full reach of the $Z\rightarrow ll$ channel.
+
+For the $ZH$ case, we also show the analysis strategy done by CMS for Run I, requiring only one photon. The selection on table \ref{tab:sel_all} remains the same, except for the subleading photon requirement and $M(\gamma\gamma)$ cut. Variables reconstructed with the diphoton information, such as $M_{T}(\gamma\gamma,\MET)$, are then reconstructed with the single photon information.
+
+\subsection{Systematic Uncertainties}
+
+While the uncertainties in the $ZH$ channel is expected to be dominated by statistics, the gluon fusion channel is very sensitive to the systematic uncertainties associated with the background predictions. We estimate the effect of these uncertainties by parametrizing the sensitivity as:
+%
+\begin{equation}
+\mathcal{S}_{sys} = \frac{N_\text{Signal}}{\sqrt{N_\text{ Background}}+\sigma_{sys}\times N_\text{Background}},
+\label{eqn:syst}
+\end{equation}
+%
+with $\sigma_{sys}$ representing a source of uncertainty that does not scale with the amount of statistics.
+%
+%While the gluon fusion channel has higher sensitivity than the $ZH$ channel, the gluon fusion channel is more sensitive to systematic uncertainties, given the large amount of background events. 
+%Because of that, the sensitivity could be easily degraded given large uncertainties on the background estimation methods. 
+Figure \ref{fig:branching_5sigma} shows the effect on the $5\sigma$ branching ratios due to the addition of a $10\%$ systematic uncertainty according to Eqn \ref{eqn:syst}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[height=2.3in]{finalresults/branchingratio_ggh.pdf}
+\includegraphics[height=2.3in]{finalresults/exclusion_zh.pdf}
+\caption{$5\sigma$ branching ratios for the gluon fusion channel, for resonant and non-resonant final states (left). Branching ratios for 95$\%$ confidence level exclusion in the ZH case, resonant and non-resonant topologies, with single photon and diphoton selections (right).}
+\label{fig:branching_5sigma}
+\end{figure}
+
+%\section{Further Studies}
+%%mention h->4g here
+
+%\section{Conclusions}
+
+% \subsection{Efficiencies}
+
+% \subsubsection{Gluon Fusion}
+
+% %%%
+% %%% signal
+
+% \begin{adjustbox}{width=1.0\textwidth,center=\textwidth}
+% \begin{tabular}{ |*{12}{c|}}
+% \hline
+% \multicolumn{12}{|c|}{Non Resonant Signal} \\ \hline
+% Cut	&	60 GeV 	&	55 GeV 	&	50 GeV 	&	45 GeV 	&	40 GeV 	&	35 GeV 	&	30 GeV 	&	25 GeV 	&	20 GeV 	&	15 GeV 	&	10 GeV 	\\ \hline
+% Total 	&	1	&	1	&	1	&	1	&	1	&	1	&	1	&	1	&	1	&	1	&	1	\\ \hline
+% $\#Photons > 1 $	&	0.51434	&	0.50241	&	0.48409	&	0.45388	&	0.41766	&	0.38132	&	0.33371	&	0.27167	&	0.19816	&	0.12221	&	0.06242	\\ \hline
+% $p_{T}(\gamma_1) > 30$ GeV, $|\eta(\gamma_1)| < 2.5$ 	&	0.34774	&	0.34757	&	0.34216	&	0.32699	&	0.30318	&	0.2766	&	0.23679	&	0.18866	&	0.128	&	0.07303	&	0.03313	\\ \hline
+% $p_{T}(\gamma_2) > 25$ GeV, $|\eta(\gamma_2)| < 2.5$ 	&	0.18697	&	0.16896	&	0.16346	&	0.15384	&	0.14288	&	0.12813	&	0.1053	&	0.07904	&	0.04989	&	0.02538	&	0.00984	\\ \hline
+% Missing $E_{T} > 40$ GeV 	&	0.08447	&	0.06658	&	0.05838	&	0.05023	&	0.04438	&	0.04007	&	0.0326	&	0.0261	&	0.01774	&	0.00991	&	0.00444	\\ \hline
+% $M(\gamma\gamma) < 100$ GeV 	&	0.08436	&	0.06646	&	0.05814	&	0.04966	&	0.04376	&	0.03923	&	0.03172	&	0.02533	&	0.01735	&	0.0097	&	0.00428	\\ \hline
+% Lepton veto 	&	0.08434	&	0.06646	&	0.05814	&	0.04965	&	0.04376	&	0.03923	&	0.03171	&	0.02533	&	0.01734	&	0.0097	&	0.00428	\\ \hline
+% \end{tabular}
+% \end{adjustbox}
+
+
+% \begin{adjustbox}{width=1.0\textwidth,center=\textwidth}
+% \begin{tabular}{ |*{12}{c|}}
+% \hline
+% \multicolumn{12}{|c|}{Resonant Signal} \\ \hline
+% Cut	&	60 GeV 	&	55 GeV 	&	50 GeV 	&	45 GeV 	&	40 GeV 	&	35 GeV 	&	30 GeV 	&	25 GeV 	&	20 GeV 	&	15 GeV 	&	10 GeV 	\\ \hline
+% Total 	&	1	&	1	&	1	&	1	&	1	&	1	&	1	&	1	&	1	&	1	&	1	\\ \hline
+% $\#Photons > 1$ 	&	0.51898	&	0.50713	&	0.48222	&	0.45738	&	0.42313	&	0.40063	&	0.38249	&	0.36999	&	0.35572	&	0.3414	&	0.26678	\\ \hline
+% $p_{T}(\gamma_1) > 30$ GeV, $|\eta(\gamma_1)| < 2.5$ 	&	0.40639	&	0.39552	&	0.36909	&	0.33967	&	0.30721	&	0.28989	&	0.2834	&	0.27902	&	0.27212	&	0.26035	&	0.18633	\\ \hline
+% $p_{T}(\gamma_2) > 25$ GeV, $|\eta(\gamma_2)| < 2.5$ 	&	0.16685	&	0.11019	&	0.09699	&	0.09087	&	0.08979	&	0.09204	&	0.09306	&	0.09364	&	0.08858	&	0.07414	&	0.03187	\\ \hline
+% Missing $E_{T} > 40$ GeV 	&	0.05977	&	0.05026	&	0.04686	&	0.04654	&	0.04988	&	0.05299	&	0.05735	&	0.06057	&	0.06113	&	0.05576	&	0.02615	\\ \hline
+% $M(\gamma\gamma) < 100$ GeV 	&	0.05947	&	0.05011	&	0.04664	&	0.04634	&	0.04976	&	0.05287	&	0.05726	&	0.06036	&	0.06099	&	0.05557	&	0.02604	\\ \hline
+% Lepton veto 	&	0.05947	&	0.0501	&	0.04664	&	0.04632	&	0.04976	&	0.05286	&	0.05726	&	0.06036	&	0.06098	&	0.05556	&	0.02604	\\ \hline
+% \end{tabular}
+% \end{adjustbox}
+
+% %%%
+% %%% background
+
+% \begin{adjustbox}{width=1.0\textwidth,center=\textwidth}
+% \begin{tabular}{ |c|c|c|c|c|c|c|c|c|c| }
+% \hline
+% \multicolumn{10}{|c|}{Backgrounds} \\ \hline
+% Cut & $\gamma$+Jets  & $Z$+Jets  & $W$+Jets  & $\gamma\gamma$  & $ZZ$  & $WW$  & $Z\gamma$  & $ZW$  & $W\gamma$ \\ \hline
+% Total  & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\ \hline
+% $\#$Photons $> 1$  & 6.34$\times10^{-3}$ & 3.63$\times10^{-4}$ & 1.35$\times10^{-4}$ & 7.52$\times10^{-1}$ & 9.16$\times10^{-4}$ & 4.24$\times10^{-4}$ & 1.78$\times10^{-2}$ & 6.93$\times10^{-4}$ & 1.59$\times10^{-2}$ \\ \hline
+% $p_{T}(\gamma_1) > 30$ GeV, $|\eta(\gamma_1)| < 2.5$  & 5.72$\times10^{-3}$ & 2.38$\times10^{-4}$ & 9.01$\times10^{-5}$ & 3.82$\times10^{-1}$ & 5.89$\times10^{-4}$ & 2.79$\times10^{-4}$ & 1.91$\times10^{-2}$ & 4.20$\times10^{-4}$ & 6.38$\times10^{-3}$ \\ \hline
+% $p_{T}(\gamma_2) > 25$ GeV, $|\eta(\gamma_2)| < 2.5$  & 4.19$\times10^{-3}$ & 1.87$\times10^{-4}$ & 6.99$\times10^{-5}$ & 2.83$\times10^{-1}$ & 4.57$\times10^{-4}$ & 2.10$\times10^{-4}$ & 1.24$\times10^{-2}$ & 3.22$\times10^{-4}$ & 4.21$\times10^{-3}$ \\ \hline
+% Missing $E_{T} > 40$ GeV  & 1.21$\times10^{-5}$ & 3.53$\times10^{-5}$ & 2.02$\times10^{-5}$ & 5.16$\times10^{-4}$ & 1.36$\times10^{-4}$ & 9.27$\times10^{-5}$ & 1.72$\times10^{-3}$ & 1.27$\times10^{-4}$ & 1.16$\times10^{-3}$ \\ \hline
+% $M(\gamma\gamma) < 100$ GeV  & 6.42$\times10^{-6}$ & 1.63$\times10^{-5}$ & 9.73$\times10^{-6}$ & 2.71$\times10^{-4}$ & 8.67$\times10^{-5}$ & 5.13$\times10^{-5}$ & 9.74$\times10^{-4}$ & 7.11$\times10^{-5}$ & 7.00$\times10^{-4}$ \\ \hline
+% Lepton veto  & 6.38$\times10^{-6}$ & 1.50$\times10^{-5}$ & 5.68$\times10^{-6}$ & 2.71$\times10^{-4}$ & 6.40$\times10^{-5}$ & 2.44$\times10^{-5}$ & 9.00$\times10^{-4}$ & 4.15$\times10^{-5}$ & 3.71$\times10^{-4}$ \\ \hline
+% \end{tabular}
+% \end{adjustbox}
+
+
+% %%%
+% %%%
+% \subsubsection{Associated Production: ZH}
+
+% %%%
+% %%% signal
+
+
+% \begin{adjustbox}{width=1.0\textwidth,center=\textwidth}
+% \begin{tabular}{ |*{12}{c|}}
+% \hline
+% \multicolumn{12}{|c|}{Non Resonant Signal} \\ \hline
+% Cut	& 	60 GeV 	 & 	55 GeV 	 & 	50 GeV 	 & 	45 GeV 	 & 	40 GeV 	 & 	35 GeV 	 & 	30 GeV 	 & 	25 GeV 	 & 	20 GeV 	 & 	15 GeV 	 & 	10 GeV 	\\ \hline
+% Total 	& 	1	& 	1	& 	1	& 	1	& 	1	& 	1	& 	1	& 	1	& 	1	& 	1	& 	1	\\ \hline
+% $\#Photons > 1$	& 	0.49847	& 	0.48708	& 	0.4682	& 	0.4418	& 	0.40974	& 	0.37109	& 	0.32405	& 	0.26559	& 	0.19575	& 	0.1276	& 	0.07497	\\ \hline
+% $p_{T}(\gamma_1) > 30$ GeV, $|\eta(\gamma_1)| < 2.5$ 	& 	0.39355	& 	0.38422	& 	0.36964	& 	0.35164	& 	0.32402	& 	0.29054	& 	0.24893	& 	0.19661	& 	0.13924	& 	0.08686	& 	0.04731	\\ \hline
+% $p_{T}(\gamma_2) > 25$ GeV, $|\eta(\gamma_2)| < 2.5$ 	& 	0.22938	& 	0.21493	& 	0.19488	& 	0.17838	& 	0.15863	& 	0.14013	& 	0.11677	& 	0.08741	& 	0.05879	& 	0.03415	& 	0.01735	\\ \hline
+% Missing $E_{T} > 40$ GeV 	& 	0.12827	& 	0.11556	& 	0.1044	& 	0.09297	& 	0.0819	& 	0.07554	& 	0.06377	& 	0.05028	& 	0.03565	& 	0.02264	& 	0.01228	\\ \hline
+% $M(\gamma\gamma) < 100$ GeV 	& 	0.12063	& 	0.10775	& 	0.09665	& 	0.08498	& 	0.07359	& 	0.06674	& 	0.05586	& 	0.04283	& 	0.02963	& 	0.0183	& 	0.0093	\\ \hline
+% $\#Muons > 1$	& 	0.073	& 	0.06466	& 	0.05858	& 	0.05224	& 	0.04644	& 	0.04122	& 	0.0346	& 	0.02622	& 	0.01712	& 	0.01028	& 	0.00464	\\ \hline
+% $p_{T}(\mu_1) > 25$ GeV, $|\eta(\mu_1)| < 2.5$	& 	0.0728	& 	0.06446	& 	0.05846	& 	0.0522	& 	0.0464	& 	0.04114	& 	0.03458	& 	0.02614	& 	0.01712	& 	0.01028	& 	0.00462	\\ \hline
+% $p_{T}(\mu_2) > 20$ GeV, $|\eta(\mu_2)| < 2.5$ 	& 	0.06534	& 	0.05896	& 	0.0533	& 	0.04724	& 	0.04228	& 	0.03728	& 	0.03192	& 	0.02384	& 	0.01544	& 	0.00948	& 	0.0042	\\ \hline
+% $70 < M(\mu\mu) < 110 $	& 	0.064	& 	0.05774	& 	0.052	& 	0.0461	& 	0.04138	& 	0.03646	& 	0.03106	& 	0.02332	& 	0.01512	& 	0.00916	& 	0.00414	\\ \hline
+% \end{tabular}
+% \end{adjustbox}
+
+% \begin{adjustbox}{width=1.0\textwidth,center=\textwidth}
+% \begin{tabular}{ |*{12}{c|}}
+% \hline
+% \multicolumn{12}{|c|}{Resonant Signal} \\ \hline
+% Cut	& 	60 GeV 	 & 	55 GeV 	 & 	50 GeV 	 & 	45 GeV 	 & 	40 GeV 	 & 	35 GeV 	 & 	30 GeV 	 & 	25 GeV 	 & 	20 GeV 	 & 	15 GeV 	 & 	10 GeV 	\\ \hline
+% Total 	& 	1	& 	1	& 	1	& 	1	& 	1	& 	1	& 	1	& 	1	& 	1	& 	1	& 	1	\\ \hline
+% $\#Photons > 1$	& 	0.50127	& 	0.48716	& 	0.47309	& 	0.45791	& 	0.4387	& 	0.4172	& 	0.40109	& 	0.38675	& 	0.36348	& 	0.325	& 	0.22608	\\ \hline
+% $p_{T}(\gamma_1) > 30$ GeV, $|\eta(\gamma_1)| < 2.5$ 	& 	0.44657	& 	0.42029	& 	0.39424	& 	0.37381	& 	0.35039	& 	0.33109	& 	0.32188	& 	0.31446	& 	0.29717	& 	0.25988	& 	0.16034	\\ \hline
+% $p_{T}(\gamma_2) > 25$ GeV, $|\eta(\gamma_2)| < 2.5$ 	& 	0.20569	& 	0.17675	& 	0.16194	& 	0.16104	& 	0.16021	& 	0.15839	& 	0.15502	& 	0.15251	& 	0.13691	& 	0.10405	& 	0.04343	\\ \hline
+% Missing $E_{T} > 40$ GeV 	& 	0.12733	& 	0.11034	& 	0.09726	& 	0.09382	& 	0.09383	&	0.09341	& 	0.0943	& 	0.09596	& 	0.08856	& 	0.07286	& 	0.03341	\\ \hline
+% $M(\gamma\gamma) < 100$ GeV 	& 	0.11754	& 	0.1016	& 	0.08894	& 	0.08594	& 	0.08578	&	0.0858	& 	0.08643	& 	0.08803	& 	0.08112	& 	0.06581	& 	0.02826	\\ \hline
+% $\#Muons > 1$	& 	0.0758	& 	0.06706	& 	0.05676	& 	0.0502	& 	0.05248	& 	0.0515	& 	0.0491	& 	0.04946	& 	0.04542	& 	0.03474	& 	0.01204	\\ \hline
+% $p_{T}(\mu_1) > 25$ GeV, $|\eta(\mu_1)| < 2.5$	& 	0.07566	& 	0.06698	& 	0.05672	& 	0.05004	& 	0.05244	& 	0.0514	& 	0.04894	& 	0.0493	& 	0.04516	& 	0.0346	& 	0.01194	\\ \hline
+% $p_{T}(\mu_2) > 20$ GeV, $|\eta(\mu_2)| < 2.5$ 	& 	0.0692	& 	0.06114	& 	0.05132	& 	0.04584	& 	0.0475	& 	0.04626	& 	0.04378	& 	0.0441	& 	0.04016	& 	0.03016	& 	0.01046	\\ \hline
+% $70 < M(\mu\mu) < 110 $	& 	0.06746	& 	0.05976	& 	0.05	& 	0.04458	& 	0.0462	& 	0.04508	& 	0.04278	& 	0.04286	& 	0.03912	& 	0.02932	& 	0.01002	\\ \hline
+% \end{tabular}
+% \end{adjustbox}
+
+% %%%
+% %%% background
+
+
+% \begin{adjustbox}{width=1.0\textwidth,center=\textwidth}
+% \begin{tabular}{ |*{10}{c|}}
+% \hline
+% \multicolumn{10}{|c|}{Backgrounds} \\ \hline
+% Cut	&	$\gamma$+Jets 	&	$Z$+Jets 	&	$W$+Jets 	&	$\gamma\gamma$ 	&	$ZZ$ 	&	$WW$ 	&	$Z\gamma$ 	&	$ZW$ 	&	$W\gamma$ 	\\ \hline
+% Total 	&	1	&	1	&	1	&	1	&	1	&	1	&	1	&	1	&	1	\\ \hline
+% $\#Photons > 1$	&	6.34$\times10^{-3}$	&	3.63$\times10^{-4}$	&	1.35$\times10^{-4}$	&	7.52$\times10^{-1}$	&	9.16$\times10^{-4}$	&	4.24$\times10^{-4}$	&	1.78$\times10^{-2}$	&	6.93$\times10^{-4}$	&	1.59$\times10^{-2}$	\\ \hline
+% $p_{T}(\gamma_1) > 30$ GeV, $|\eta(\gamma_1)| < 2.5$ 	&	5.72$\times10^{-3}$	&	2.38$\times10^{-4}$	&	9.01$\times10^{-5}$	&	3.82$\times10^{-1}$	&	5.89$\times10^{-4}$	&	2.79$\times10^{-4}$	&	1.91$\times10^{-2}$	&	4.20$\times10^{-4}$	&	6.38$\times10^{-3}$	\\ \hline
+% $p_{T}(\gamma_2) > 25$ GeV, $|\eta(\gamma_2)| < 2.5$ 	&	4.19$\times10^{-3}$	&	1.87$\times10^{-4}$	&	5.06$\times10^{-4}$	&	2.83$\times10^{-1}$	&	4.57$\times10^{-4}$	&	2.10$\times10^{-4}$	&	1.24$\times10^{-2}$	&	3.22$\times10^{-4}$	&	4.21$\times10^{-3}$	\\ \hline
+% Missing $E_{T} > 40$ GeV 	&	1.21$\times10^{-5}$	&	3.53$\times10^{-5}$	&	1.46$\times10^{-4}$	&	5.16$\times10^{-4}$	&	1.36$\times10^{-4}$	&	9.27$\times10^{-5}$	&	1.72$\times10^{-3}$	&	1.27$\times10^{-4}$	&	1.16$\times10^{-3}$	\\ \hline
+% $M(\gamma\gamma) < 100$ GeV 	&	6.42$\times10^{-6}$	&	1.63$\times10^{-5}$	&	7.05$\times10^{-5}$	&	2.71$\times10^{-4}$	&	8.67$\times10^{-5}$	&	5.13$\times10^{-5}$	&	9.74$\times10^{-4}$	&	7.11$\times10^{-5}$	&	7.00$\times10^{-4}$	\\ \hline
+% $\#Muons > 1$	&	0	&	2.07$\times10^{-8}$	&	3.80$\times10^{-10}$	&	0	&	1.50$\times10^{-6}$	&	4.29$\times10^{-7}$	&	1.42$\times10^{-6}$	&	1.29$\times10^{-6}$	&	1.20$\times10^{-7}$	\\ \hline
+% $p_{T}(\mu_1) > 25$ GeV, $|\eta(\mu_1)| < 2.5$	&	0	&	1.52$\times10^{-8}$	&	1.65$\times10^{-10}$	&	0	&	1.46$\times10^{-6}$	&	4.04$\times10^{-7}$	&	1.05$\times10^{-6}$	&	1.26$\times10^{-6}$	&	9.19$\times10^{-8}$	\\ \hline
+% $p_{T}(\mu_2) > 20$ GeV, $|\eta(\mu_2)| < 2.5$ 	&	0	&	9.02$\times10^{-9}$	&	0	&	0	&	1.25$\times10^{-6}$	&	3.04$\times10^{-7}$	&	6.28$\times10^{-7}$	&	1.06$\times10^{-6}$	&	7.34$\times10^{-8}$	\\ \hline
+% $70 < M(\mu\mu) < 110$ 	&	0	&	7.13$\times10^{-9}$	&	0	&	0	&	1.17$\times10^{-6}$	&	9.79$\times10^{-8}$	&	4.03$\times10^{-7}$	&	8.75$\times10^{-7}$	&	2.77$\times10^{-8}$	\\ \hline
+% \end{tabular}
+% \end{adjustbox}
+
+
+\clearpage
+\section{Additional Figures}
+
+%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[height=1.8in]{figs/plots_ggh/MET.pdf}
+\includegraphics[height=1.8in]{figs/plots_ggh/MT.pdf}
+\caption{(left) \ET and (right) transverse mass for the gluon fusion channel.}
+\label{fig:MET}
+\end{figure}
+%%
+
+
+%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[height=1.8in]{figs/plots_ggh/leadingPhoton_pt.pdf}
+\includegraphics[height=1.8in]{figs/plots_ggh/subleadingPhoton_pt.pdf}
+\caption{(left) Leading photon \pt and (right) subleading photon \pt for the gluon fusion channel.}
+\label{fig:leadingPhoton_pt}
+\end{figure}
+%%
+
+%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[height=1.8in]{figs/plots_ggh/Photon_deta.pdf}
+\includegraphics[height=1.8in]{figs/plots_ggh/Photon_dphi.pdf}
+\includegraphics[height=1.8in]{figs/plots_ggh/Photon_dr.pdf}
+\caption{(left) $\Delta\eta$, (center) $\Delta\phi$, (right) $\Delta R$ for the gluon fusion channel.}
+\label{fig:Photon_deta}
+\end{figure}
+%%
+
+
+%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[height=1.8in]{figs/plots_ggh/Photon_iMass.pdf}
+\includegraphics[height=1.8in]{figs/plots_ggh/dphi_ggMET_real.pdf}
+\caption{(left) Diphoton invariant mass and (right) $\Delta \phi$ between leading and subleading photons for the gluon fusion channel.}
+\label{fig:Photon_iMass}
+\end{figure}
+%%
+
+
+%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[height=1.8in]{figs/plots_zh/MET.pdf}
+\includegraphics[height=1.8in]{figs/plots_zh/MT.pdf}
+\caption{(left) \ET and (right) transverse mass for the $ZH$ channel.}
+\label{fig:MET}
+\end{figure}
+%%
+
+
+%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[height=1.8in]{figs/plots_zh/leadingPhoton_pt.pdf}
+\includegraphics[height=1.8in]{figs/plots_zh/subleadingPhoton_pt.pdf}
+\caption{(left) Leading photon \pt and (right) subleading photon \pt for the $ZH$ channel.}
+\label{fig:leadingPhoton_pt}
+\end{figure}
+%%
+
+
+%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[height=1.8in]{figs/plots_zh/Photon_dr.pdf}
+\includegraphics[height=1.8in]{figs/plots_zh/dimuon_mass.pdf}
+\caption{(left) $\Delta R$ and (right) dimuon invariant mass for the $ZH$ channel.}
+\label{fig:Photon_dr}
+\end{figure}
+%%
+
+%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[height=1.8in]{figs/plots_zh/Photon_iMass.pdf}
+\includegraphics[height=1.8in]{figs/plots_zh/dphi_ggMET_real.pdf}
+\caption{(left) Diphoton invariant mass and (right) $\Delta \phi$ between leading and subleading photons  for the $ZH$ channel.}
+\label{fig:Photon_iMass}
+\end{figure}
+%%
+
+
+
+%%%%%%
+%%%%%% Bibliography
+%%%%%%
+	\clearpage
+	\newpage
+	\section{References}
+
+\begin{thebibliography}{99}
+
+\bibitem{Curtin:2013fra} 
+  D.~Curtin {\it et al.},
+  %``Exotic decays of the 125 GeV Higgs boson,''
+  Phys.\ Rev.\ D {\bf 90}, no. 7, 075004 (2014).
+%  [arXiv:1312.4992 [hep-ph]].
+  %%CITATION = ARXIV:1312.4992;%%
+  %79 citations counted in INSPIRE as of 13 Nov 2015
+
+
+  \bibitem{Djouadi:1997gw} 
+  A.~Djouadi and M.~Drees,
+  %``Higgs boson decays into light gravitinos,''
+  Phys.\ Lett.\ B {\bf 407}, 243 (1997).
+%  [hep-ph/9703452].
+  %%CITATION = HEP-PH/9703452;%%
+  %27 citations counted in INSPIRE as of 01 Nov 2015
+
+
+\bibitem{Mason:2009qh} 
+  J.~D.~Mason, D.~E.~Morrissey and D.~Poland,
+  %``Higgs Boson Decays to Neutralinos in Low-Scale Gauge Mediation,''
+  Phys.\ Rev.\ D {\bf 80}, 115015 (2009)
+  [arXiv:0909.3523 [hep-ph]].
+  %%CITATION = ARXIV:0909.3523;%%
+  %13 citations counted in INSPIRE as of 13 Nov 2015
+ 
+  \bibitem{Petersson:2012dp} 
+  C.~Petersson, A.~Romagnoni and R.~Torre,
+  %``Higgs Decay with Monophoton + MET Signature from Low Scale Supersymmetry Breaking,''
+  JHEP {\bf 1210}, 016 (2012).
+%  [arXiv:1203.4563 [hep-ph]].
+  %%CITATION = ARXIV:1203.4563;%%
+  %26 citations counted in INSPIRE as of 01 Nov 20
+
+
+\bibitem{low-monophoton} 
+  V.~Khachatryan {\it et al.} [CMS Collaboration],
+  %``Search for exotic decays of a Higgs boson into undetectable particles and photons,''
+  arXiv:1507.00359 [hep-ex].
+  %%CITATION = ARXIV:1507.00359;%%
+  %2 citations counted in INSPIRE as of 04 Dec 2015
+  
+%\cite{ATLAS:2015bra}
+\bibitem{ATLAS:2015bra} 
+  The ATLAS collaboration [ATLAS Collaboration],
+  %``Search for exotic Higgs-boson decays in events with at least one photon, missing transverse momentum, and two forward jets produced in $\sqrt{s}$ = 8 TeV $\boldsymbol{pp}$ collisions with the ATLAS detector,''
+  ATLAS-CONF-2015-001.
+  %%CITATION = ATLAS-CONF-2015-001;%%
+  %1 citations counted in INSPIRE as of 10 Dec 2015
+  
+\bibitem{madgraph} 
+  J.~Alwall {\it et al.},
+  %``The automated computation of tree-level and next-to-leading order differential cross sections, and their matching to parton shower simulations,''
+  JHEP {\bf 1407}, 079 (2014).
+%  doi:10.1007/JHEP07(2014)079.
+%  [arXiv:1405.0301 [hep-ph]].
+  %%CITATION = doi:10.1007/JHEP07(2014)079;%%
+  %592 citations counted in INSPIRE as of 04 Dec 2015
+
+\bibitem{pythia} 
+  T.~Sjostrand, S.~Mrenna and P.~Z.~Skands,
+  %``A Brief Introduction to PYTHIA 8.1,''
+  Comput.\ Phys.\ Commun.\  {\bf 178}, 852 (2008).
+%  doi:10.1016/j.cpc.2008.01.036
+%  [arXiv:0710.3820 [hep-ph]].
+  %%CITATION = doi:10.1016/j.cpc.2008.01.036;%%
+  %1977 citations counted in INSPIRE as of 04 Dec 2015
+  
+\bibitem{delphes} 
+  J.~de Favereau {\it et al.} [DELPHES 3 Collaboration],
+  %``DELPHES 3, A modular framework for fast simulation of a generic collider experiment,''
+  JHEP {\bf 1402}, 057 (2014).
+%  doi:10.1007/JHEP02(2014)057
+%  [arXiv:1307.6346 [hep-ex]].
+  %%CITATION = doi:10.1007/JHEP02(2014)057;%%
+  %346 citations counted in INSPIRE as of 04 Dec 2015  
+  
+\bibitem{Christensen:2013aua}
+  N.~D.~Christensen {\it et al.},
+  %``Simulating spin-$ \frac{3}{2}$ particles at colliders,''
+  Eur.\ Phys.\ J.\ C {\bf 73} (2013) 10,  2580
+  doi:10.1140/epjc/s10052-013-2580-x
+  [arXiv:1308.1668 [hep-ph]].
+  %%CITATION = doi:10.1140/epjc/s10052-013-2580-x;%%
+  %14 citations counted in INSPIRE as of 17 Nov 2015
+
+
+  
+\bibitem{Anderson:2013kxz} 
+  J.~Anderson {\it et al.},
+  %``Snowmass Energy Frontier Simulations,''
+  arXiv:1309.1057 [hep-ex].
+  %%CITATION = ARXIV:1309.1057;%%
+  %58 citations counted in INSPIRE as of 13 Nov 2015
+  
+\bibitem{mcfm} 
+  J.~M.~Campbell and R.~K.~Ellis,
+  %``MCFM for the Tevatron and the LHC,''
+  Nucl.\ Phys.\ Proc.\ Suppl.\  {\bf 205-206}, 10 (2010)
+  [arXiv:1007.3492 [hep-ph]].
+  %%CITATION = ARXIV:1007.3492;%%
+  %413 citations counted in INSPIRE as of 01 Nov 2015  
+  
+\bibitem{Campbell:2011bn}
+  J.~M.~Campbell, R.~K.~Ellis and C.~Williams,
+  %``Vector boson pair production at the LHC,''
+  JHEP {\bf 1107} (2011) 018
+  doi:10.1007/JHEP07(2011)018
+  [arXiv:1105.0020 [hep-ph]].
+  %%CITATION = doi:10.1007/JHEP07(2011)018;%%
+  %533 citations counted in INSPIRE as of 17 Nov 2015
+
+
+\end{thebibliography}
+
+
+\end{document}

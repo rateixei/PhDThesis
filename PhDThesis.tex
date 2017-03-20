@@ -44,12 +44,53 @@
 \newcommand{\sigmaHH}{\ensuremath{\sigma_{\PH\PH}}\xspace}
 \newcommand{\sigmaHHSMNNLO}{\ensuremath{\sigma_{\PH\PH}^{\textrm SM,NNLO}}\xspace}
 \newcommand{\DeltaR}{\ensuremath{\Delta{\textrm R}}\xspace}
+\def\met{\mbox{${\hbox{$E$\kern-0.45em\lower-.1ex\hbox{\bf{/}}}}_T$}\xspace} %missing ET                                                                                 
+\def \gmet  {$\gamma$ + \met}
+%\def \pt {p$_\text{T}$~}
+\def \zinvg  {Z($\nu\bar{\nu}$)+$\gamma$~}
+\def \winlvg  {W($\ell\nu$)+$\gamma$~}
+\def \sigieie  {$\sigma_{\text{i}{\eta}\text{i}{\eta}}~$}
+\def \sigipip  {$\sigma_{\text{i}{\phi}\text{i}{\phi}}~$}
+\newcommand{\as}{$\alpha_s$~}
+\newcommand{\comm}[1]{}
+\def \etg {E$_\text{T}^{\gamma}$\xspace}
+\def\met{\mbox{${\hbox{$E$\kern-0.45em\lower-.1ex\hbox{\bf{/}}}}_T$}\xspace} %missing ET
+\def \gmet  {$\gamma$ + \met\xspace}
+%\def \pt {p$_\text{T}$~}
+\def \zinvg  {Z($\nu\bar{\nu}$)+$\gamma$\xspace}
+\def \winlvg  {W($\ell\nu$)+$\gamma$\xspace}
+\def \sigieie  {$\sigma_{\text{i}{\eta}\text{i}{\eta}}\xspace$}
+\def \sigipip  {$\sigma_{\text{i}{\phi}\text{i}{\phi}}\xspace$}
+\newcommand{\Pgg}{\ensuremath{{\gamma}}}
+\newcommand{\Pe}{\ensuremath{{e}}}
+\newcommand{\Pep}{\ensuremath{{e}^+}}
+\newcommand{\Pem}{\ensuremath{{e}^-}}
+\providecommand{\Pgn}{\ensuremath{\nu}}
+\providecommand{\Pagn}{\ensuremath{\overline{\nu}}}
+\newcommand{\PW}{\ensuremath{\mathrm{W}}}
+\providecommand{\PSGczDo}{\ensuremath{\widetilde{\chi}^{0}_{1}}\xspace} % neutralino
+
+\def\HZg{$H\to Z\gamma$\xspace}
+%\def\Hgg{$H\to\gamma\gamma$\xspace}
+\def\HWWllnn{$H\to WW \to ll \nu\nu$\xspace}
+\def\HWW{$H\to WW$\xspace}
+
+\newcommand{\pb} {\,\mathrm{pb}\xspace}
+\newcommand{\PXXG}{\ensuremath{G}\xspace} % graviton
+\newcommand{\PXXSG}{\ensuremath{\widetilde{\PXXG}}\xspace} % gravitino
+\newcommand{\PSGc}{\ensuremath{\widetilde{\chi}}\xspace} % neutralino
+
+
 
 %load any additional packages
 \usepackage{amssymb}
 \usepackage{hyperref}
 \usepackage{ptdr-definitions}
 \extrafloats{100}
+\usepackage{array}
+\usepackage{float}
+\usepackage{multirow}
+
 %input macros (i.e. write your own macros file called mymacros.tex 
 %and uncomment the next line)
 %\include{mymacros}
@@ -104,8 +145,8 @@
 
 %now enable appendix numbering format and include any appendices
 \appendix
-\include{appendices/appendix1}
-\include{appendices/appendix2}
+%\include{appendices/appendix1}
+%\include{appendices/appendix2}
 
 %next line adds the Bibliography to the contents page
 \addcontentsline{toc}{chapter}{Bibliography}

@@ -1,0 +1,104 @@
+\section{Background estimation}
+
+   The irreducible background for the $\Pgg+$\met\ signal is the SM process $Z\Pgg\rightarrow\Pgn\Pagn\Pgg$. Other SM backgrounds include $\PW\Pgg$, $\PW\rightarrow \Pe\Pgn$, $\PW\rightarrow \mu\Pgn$, $\PW\rightarrow \tau\Pgn$, $\Pgg$+jet, multijet (referred to as QCD background) and diphoton events. Background events that do not come from collision processes are also considered in the analysis. These backgrounds can be divided broadly into three categories: 
+
+\begin{itemize}
+ \item Backgrounds estimated with Monte Carlo (MC) simulation: $Z\Pgg\rightarrow\Pgn\Pagn\Pgg$, $Z\Pgg\rightarrow\ell\ell\Pgg$, $\PW\Pgg$, $\Pgg$+jets, $\gamma\gamma$;
+ \item Collision backgrounds estimated using data: jets misidentified as photons and electrons misidentified as photons;
+ \item Non-collision backgrounds estimated using data. %: beam halo.
+\end{itemize}
+
+
+%%----MC simulation background
+\subsection{Background estimates from MC simulation}
+
+   %%----Zgamma & Wgamma
+   The $Z\Pgg\rightarrow\Pgn\Pagn\Pgg$ is the irreducible background in this study. It is estimated from a MC sample generated with \MADGRAPH~\cite{Alwall:2011uj} and processed with \PYTHIA v6.426~\cite{Sjostrand:2006za} for showering and hadronization. To describe the topology of events in a realistic manner, up to two extra partons were included in the matrix elements during event generation. The final event yields are normalized using the next-to-leading-order (NLO) cross section calculated with the \MCFM event generator~\cite{MCFM}.  The $\PW\gamma$ MC simulation was also produced with \MADGRAPH, including up to two extra partons, and normalized using the NLO cross section calculated from \MCFM. 
+
+  %% gamma+jet 
+   The $\gamma+$jet is one of the most significant backgrounds in this analysis due to the presence of a genuine photon and the large production cross section. The events for this process are simulated using \MADGRAPH, processed through \PYTHIA and normalized using the LO cross section. The normalization of this background is then corrected using control sample in data for two different event classes: no-jet and one or more jets. The control sample in data is obtained using events collected with the prescaled single-photon trigger and with the \met requirement reversed to ensure orthogonality to the signal phase space. Correction factors ($C$) are derived by normalizing the event yield in the simulation to match the data in the control region, separately for events with zero jets ($C=1.7$) and one or more jets ($C=1.1$). These correction factors are then used to normalize the $\gamma+$jet event yield from simulation in the signal region. An uncertainty of $16\%$ is derived for these correction factors based on the difference between the corrected and uncorrected simulation and the relative fraction of zero jet ($\sim10\%$ of the events in the control region) and one or more jet events.
+
+  %% Other MC backgronds
+   The background estimate from the process $Z\Pgg\rightarrow\ell\ell\Pgg$ is obtained using \MADGRAPH, and the background estimates from the processes $\PW\rightarrow \mu\Pgn$, $\PW\rightarrow \tau\Pgn$ are obtained using \PYTHIA. These processes are found to contribute only to a small fraction of the total background prediction. 
+
+  %% Scale Factors for MC backgrounds
+   All simulated events are processed through a \GEANTfour-based simulation of the CMS detector \cite{GEANT} and the same reconstruction chain as the data. To take into account differences between data and simulation due to imperfect MC modeling, various scale factors (SF) are applied to correct the MC-based estimates. These SFs are defined as the ratio of the efficiency in data to the efficiency in simulation for a given selection. The SF for photon reconstruction and identification is estimated from $Z\rightarrow ee$ decays with $R_{9}>0.9$ using a standard ``tag-and-probe'' method ~\cite{CMS:2011aa} and are listed in Table~\ref{sf_id}. The trigger efficiency measured in Section \ref{sec:event_selection} is applied to the simulated samples.
+
+%% Table for photon ID
+\begin{table}[H]                                                                                         
+\small
+\center    
+{ 
+ \caption{Scale factors for the photon identification}                                                             
+ \label{sf_id}                                                                                     
+ \begin{tabular}{|c|c|c|c|}                                                                               
+   \hline                                                                                                 
+   Variable     &  \etg $[30 - 40] \GeV$ & \etg $[40 - 50] \GeV$ &  \etg $ > 50 \GeV$ \\                                      
+   \hline                                                                                                 
+   \hline                                                                                                 
+Pixel Seed Veto & 0.995 $\pm$ 0.004 & 0.970 $\pm$ 0.016  & 1.012 $\pm$ 0.014 \\  
+Photon ID ($0 < |\eta| < 0.8$) & 0.996 $\pm$ 0.010 & 0.996 $\pm$ 0.010 & 0.996 $\pm$ 0.010 \\          
+Photon ID ($0.8 < |\eta| < 1.5$)& 0.996 $\pm$ 0.010 & 0.997 $\pm$ 0.010 & 0.997 $\pm$ 0.010 \\         
+\hline                                                                                                    
+\end{tabular}
+}                                                                                       
+\end{table}                                                                                               
+
+%%----Collision data driven background
+\subsection{Jets Identified as Photons Background}
+
+  %--fake jets
+  The contamination from jets misidentified as photons is estimated by using a data control sample, enriched in QCD multijet events, defined by \met $<$ 40 GeV. In this sample we measure the ratio of events that pass the signal photon identification and isolation criteria (numerator selection) relative to those that pass a looser photon identification and isolation criteria but also fail one of the nominal isolation requirements (denominator selection). The sample of events passing the numerator selection includes genuine photons whose contribution must be subtracted to obtain the true ratio of misidentified jets. This contribution is estimated by fitting templates of energy-weighted shower widths of genuine photons (determined from MC simulation of $\gamma+$jets events) and misidentified photons (determined from an isolation sideband in data) to the candidate distribution. The final corrected extrapolation factor, shown in Figure~\ref{fig:qcd_fr}, is then used to scale a sample of events in data which pass the denominator selection in addition to the other non-orthogonal event selections. 
+
+%FIGURE 19
+\begin{figure}[H]
+\centering
+{\includegraphics[scale=0.6]{figures/fitResult.pdf}}
+%\newline
+\caption{ Ratio of number of photons passing signal like requirement relative to those satisfying a very loose identification and isolation selection and at the same time failing at least one of the isolation criteria as a function of \etg.}
+\label{fig:qcd_fr}
+\end{figure}
+
+  The systematic uncertainty in this method is dominated by the choice of the isolation sideband region and is conservatively estimated to be $35\%$ by varying the  charged-hadron isolation in the sideband region definition. The other sources of systematic uncertainty are determined by varying the bin size of the templates, the \met selection for the control region, and the loose identification requirements on the photons, and are found to be comparatively small.
+
+\subsection{Electrons Identified as Photons Background}
+\label{sec:ewk}
+
+\input{monophoton/electron_fakes}
+%  Events with single electrons misidentified as photons are another major source of background.
+%  An electron can be misidentified as a photon if the pixel seed in the tracker from the electron's trajectory does not get reconstructed.
+%  This background is estimated using a tag-and-probe method with $\Z\to ee$ events. The pixel seed efficiency ($\epsilon_{\gamma_{e}}$) to identify electrons is estimated in the $Z$ boson mass window of 60-120\GeV. The inefficiency ($1-\epsilon_{\gamma_{e}}$) of the pixel seed requirement is found to be $2.31\pm 0.03 \%$. The ratio $(1-\epsilon_{\gamma_{e}})/\epsilon_{\gamma_{e}}$, which represents the electron misidentification rate, is applied to a candidate sample with the inverted pixel seed requirement and used to estimate the contamination in the signal region. The misidentification rate is found to be dependent on the number of vertices reconstructed in the event and the number of tracks associated to the selected primary vertex.   The difference in the final yields using the two parameterizations or the inclusive measurement of $\epsilon_{\gamma_{e}}$ are found to be within $5\%$. This difference is considered as a systematic uncertainty, and the yield calculated using the inclusive rate is used as the nominal estimate. The method is repeated on simulation, and the difference of $4\%$ between the measured and known electron misidentification rate is considered as an additional source of systematic uncertainty.
+
+
+%The rate of misidentified electrons with respect to these quantities are shown in Figure~\ref{fig:eg_fakerate1}.
+
+%Figures 29.b and c, if necessary
+%\begin{figure}[H]
+%\centering
+%[]{\includegraphics[scale=0.42]{figures/eg_nvtx.pdf}}
+%[]{\includegraphics[scale=0.42]{figures/eg_ntrk.pdf}}
+%\caption{Rate of electrons misidentified as photons ($1-\epsilon_{\gamma_{e}}$) parametrized as a function of the number of reconstructed vertices (a) and number of tracks associated to the primary vertex (b). The red line represents the inclusive measurement of $\epsilon_{\gamma_{e}}$.}
+%\label{fig:eg_fakerate1}
+%\end{figure}
+
+
+\subsection{Non-collision background estimates from data}
+
+The search is susceptible to contamination from non-collision backgrounds which arise from cosmic ray interactions, spurious signals in the ECAL, and accelerator induced secondary particles (beam halo). These backgrounds have different arrival time distributions compared to prompt photons produced in hard scattering. To quantify the contamination due to these backgrounds a fit is performed to the candidate time distribution using background templates derived from the data. The contamination due to out-of-time background contribution is found to be negligible, therefore not included in the final event yield.
+
+\subsection{Background modeling validation}
+
+The background modeling is examined in several control regions. A control sample enriched in $W(l\nu)\gamma$ events is defined with inverted lepton-veto requirement in the preselection, thus selecting events with a loose $e$ or $\mu$. It is expected to be free of any signal contamination due to the presence of a lepton. Another control sample enriched in $\gamma +$jet events is constructed by just requiring no selection other than the preselection requirements. Figure~\ref{fig:CR12} shows the data vs SM expectation in the two control regions. The observed data and estimated SM backgrounds are found to be consistent both in yield and shape.
+
+ %% figure for control regions 
+\begin{figure}[H]                  
+\centering   
+[]{\label{fig:QCDPt}\includegraphics[width=0.45\textwidth]{PAS_Plots2/StackedHisto_Pho_Pt_LeptonCR.pdf}}
+[]{\label{fig:QCDMET}\includegraphics[width=0.45\textwidth]{PAS_Plots2/StackedHisto_Pho_Pt_Preliminary.pdf}}
+%[]{\label{fig:QCDPt}\includegraphics[scale=0.4]{figures/lepton_pt_CR.pdf}}                           
+%[]{\label{fig:QCDMET}\includegraphics[scale=0.4]{figures/QCD_pt_CR.pdf}}                         
+\caption{The \etg distributions for data vs. SM expectation in a control region enriched by (a)  W($l\nu$) events, and (b) $\gamma+$jet events. The bottom panels in each plot show the ratio of (data - background)/background and the gray band includes both the statistical and systematic uncertainty on the background prediction.}
+\label{fig:CR12}                     
+\end{figure} 
+
+  

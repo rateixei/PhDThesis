@@ -1,0 +1,40 @@
+%%
+\section{Background Estimation}
+We have multiple sources of collison and non-collision background for the $\gamma + \met$ final state. We can group these backgrounds based on their properties and how we estimate them.
+
+We consider in-time processes for which we use data-driven techniques to estimate their contribution. These are:
+
+\begin{itemize}
+ \item QCD multi-jet events that can contribute to the background if a jet fakes a photon and additional hadronic activity is mismeasured yielding \met.
+ \item W$\rightarrow e \nu$ events in which the electron is reconstructed as a photon.
+\end{itemize}
+
+Newt, Non-collision phenomena are a background to this analysis. These can be sub-divided into two categories:
+
+\begin{itemize}
+\item Electromagnetic showers induced by beam halo muons.
+\item Spikes in the ECAL.
+\end{itemize}
+
+
+Finally, we use simulation to estimate backgrounds from a variety of physics processes:
+
+\begin{itemize}
+\item Z$\nu\nu \gamma$ where both the $\met$ and the $\gamma$ are real; it is an irreducible background.
+\item W$(\rightarrow l \nu) + \gamma$ production is a background when the charged lepton is lost.
+\item $\gamma $+ Jets events will appear as $\gamma + \met $ events if the jet is mismeasured yielding $\met$.
+\item W$\rightarrow \mu (\tau) \nu$ events in which the muon(tau) brems a hard photon.
+\item $Z ll \gamma$ where the lepton is out of acceptance or not reconstructed and results in $\met$.
+\item $\gamma \gamma$ where one of the $\gamma$ is out of acceptance or not reconstructed and results in $\met$
+\end{itemize}
+
+\label{sec:bkg}
+
+\input{monophoton/jet_fakes.tex}
+
+\input{monophoton/electron_fakes.tex}
+
+\input{monophoton/non_collision.tex}
+
+\input{monophoton/mcbackgrounds.tex}
+
