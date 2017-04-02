@@ -11,8 +11,10 @@
 \DeclareOption{shieldcrest}{\def\logoversion{shieldcrest}}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 \ProcessOptions\relax
-\LoadClass[a4paper]{report}
-%\RequirePackage[left=10in,right=1in,top=1in,bottom=1in]{geometry}
+\LoadClass[]{report}
+%\RequirePackage[top=1in, bottom=1.25in, left=1.25in, right=110in]{geometry}
+%\RequirePackage{fullpage}
+%\RequirePackage[pass]{geometry}
 % As an alternative to the above could use next line for twosided output
 %\LoadClass[a4paper,twoside,openright]{report}
 

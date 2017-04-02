@@ -1,8 +1,8 @@
-\documentclass[12pt]{ociamthesis}  % default square logo 
+\documentclass[11pt]{ociamthesis}  % default square logo 
 %\documentclass[12pt,beltcrest]{ociamthesis} % use old belt crest logo
 %\documentclass[12pt,shieldcrest]{ociamthesis} % use older shield crest logo
-
-
+\usepackage[top=1.4in, bottom=1.25in, left=1.2in, right=1.2in]{geometry}
+\usepackage{fancyhdr}
 \newcommand{\HH}{\ensuremath{\PH\PH}}
 \newcommand{\mHH}{\ensuremath{M_{\PH\PH}}\xspace}
 \newcommand{\Hgg}{\ensuremath{\PH\to\gamma\gamma}}
@@ -92,6 +92,7 @@
 \usepackage{multirow}
 \usepackage{graphbox}
 
+
 %input macros (i.e. write your own macros file called mymacros.tex 
 %and uncomment the next line)
 %\include{mymacros}
@@ -119,7 +120,7 @@
 
 %this baselineskip gives sufficient line spacing for an examiner to easily
 %markup the thesis with comments
-\baselineskip=18pt plus1pt
+%\baselineskip=18pt plus1pt
 
 %set the number of sectioning levels that get number and appear in the contents
 \setcounter{secnumdepth}{3}
@@ -137,6 +138,11 @@
 \end{romanpages}            % end roman page numbering
 
 %now include the files of latex for each of the chapters etc
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+\rhead{\rightmark}
+
 \include{introduction/text}
 \include{cms/text}
 \include{ecal/text}
