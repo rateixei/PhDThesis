@@ -1,7 +1,7 @@
 \section{Higgs Exotic Decays to Photons and MET Projection Studies}
 \subsection{Introduction}
 
-Exotic decays of the Higgs boson can produce the final state consisting of two photons and missing transverse energy (\MET)~\cite{Curtin:2013fra}. 
+Exotic decays of the Higgs boson can produce the final state consisting of two photons and missing transverse energy (\MET) in different topologies and theoretical benchmarks~\cite{Curtin:2013fra}. 
 %
 In the non-resonant case, the photons arise from opposite sides of the initial two-body decay: $h\to XX, X\to\gamma Y$, where $Y$ is a stable neutral particle. For instance, such a decay can occur within general gauge mediation models of supersymmetry, in which the $X$ corresponds to a neutralino NLSP with mass less than half the Higgs mass, and the $Y$ corresponds to a gravitino LSP~\cite{Djouadi:1997gw, Mason:2009qh, Petersson:2012dp}.
 %
@@ -30,7 +30,7 @@ Signal and background Monte Carlo (MC) samples were generated with Madgraph 5~\c
 %The detector card used in DELPHES was based on the CMS detector card, but updated to currently used parameters, such as isolation cone sizes and jet algorithm parameters.
 The samples were produced at $\sqrt{s} = 14$ TeV.
 
-The object reconstruction and identification are performed with DELPHES, according to the information provided in the detector configuration card. For the photons reconstruction and identification, we assume an efficiency of $95\%$ in the electromagnetic calorimeter barrel ($|\eta| < 1.5$) and $85\%$ in the endcap ($1.5 < |\eta| < 2.5$). We also impose an isolation cut on the photons by requiring all particle flow candidates within a cone of $\Delta R < 0.3$ to have an energy ratio less than 0.1 with respect to the photon candidate. For muons, we assume an efficiency of $95\%$ for the whole detector acceptance ($|\eta| < 2.5$). An isolation cut similar to the photons is also applied. Jets are reconstructed with the anti-$k_T$ algorithm with $R = 0.4$.
+The object reconstruction and identification are performed with DELPHES, according to the information provided in the detector configuration card. For the photons reconstruction and identification, we assume an efficiency of $95\%$ in the electromagnetic calorimeter barrel ($|\eta| < 1.5$) and $85\%$ in the endcap ($1.5 < |\eta| < 2.5$). We also impose an isolation cut on the photons by requiring all particle flow candidates within a cone of $\Delta R < 0.3$ to have an energy ratio less than 0.1 with respect to the photon candidate. For muons, we assume an efficiency of $95\%$ for the whole detector acceptance ($|\eta| < 2.5$). An isolation cut similar to the photons is also applied. Jets are reconstructed with the anti-$k_T$ algorithm with $R = 0.4$, similar to the Run 2 analyses at CMS.
 
 \vspace{0.2cm} \textbf{Signal MC Samples}
 
@@ -41,14 +41,14 @@ For the resonant case, we assume the Higgs boson decays into two scalar particle
 We investigate the production of the Higgs boson through both gluon fusion and associated production with a $Z$ boson ($ZH$), with the $Z$ boson decaying to two muons. The inclusion of the dielectron decay of the $Z$ can also be considered for future studies.
 %As such, the signal production cross subsection
 %
-A branching ratio of ${B}(H\to\gamma\gamma+\MET) = 10\%$ is assumed for the signal. This value of the branching ratio was chosen to be within the current bounds on the Higgs boson width, yet close to the 8 TeV limits from the search for Higgs decays to the monophoton final state ($H\to\gamma+\MET$)~\cite{lowmonophoton}.
+A branching ratio of ${B}(H\to\gamma\gamma+\MET) = 10\%$ is assumed for the signal. This value of the branching ratio was chosen to be within the current bounds on the Higgs boson width, yet close to the 8 TeV limits from the search for Higgs decays to the monophoton final state ($H\to\gamma+\MET$)~\cite{lowmonophoton}, when combining gluon fusion and ZH production mechanisms.
 
 
 \vspace{0.2cm} \textbf{Background MC Samples}
 
 Although this analysis is not guaranteed to be entirely free from QCD multi-jet backgrounds, it has been shown in similar analyses (such as \cite{lowmonophoton}) that it is possible to reduce the QCD to a sub-dominant contribution. As such, the remaining backgrounds for this analysis arise predominantly from the single boson ($\gamma$/$Z$/$W$) plus jets and diboson processes.
 
-The background samples were modeled using the Snowmass LHE simulation samples~\cite{Anderson:2013kxz}. They consist of single boson samples ($\gamma/Z/W$) with at least one jet and inclusive diboson ($\gamma\gamma/Z\gamma/W\gamma/$ $WW/ZZ/WZ$) samples. No pure QCD sample was produced for this study. The samples include both hadronic and leptonic decays of the $W$ and $Z$ bosons. The cross subsections used for normalizing the single boson samples were estimated with MCFM~\cite{mcfm}, assuming an efficiency of $15\%$ for the 1 jet requirement (obtained with Madgraph). For the diboson samples, the cross subsections used were estimated from the reference \cite{Campbell:2011bn}. The cross subsections and number of events in the samples are shown in Table \ref{tab:sel_eff}.
+The background samples were modeled using the Snowmass LHE simulation samples~\cite{Anderson:2013kxz}. They consist of single boson samples ($\gamma/Z/W$) with at least one jet and inclusive diboson ($\gamma\gamma/Z\gamma/W\gamma/$ $WW/ZZ/WZ$) samples. No pure QCD sample was produced for this study. The samples include both hadronic and leptonic decays of the $W$ and $Z$ bosons. The cross subsections used for normalizing the single boson samples were estimated with MCFM~\cite{MCFM}, assuming an efficiency of $15\%$ for the 1 jet requirement (obtained with Madgraph). For the diboson samples, the cross subsections used were estimated from the reference \cite{Campbell:2011bn}. The cross subsections and number of events in the samples are shown in Table \ref{tab:sel_eff}.
 
 
 \subsubsection{Event Selection}
@@ -240,7 +240,7 @@ After the choice of fake photon candidates, we calculate weights for the individ
 
 \subsection{Results}
 
-We present the expected sensitivity of this search in terms of the necessary $h\rightarrow\gamma\gamma+\MET$ branching ratio to reach a $5\sigma$ sensitivity for an assumed integrated luminosity of $100$ fb$^{-1}$ at $\sqrt{s} = 14$ TeV, with the sensitivity defined as:
+We present the expected sensitivity of this search in terms of the necessary $h\rightarrow\gamma\gamma+\MET$ branching ratio to reach a $5\sigma$ sensitivity for an assumed integrated luminosity of $100$ fb$^{-1}$ at $\sqrt{s} = 14$ TeV, with the frequentist sensitivity defined as:
 %
 \begin{equation}
 \mathcal{S} = \frac{N_\text{Signal}}{\sqrt{N_\text{Background}}}.
@@ -294,12 +294,3 @@ Figure \ref{fig:branching_5sigma} shows the effect on the $5\sigma$ branching ra
 \caption{(Left) $5\sigma$ branching ratios for the gluon fusion channel, for resonant and non-resonant final states, using the $\gamma+\MET$ trigger. (Right) Branching ratios for 95$\%$ confidence level exclusion in the ZH case, resonant and non-resonant topologies, requiring at least one photon ($N(\gamma) \geq 1$) and at least two photons ($N(\gamma) \geq 2$). The shaded areas correspond to a variation in systematics up to $10\%$.}
 \label{fig:branching_5sigma}
 \end{figure}
-%%%%%%
-%%%%%% Bibliography
-%%%%%%
-	\clearpage
-	\newpage
-\subsubsection*{References}
-\vspace{-5ex}
-\bibliographystyle{hep}%Used BibTeX style is unsrt
-\bibliography{bib_ggMET}

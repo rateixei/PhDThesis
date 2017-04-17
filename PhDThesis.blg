@@ -1,0 +1,86 @@
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: PhDThesis.aux
+A level-1 auxiliary file: intro/dedication.aux
+A level-1 auxiliary file: intro/acknowlegements.aux
+A level-1 auxiliary file: intro/abstract.aux
+A level-1 auxiliary file: introduction/text.aux
+A level-1 auxiliary file: cms/text.aux
+A level-1 auxiliary file: ecal/text.aux
+A level-1 auxiliary file: monophoton/text.aux
+A level-1 auxiliary file: hh/text.aux
+A level-1 auxiliary file: conclusion/text.aux
+The style file: hep.bst
+Database file #1: refs.bib
+Repeated entry---line 2652 of file refs.bib
+ : @article{Sjostrand:2006za
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2884 of file refs.bib
+ : @article{Sjostrand:2006za
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4771 of file refs.bib
+ : @article{Cacciari:2011ma
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 8355 of file refs.bib
+ : @article{Sjostrand:2006za
+ :                          ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "deAquino:2011ix"
+Warning--empty author in cms_jet
+Warning--empty author in cms_btag
+Warning--empty author in cms_hgg_15
+Warning--empty institution in cms_upgrade
+Warning--empty institution in hcalnoise
+Warning--empty institution in ele_id
+Warning--empty institution in CMS-PAS-JME-13-005
+Warning--empty institution in CMS:2013gfa
+Warning--empty institution in 2014photon
+Warning--empty year in 2014photon
+Warning--empty note in PDF4LHC
+Warning--empty institution in AN-13-075
+Warning--empty institution in AN-14-118
+You've used 112 entries,
+            2195 wiz_defined-function locations,
+            1171 strings with 20409 characters,
+and the built_in function-call counts, 30189 in all, are:
+= -- 3037
+> -- 1021
+< -- 11
++ -- 391
+- -- 279
+* -- 2280
+:= -- 4148
+add.period$ -- 123
+call.type$ -- 112
+change.case$ -- 107
+chr.to.int$ -- 0
+cite$ -- 125
+duplicate$ -- 1684
+empty$ -- 2854
+format.name$ -- 279
+if$ -- 7736
+int.to.chr$ -- 0
+int.to.str$ -- 112
+missing$ -- 339
+newline$ -- 348
+num.names$ -- 99
+pop$ -- 485
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 1140
+stack$ -- 0
+substring$ -- 1322
+swap$ -- 705
+text.length$ -- 11
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 13
+while$ -- 200
+width$ -- 115
+write$ -- 1112
+(There were 4 error messages)

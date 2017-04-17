@@ -11,7 +11,7 @@
 \DeclareOption{shieldcrest}{\def\logoversion{shieldcrest}}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 \ProcessOptions\relax
-\LoadClass[]{report}
+\LoadClass[letterpaper]{report}
 %\RequirePackage[top=1in, bottom=1.25in, left=1.25in, right=110in]{geometry}
 %\RequirePackage{fullpage}
 %\RequirePackage[pass]{geometry}
@@ -101,11 +101,11 @@
     \renewcommand{\footnotesize}{\small}
     \renewcommand{\footnoterule}{\relax}
     \thispagestyle{empty}
-  \null\vfill
+%  \null\vfill
   \begin{center}
 %    { \Huge {\bfseries {\@title}} \par}
     {\logo \par} 
-    {\large \vspace*{35mm} 
+    {\large \vspace*{25mm} 
 %       {\logo \par} 
        { \Huge {\bfseries {\@title}} \par}
     \vspace*{25mm}}

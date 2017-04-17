@@ -1,9 +1,9 @@
 \section{Introduction}
-This Analysis Note describes the inclusive search for the double Higgs production process in the decay
+This chapter describes the inclusive search for the double Higgs production process in the decay
 mode $\HH \to \bbgg$ at $\sqrt{s}=13\TeV$, with $36.5$ fb$^{-1}$ from the 2016 data taking period. 
 This analysis is based on the search at 8\TeV performed in the same final state, recently published by CMS in
 Ref.~\cite{HIG-13-032} (the internal CMS documentation of this analysis can be found in Refs.~\cite{AN-13-075,AN-14-118}), and 
-on the earlier 13\TeV search using 2015 data HIG-16-032.
+on the earlier 13\TeV search using 2015 data \ref{bbgg_2015}.
 
 Many theories beyond the SM (BSM) suggest the existence of new physics potentially manifested in the detection of a pair of Higgs bosons. 
 The simplest signal we can look for is in the form of a resonant contribution to the invariant mass of the HH system (resonant search). 
@@ -30,7 +30,7 @@ In the non-resonant search, we investigate explicitly the case of anomalous coup
 following the same model parametrization used in Ref.~\cite{HIG-13-032}. 
 In the 13$\TeV$ analysis however we study the parameter space of anomalous couplings 
 using the approach suggested in~\cite{Dall'Osso:2015aia}, where physics benchmarks are defined based in basic signal kinematics. 
-We also put limits in the Standard Model like HH production, a process that has a cross section of $\sigma_{HH}(SMNNLO) = 33.70$~fb~ at 13 TeV \cite{MelladoGarcia:2150771}.
+We also put limits in the Standard Model like HH production, a process that has a cross section of $\sigma(pp\rightarrow HH)^{\text{SM}}_{\text{NNLO}} = 33.45$~fb~ at 13 TeV \cite{MelladoGarcia:2150771}.
 
 %, where $X$ denotes a Radion or a Graviton particle. (We now know that the waves of the gravitational field
 %exist~\cite{ligo}, so there must be a particle, right?)  
@@ -57,17 +57,17 @@ We also put limits in the Standard Model like HH production, a process that has 
 %\end{itemize}
 
 %{\bf Update with the structure when fixed}
-This note is organized as follows.
-In section \ref{sec:samples}, we describe the data and Monte Carlo samples used in the analysis, both for signal and background.
-In section \ref{sec:trigger}, the online selection used in this analysis is described.
-Sections \ref{sec:photons} and \ref{sec:jets} are dedicated to the object reconstruction and selection in the analysis.
-The categorization procedure for the resonant and non-resonant analyses is defined in section \ref{sec:cats}
-Section \ref{sec:masswindow} described a new variable $\Mtilde$ that is a better proxy to the true 4-body invariant mass than the standard $\Mjjgg$, and how it is used to create signal mass dependent selections.
-The selection efficiencies are shown in section \ref{sec:selection}.
-The limits and signal extraction are defined in section \ref{sec:modeling}, along with the signal and background modeling procedures.
-The systematic uncertainties for this analysis are defined in section \ref{sec:systematics}.
-Finally, the results are shown in sections \ref{sec:results} and \ref{sec:nonresonant-results}, for the resonant and non-resonant analyses respectively.
-Section \ref{sec:summary} provides a summary of this analysis note.
+%This note is organized as follows.
+%In section \ref{sec:samples}, we describe the data and Monte Carlo samples used in the analysis, both for %signal and background.
+%In section \ref{sec:trigger}, the online selection used in this analysis is described.
+%Sections \ref{sec:photons} and \ref{sec:jets} are dedicated to the object reconstruction and selection in the %analysis.
+%The categorization procedure for the resonant and non-resonant analyses is defined in section \ref{sec:cats}
+%Section \ref{sec:masswindow} described a new variable $\Mtilde$ that is a better proxy to the true 4-body %invariant mass than the standard $\Mjjgg$, and how it is used to create signal mass dependent selections.
+%The selection efficiencies are shown in section \ref{sec:selection}.
+%The limits and signal extraction are defined in section \ref{sec:modeling}, along with the signal and background %modeling procedures.
+%The systematic uncertainties for this analysis are defined in section \ref{sec:systematics}.
+%Finally, the results are shown in sections \ref{sec:results} and \ref{sec:nonresonant-results}, for the resonant %and non-resonant analyses respectively.
+%Section \ref{sec:summary} provides a summary of this analysis note.
 
 %This note is organized as follows: in section \ref{sec:samples} we describe the Monte Carlo samples used. 
 %In section \ref{sec:data_sim} we describe the simulated signal and background event samples used in the analysis. 
@@ -78,21 +78,21 @@ Section \ref{sec:summary} provides a summary of this analysis note.
 
 The main strategy upgrades with respect to the Run-I analysis are:
 \begin{itemize}
-\item We make use of MVA ID for the photon selection, which improves the selection
-  efficiency, see section~\ref{sec:photons}
-\item Using \Mtilde variable instead of 4-body mass, $\Mjjgg$. This allows to cancel the
-  effects of the low dijet mass resolution (compared to $\Mgg$).
-  uncertainties in the jet energy scale, see Section~\ref{sec:masswindow}
-\item An improved version of the Combined Secondary Vertex algorithm (CSVv2) for b-tagging
-  was developed in CMS.
-\item A new categorization method was developed to deal with signal categories and phase spaces 
-with not enough events for a reliable background description.
-\item A dedicated b-jet energy regression is being developed for Run-II analysis, see
-  Section~\ref{sec:b-reg}.
-\item The main part of the analysis is performed in a framework based on top of the one developed
- by the $\Hgg$ group \cite{flashgg-twiki}, so we benefit from the latest and greatest photon selection tools
-  available.
+
+\item We make use of MVA ID for the photon selection, which improves the selection efficiency;
+
+\item Using \Mtilde variable instead of 4-body mass, $\Mjjgg$ - this allows to cancel the effects of the low dijet mass resolution (compared to $\Mgg$) uncertainties in the jet energy scale;
+
+\item An improved version of the Combined Secondary Vertex algorithm (CSVv2) for b-tagging was developed in CMS;
+
+\item A new categorization method was developed to deal with signal categories and phase spaces with not enough events for a reliable background description;
+
+\item A dedicated b-jet energy regression is being developed for Run-II analysis; 
+
+\item The main part of the analysis is performed in a framework based on top of the one developed by the $\Hgg$ group, so we benefit from the latest and greatest photon selection tools available.
+
 \end{itemize}
+
 In the new version of the analysis we also profit from a better description of the signal in the MC
 samples (Section~\ref{sec:samples}), and a higher statistics of the MC events. The
 description of the simulated background is also improved. We observe a good agreement in

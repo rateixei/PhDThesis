@@ -10,7 +10,7 @@ After the control sample is created, it needs to be normalized by the number of 
 Before describing the details of this method, the following definitions must be made:
 
 \begin{itemize}
-\item $\gamma$: Objects that pass the complete $e/\gamma$ POG photon ID, including the PSV cut (photon object);
+\item $\gamma$: Objects that pass the complete $e/\gamma$ photon ID, including the PSV cut (photon object);
 \item $\gamma_e$: Objects that pass the photon ID with the PSV cut reversed ($e$-fake object);
 \item $N_{\gamma_e}$: Number of events in the control sample, which is made of $\gamma_e$;
 \item $\epsilon_{\gamma_e}$: Efficiency of accepting $\gamma_e$ objects (including acceptance);
@@ -104,52 +104,34 @@ F_{e\rightarrow \gamma} &=& \left( 2.32\pm 0.03 \right)\%.
 
 \subsubsection{Electron $\rightarrow$ Photon Fake Rate Dependencies on \pt, $N_{Vtx}$, $N_{Trk}$}
 
-It has been shown before, in the environment of the SUSY Photon analysis\cite{susyphoton_slides}, that the PSV fake rate is dependent on variables such as the probe $p_T$, the number of tracks associated with the primary vertex and the number of reconstructed primary vertices in the event. The nature of the two last dependencies are deeply rooted in the track reconstruction and matching algorithm. Those details were documented in the Appendix of the SUSY Photon Analysis AN \cite{CMS_AN_2014-128}.
+It has been shown before, in the environment of the SUSY Photon analysis, that the PSV fake rate is dependent on variables such as the probe $p_T$, the number of tracks associated with the primary vertex and the number of reconstructed primary vertices in the event. The nature of the two last dependencies are deeply rooted in the track reconstruction and matching algorithm. 
 
 To check the dependency of the fake rate in the three variables mentioned, the fake rate was calculated in exclusive bins. In each bin, the signal template used was the corresponding bin in the MC signal sample. Each fit was done individually for every bin.
 
-In  Fig. \ref{FR_pt}, \ref{FR_trk} and \ref{FR_pu}, we see how the PSV fake rate depends on the probe $p_T$, number of tracks associated with the primary vertex and the number of reconstructed primary vertices, respectively. The red line in each plot represents the fake rate obtained previously, assuming that there are no dependencies, with the entire invariant mass spectrum. For now on, this first result will be referenced as the flat fake rate.
+In the plots in Figure \ref{fig:FR_all}, we see how the PSV fake rate depends on the probe $p_T$, number of tracks associated with the primary vertex and the number of reconstructed primary vertices, respectively. The red line in each plot represents the fake rate obtained previously, assuming that there are no dependencies, with the entire invariant mass spectrum. For now on, this first result will be referenced as the flat fake rate.
 
 
 \begin{figure}[H]
 \begin{center}
-{\label{FR_pt}\includegraphics[width=0.45\textwidth]{efake_figs/FakeRate_Pt.pdf}}
-{\label{FR_pu}\includegraphics[width=0.45\textwidth]{efake_figs/FakeRate_PU.pdf}}
-\\
-{\label{FR_trk}\includegraphics[width=0.45\textwidth]{efake_figs/FakeRate_Trk.pdf}}
+{\includegraphics[width=0.45\textwidth]{efake_figs/FakeRate_Pt.pdf}}
+{\includegraphics[width=0.45\textwidth]{efake_figs/FakeRate_PU.pdf}}
+{\includegraphics[width=0.45\textwidth]{efake_figs/FakeRate_Trk.pdf}}
 \caption{Fake rate vs. probe $p_T$, number of primary vertices and track multiplicity.}
-\label{FR_all}
+\label{fig:FR_all}
 \end{center}
 \end{figure}
-%
-%\begin{figure}[H]
-%\begin{center}
-%\caption{Fake rate vs. number of primary vertices reconstructed.}
-%\label{FR_pu}
-%\end{center}
-%\end{figure}
-
-%\begin{figure}[H]
-%\begin{center}
-%\includegraphics[scale=0.5]{efake_figs/FakeRate_Trk.pdf}
-%\caption{Fake rate vs. track multiplicity.}
-%\label{FR_trk}
-%\end{center}
-%\end{figure}
 
 As shown in the plots, there is a non-trivial dependency of the fake rate on the variables probed. There are different ways to solve this feature. The most complete one would be to achieve a multi-parameter description of the fake rate, including a 3-dimensional function with dependencies of the fake rate on each variable. That, however, demands a thorough study of these dependencies and a functional form to perform this task. A second way would be to choose one of the parametrizations, including the flat one, and prescribe a systematical error to that assumption. To know how much one choice impacts the fake rate, we can look at the final result and observe how much the yields change with each assumption.
 
-In our case, the final result is the control sample of photon-like objects that fail the pixel seed veto normalized by the fake rate, which represents the estimation of our electron faking photon contamination in the signal region. Figs. \ref{CS_params_pt}, \ref{CS_params_eta} and \ref{CS_params_phi} show the shape and yields of this control sample when normalized by the different parametrizations of the fake rate. When checking the differences in number of events of each bin, we see that they are all within $5\%$ of each other, being higher around the $p_T$ peak and approaching $0$ for higher values. Therefore, it is safe to choose any specific parametrization and assume a systematic error of $5\%$ on the number of events to make sure that the different assumptions are compatible. With these assumptions, we choose to use the flat parametrization, since it only involves one fit and it has been shown to be much more stable with respect to different fit functions, for signal and background.
+In our case, the final result is the control sample of photon-like objects that fail the pixel seed veto normalized by the fake rate, which represents the estimation of our electron faking photon contamination in the signal region. The plots in Figure \ref{CS_params} show the shape and yields of this control sample when normalized by the different parametrizations of the fake rate. When checking the differences in number of events of each bin, we see that they are all within $5\%$ of each other, being higher around the $p_T$ peak and approaching $0$ for higher values. Therefore, it is safe to choose any specific parametrization and assume a systematic error of $5\%$ on the number of events to make sure that the different assumptions are compatible. With these assumptions, we choose to use the flat parametrization, since it only involves one fit and it has been shown to be much more stable with respect to different fit functions, for signal and background.
 
-
-%To check the differences in shape and yield of the three different parametrizations, we use the control sample of photon objects with inverted pixel seed requirement and normalize it with the parametrized fake rates. After the normalizations, the control sample distributions are shown  in Figs. \ref{CS_params_pt}, \ref{CS_params_eta} and \ref{CS_params_phi}, we see the distributions of $p_T$ and $\eta$ for the control sample after being normalized by the fake rate. When checking the differences in number of events of each bin, we see that they are all within $5\%$ of each other, being higher around the $p_T$ peak and approaching $0$ for higher values. Therefore, it is safe to choose any specific parametrization and assume a systematic error of $5\%$ on the number of events to make sure that the different assumptions are compatible. With these assumptions, we choose to use the flat parametrization, since it only involves one fit and it has been shown to be much more stable with respect to different fit functions, for signal and background.
 
 \begin{figure}[H]
 \begin{center}
-  {\label{CS_params_pt}\includegraphics[width=0.45\textwidth]{efake_figs/CS_param_pt.pdf}}
-  {\label{CS_params_eta}\includegraphics[width=0.45\textwidth]{efake_figs/CS_param_eta.pdf}}
+  {\includegraphics[width=0.45\textwidth]{efake_figs/CS_param_pt.pdf}}
+  {\includegraphics[width=0.45\textwidth]{efake_figs/CS_param_eta.pdf}}
 \\
-  {\label{CS_params_phi}\includegraphics[width=0.45\textwidth]{efake_figs/CS_param_phi.pdf}}
+  {\includegraphics[width=0.45\textwidth]{efake_figs/CS_param_phi.pdf}}
 \caption{Control sample distribution of photon $p_T$, $\eta$ and $\phi$.}
 \label{CS_params}
 \end{center}
@@ -169,15 +151,16 @@ F_{gen} = \frac{\textrm{\#Medium ID Photons \&\& Matched to Gen Electrons \&\& P
 
 Here, the Medium photon ID is the one used on the analysis, including all the shower shape cuts to remove spikes and other contributions.
 
-We compare the results of the two measurements, generator-level and reco-level, on the plots in Fig. \ref{closure_old_pt}, \ref{closure_old_pu} and \ref{closure_old_ntrk}.
+We compare the results of the two measurements, generator-level and reco-level, on the plots in Figure \ref{closure_old}.
 
 \begin{figure}[H]
 \begin{center}
-{\label{closure_old_pt}\includegraphics[width=0.45\textwidth]{efake_figs/closure_old_pt.pdf}}
-{\label{closure_old_pu}\includegraphics[width=0.45\textwidth]{efake_figs/closure_old_pu.pdf}}
+{\includegraphics[width=0.45\textwidth]{efake_figs/closure_old_pt.pdf}}
+{\includegraphics[width=0.45\textwidth]{efake_figs/closure_old_pu.pdf}}
 \\
-{\label{closure_old_ntrk}\includegraphics[width=0.45\textwidth]{efake_figs/closure_old_trk.pdf}}
+{\includegraphics[width=0.45\textwidth]{efake_figs/closure_old_trk.pdf}}
 \caption{Closure test in probe $p_T$,number of reconstructeed primary vertices and track multiplicity .}
+\label{closure_old}
 \end{center}
 \end{figure}
 %
@@ -201,7 +184,7 @@ The lines represent the fake rate results from the flat assumption. For the gene
 
 We investigated the cause of this result and noticed that it comes about because of a "hidden" primary vertex matching on the tag-and-probe method. When using the tag and probe for electrons as tag and photons as probe, the photon ends up being matched to the hardest primary vertex because the electron, in the electron ID requirements, is indeed matched. When we require the invariant mass of the pair to be close to the $Z$ peak, the electron PV matching is indirectly passed to the probe photon, since they must come from the same source. This requirement does not exist on the gen-level fake rate, which is basically a counting experiment.
 
-The importance of the PV matching requirement comes about because of the nature of the DY$\to ee$ process. Since it is a low multiplicity process, i.e., there will not be many objects naturally from the hard scatter process, the $Z$ might not come from the hardest reconstructed primary vertex of the event. Therefore, when that happens, we measure the fake rate from a  primary vertex that is not the hardest and, therefore, has fewer tracks than the primary vertex assumed. Since we know that the fake rate increases sharply when there are few tracks in the primary vertex, that explains why, in plot \ref{closure_old_ntrk}, there is an increase in higher values of NTrack - those are actually hard scatter events with few tracks that were mistakenly matched to the hardest PV.
+The importance of the PV matching requirement comes about because of the nature of the DY$\to ee$ process. Since it is a low multiplicity process, i.e., there will not be many objects naturally from the hard scatter process, the $Z$ might not come from the hardest reconstructed primary vertex of the event. Therefore, when that happens, we measure the fake rate from a  primary vertex that is not the hardest and, therefore, has fewer tracks than the primary vertex assumed. Since we know that the fake rate increases sharply when there are few tracks in the primary vertex, that explains why, in plot \ref{closure_old}, there is an increase in higher values of NTrack - those are actually hard scatter events with few tracks that were mistakenly matched to the hardest PV.
 
 To overcome these problems, we match the gen-level particles used for the gen-level fake rate to the hardest reconstructed primary vertex with the following cuts (from the muon ID POG recommendations):
 
@@ -211,7 +194,7 @@ To overcome these problems, we match the gen-level particles used for the gen-le
 \end{itemize}
 
 These variables are obtained directly from methods of the RECO::Candidate class inherited by the RECO::GenParticle.
-With that, we have the plots on Fig. \ref{closure_pt}, \ref{closure_pu} and \ref{closure_ntrk}.
+With that, we have the plots on Figure \ref{closure_all}.
 
 \begin{figure}[H]
 \begin{center}

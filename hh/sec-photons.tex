@@ -1,7 +1,7 @@
 \subsection{Photons}
 \label{sec:photons}
 
-The kinematic requirements applied on the photons, after the diphoton candidates have passed through the event pre-selection (see Section ~\ref{sec:trigger}), is analogous to the ones used in the SM $\Hgg$ analysis. The selection is as follows:
+The kinematic requirements applied on the photons, after the diphoton candidates have passed through the event pre-selection (see Section ~\ref{sec:trigger}), is similar to the ones used in the SM $\Hgg$ analysis. The selection is as follows:
 \begin{itemize}
 \item Leading photon $E_{T} > 30 \GeV$, trailing photon $E_{T}>20 \GeV$;
 \item Leading photon $E_{T}/\Mgg > 1/3$, trailing photon $E_{T}/\Mgg > 1/4$;
@@ -28,36 +28,36 @@ The WP chosen is one that provides $90\%$ signal efficiency for the photon selec
 The scale factors used to ensure data/MC agreement in the selection efficiency are also applied (provided centrally).
 Additionally, an electron veto is applied to avoid background with electrons faking photons (scale factors provided centrally also applied).
 
-=========== OLD ===========
+%=========== OLD ===========
 
-Currently (as of January 2016), the available samples processed by the $\Hgg$ group only have stored 
-their own training of the photon MVA ID. 
-We have chosen working points that ensure that the resonant low mass samples have 
-a $90\%$ efficiency both in the barrel and the endcap ECAL regions. 
+%Currently (as of January 2016), the available samples processed by the $\Hgg$ group only have stored 
+%their own training of the photon MVA ID. 
+%We have chosen working points that ensure that the resonant low mass samples have 
+%a $90\%$ efficiency both in the barrel and the endcap ECAL regions. 
 
-\begin{table}[h]
-\centering
-\begin{tabular} { | c | c | }
-\hline
-ECAL Region & Hgg MVA Selection \\ \hline
-EB & 0.07 \\ \hline
-EE & -0.03 \\ \hline
-\end{tabular}
-\end{table}
+%\begin{table}[h]
+%\centering
+%\begin{tabular} { | c | c | }
+%\hline
+%ECAL Region & Hgg MVA Selection \\ \hline
+%EB & 0.07 \\ \hline
+%EE & -0.03 \\ \hline
+%\end{tabular}
+%\end{table}
 
-Efficiencies of the leading photon to pass the ID criteria, as a function of the photon transverse energy, 
-are shown in Figure \ref{fig:Hgg-PhoID-eff}. 
-Only photons matched to gen-level prompt photons are used. 
+%Efficiencies of the leading photon to pass the ID criteria, as a function of the photon transverse energy, 
+%are shown in Figure \ref{fig:Hgg-PhoID-eff}. 
+%Only photons matched to gen-level prompt photons are used. 
 
 
-\begin{figure*}[thb]
-  \centering
-  \includegraphics[width=0.45\textwidth]{figures/sec-photons/SMHH_HggMVA_Eff_EB.pdf}\hfil
-  \includegraphics[width=0.45\textwidth]{figures/sec-photons/SMHH_HggMVA_Eff_EE.pdf}\hfil
-  \caption{Efficiencies of the leading photon to pass the ID criteria, as a function of the photon transverse energy, 
-for photons in the barrel and endcap regions of ECAL. }
-  \label{fig:Hgg-PhoID-eff}
-\end{figure*}
+%\begin{figure*}[thb]
+%  \centering
+%  \includegraphics[width=0.45\textwidth]{figures/sec-photons/SMHH_HggMVA_Eff_EB.pdf}\hfil
+%  \includegraphics[width=0.45\textwidth]{figures/sec-photons/SMHH_HggMVA_Eff_EE.pdf}\hfil
+%  \caption{Efficiencies of the leading photon to pass the ID criteria, as a function of the photon transverse energy, 
+%for photons in the barrel and endcap regions of ECAL. }
+%  \label{fig:Hgg-PhoID-eff}
+%\end{figure*}
 
 %We have studied all of those possibilities with MC samples, and for the 2015 data we
 %decided to use the MVA ID of EGamma group with \textit{Loose} working point (WP),
@@ -109,6 +109,11 @@ Inheriting from the main $\Hgg$ analysis, we use the vertex that gives the highe
 Because there are additional jets in the event, picking picking this vertex has a very small mismatch efficiency. 
 Only in less than $0.1\%$ of the events, the chosen vertex is different from the vertex associated to the simulated event. 
 
+The $\Hgg$ vertex MVA score is based on three variables calculated for each reconstructed vertex: the sum of the squared transverse momenta of the charged particle tracks associated with the vertex, and two variables that quantify the vector and scalar balance of $p_{T}$ between the diphoton system and the charged particle tracks associated with the vertex. 
+In addition, if either photon is associated with any charged particle track that has been identified as resulting from conversion, also the conversion information is used. 
+The variables are used as the inputs to a multivariate classifier based on a boosted decision tree (BDT) to choose the reconstructed vertex to be associated with the diphoton system. 
+The average vertex finding efficiency of this algorithm in the SM $\Hgg$ analysis is $80\%$.
+
 \subsubsection{Gain Switch}
 
 Due to the ECAL slew rate issue discovered during the 2016 data taking, we investiaged the fraction of selected events in our blinded signal region with photons that go through gain switches. 
@@ -128,6 +133,7 @@ This non-negligible rate means that the analysis needs to use the re-MiniAOD Mor
 \subsubsection{Regression}
 
 A new version of the photon energy regression has been trained (with 80X MC and 2016 data taking conditions). 
+This regression aims to correct the photon super cluster energy, as described in previous sections.  
 We compared this new regression to the previous training (74X), as seen in the plots of Figure \ref{fig:pho_reg} for three different resonance mass points. 
 The difference observed is not large enough for this analysis to be affected, so the regression version used is 74X (following main $\Hgg$ analysis).
 

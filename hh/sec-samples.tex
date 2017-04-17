@@ -63,10 +63,6 @@ The full simulated samples can be found on DAS as:
 where the $X$ ranges between 0 and 13. The $X=0$ represents the point ($\kappa_{\lambda}$, $\kappa_{t}$, $c_2$, $c_g$, $c_{2g}$) = (0,1,0,0,0) - when the process is induced only by the box diagram and the reminiscent correspond to the points listed in Tab.~\ref{tab:bench}.
 The analytical formula that allows us to calculate cross sections for any point of the parameter space can be found here~\cite{CarvalhoAntunesDeOliveira:2130724}, and a handful script that calculates the cross sections point by point can be found here~\cite{hhrosetta}.  
 
-%In Figure XX we show the Distributions at Gen level {\bf CHECK}.
-In the next session we explain how we had derived results in different benchmark points, based in the above full-simulated samples. \\
-
-
 \begin{table}
 \centering
 \small{
@@ -93,8 +89,6 @@ The first cluster is the one that contains the SM sample.
 \label{tab:bench_old}}
 \end{table} 
 
-\mbox{}\\{\bf - Distributions at Gen level}
-
 \subsubsection{Reweighting}
 \label{sec:rewei}
 
@@ -110,9 +104,7 @@ The procedure is made as follows:
 \begin{itemize}
 \item For each new parameter space point we perform 
 a simulation in {\tt MG5\_aMC@NLO}, asking for $N$ events;
-\item We construct two dimensional histograms in the 
-generation level $m_{HH}$ and $cos\theta^*$, with 20$\GeV$-wide bins in the $m_{HH}$ and
- 0.2-wide bins in $cos\theta^*$ (without the moduli);
+\item We construct two dimensional histograms at generation level $m_{HH}$ and $cos\theta^*$, with 20$\GeV$-wide bins in the $m_{HH}$ and 0.2-wide bins in $cos\theta^*$ (without the moduli);
 \item We construct the same histogram with the sum of all the full simulated samples described in the last section (signal dataset);
 \item The new sample is constructed by weigthing the signal dataset event-by-event by:
  \begin{equation}
@@ -122,14 +114,10 @@ generation level $m_{HH}$ and $cos\theta^*$, with 20$\GeV$-wide bins in the $m_{
  new signal sample (signal dataset) in that bin. 
  \end{itemize}
  
- We make reweighted samples for three types of theory scans:
-\begin{itemize}
-%  \item The frozen list of benchmarks of Refs.~\cite{Dall'Osso:2015aia,MelladoGarcia:2150771}, listed in Tab.~\ref{tab:bench}. 
-  \item A plain scan in $\kappa_{\lambda}$, while all the other parameters are kept as in SM ($\kappa_{t}$, $c_2 = c_g  = c_{2g} =0$), where the gen-level histograms are made from 50,000 events
-  \item Another set of samples that we will use to calculate the shape systematics necessary to extrapolate the limits in the benchmarks to an extended part of the parameter space (see Sec.~\ref{sec:shapesyst}).
-\end{itemize} 
-%The 2D histograms to construct the new samples are HERE and the map pf weights to the dataset BLA is HERE.
- 
+ We make reweighted samples for three types of theory scans. 
+ First, a plain scan in $\kappa_{\lambda}$, while all the other parameters are kept as in SM ($\kappa_{t}$, $c_2 = c_g  = c_{2g} =0$), where the gen-level histograms are made from 50,000 events. 
+ Then, a scan in the 2D plane defined by fixing  $c_2 = c_g  = c_{2g} =0$, with varying $\kappa_{\lambda}$ and $\kappa_{t}$. 
+
  \begin{table}[h]
 \centering
 \small{
@@ -155,19 +143,13 @@ SM &	1.0 & 1.0	 &	0.0		& 0.0	& 0.0 \\
 \caption{\small Parameter values of the twelve benchmarks and the Standard Model point.  \label{tab:bench}}
 \end{table}
  
-\subsubsection{Non-resonant Vector Boson Fusion}
+ \subsection{Background MC}
 
-For the 2016 version of the analysis, one non-resonant VBF sample was also produced centrally with the Standard Model coupling parameters. 
-The MiniAOD version of this sample can be found on DAS under:   
-/VBFHHTo2B2G\_CV\_1\_C2V\_1\_C3\_1\_13TeV-madgraph/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM
- 
-\subsection{Background MC}
-
-Even though the signal extraction and background modeling of this analysis are performed based on data, background Monte Carlo samples are used to validate the simulation of our signal description and to develop the analysis. The main backgrounds for the $\bbgg$ final state come from either well-isolated photons coming from the hard scatter (prompt photons) or isolated photons reconstructed due to very collimated $\pi^{0}\to\gamma\gamma$ decays fragmented from jets (fake photons). These backgrounds are the same as the ones to the SM $\Hgg$ analysis, and a more complete description of the samples used can be found in the $\Hgg$ AN ~\cite{Hgg2015, Hgg2016}.
+Even though the signal extraction and background modeling of this analysis are performed based on data, background Monte Carlo samples are used to validate the simulation of our signal description and to develop the analysis. The main backgrounds for the $\bbgg$ final state come from either well-isolated photons coming from the hard scatter (prompt photons) or isolated photons reconstructed due to very collimated $\pi^{0}\to\gamma\gamma$ decays fragmented from jets (fake photons). These backgrounds are the same as the ones to the SM $\Hgg$ analysis.
 
 We can classify these backgrounds with respect to the number of prompt and fake photons in the selected diphoton candidate. The prompt-prompt background events are simulated with the Sherpa generator; it includes the born processes with up to 3 additional jets at LO accuracy as well as the box processes at LO. The prompt-fake and the fake-fake contributions are simulated with PYTHIA8, with a "Double-EM Enriched" filter\footnote{it requires a high $\pt$ and well isolated photon-like signal (electromagnetic activity) coming from photons, electrons, or neutral hadrons)} applied during production to improve the samples selection efficiencies. Additionally, a sample of Drell-Yan events decaying into electrons, simulated at NLO with AMC@NLO, is used, although its final contribution to the event yield is minimal due to the $M(\gamma\gamma) > 100 \gev$ selection cut.
 
 \subsection{Data}
 
-The data samples used in this analysis correspond to approximately $36.5$ fb$^{-1}$ of data collected in 2016, reconstructed with the 80X CMSSW release.
+The data samples used in this analysis correspond to approximately $35.87$ fb$^{-1}$ of data collected in 2016, reconstructed with the 80X CMSSW release.
 
