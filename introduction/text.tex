@@ -7,16 +7,16 @@
 The Standard Model of particles and fields (SM) describes the most basic constituents of matter and their dynamics, as currently known. 
 It is built upon the hypothesis that fundamental, point-like particles exist (fermions) and that their interactions, via bosonic fields, can be described in a relativistic quantum field theoretical framework. 
 Fundamental interactions are described in the SM by the gauge invariance principle, meaning that interactions will appear in the framework as gauge fields after imposing local and continuous (gauge) symmetries. 
-An early example of this principle is the emergence of electromagnetism on the Schrödinger equation by imposing a local and continuous $U(1)$ symmetry.
+An early example of this principle is the emergence of electromagnetism in the Schrödinger equation by imposing a local and continuous $U(1)$ symmetry.
 
-As of today, the SM described three types of interactions: 
+As of today, the SM describes three types of interactions: 
 
 \begin{description}
 \item[The Strong Interaction] Also known as quantum chromodynamics or QCD. It appears in the SM via an $SU(3)$ gauge symmetry. This gauge group implies the existence of 8 gauge bosons, called gluons. Fermions particles that interact via QCD are called \textbf{quarks}, and are organized in triplets of a "color" charge. Fermions that do not interact via QCD are called \textbf{leptons}. 
 
 \item[The Electromagnetic Interaction] It appears in the SM via an $U(1)$ gauge symmetry, with one gauge boson associated to it (photon). The particles that interact via the electromagnetic interaction have electric charge. 
 
-\item[The Weak Interaction] Appears in the SM via an $SU(2)$ gauge symmetry. It has three different gauge bosons associated to it, two have electric charge: $W^{+}$ and $W^{-}$, while one is neutral: $Z^{0}$. The weak interaction charge is commonly called weak hypercharge.
+\item[The Weak Interaction] Appears in the SM via an $SU(2)$ gauge symmetry. It has three different gauge bosons associated with it; two have electric charge ($W^{+}$ and $W^{-}$), while one is neutral ($Z^{0}$). The weak interaction charge is commonly called weak hypercharge.
 \end{description}
 
 The two last interactions have been further combined in a single theoretical model, called the electroweak interaction  \cite{weinberg_ew, salam_ew, glashow_ew}. 
@@ -61,27 +61,43 @@ b
 R_l = e_{R},\,\mu_{R},\,\tau_{R};\, \, R_q = u_{R},\, d_{R},\, c_{R},\, s_{R},\, t_{R},\, b_{R}.
 \end{equation}
 
+\section{Quantum Chromodynamics}
 
+QCD is the fundamental interaction in the SM that arises from the gauge symmetry under the $SU(3)$ gauge group \cite{qcd}. 
+Fermions that carry the color charge are called quarks and are represented as a triplet under $SU(3)$, a hypothesis that explains, for example, the baryonic structure discovered in the early 60's (the Eightfold Way). 
+The QCD lagrangian can be written as:
+
+\begin{equation}
+\mathcal{L}_{\text{QCD}} = \bar{\psi}i\gamma^{\mu}\left( \partial_{\mu} + ig_s T^{a}G^{a}_{\mu} \right)\psi - \frac{1}{4}G^{a}_{\mu\nu} G^{a,\mu\nu} 
+\end{equation}
+
+\noindent where $\psi$ are the $SU(3)$ triplet quark wave functions, $G_\mu^{a}$ are the gauge fields introduced by the symmetry (gluons), $G^{a,\mu\nu} = \partial_\mu G_\nu^{a} - \partial_\nu G_\mu^{a} - g_sf^{abc}G^{b}_\mu G^{c}_\nu$ is the field strength tensor of QCD, $T^{a}$ are the 8 $SU(3)$ generators, and $g_s$ is the QCD coupling constant. 
+
+The fact that the $G^{a}_{\mu\nu} G^{a,\mu\nu} $ term in the QCD lagrangian has terms in which the gluon fields interact with themselves, meaning that gluons also have color charge, leads to interesting behaviors of the theory. 
+One of these interesting features is \textit{confinement} \cite{confinement}, which forbids colored states to be detected in isolation. 
+Therefore, only color neutral states, such as baryons (bound states with three quarks) and mesons (bound states with a quark and an anti-quark), are seen in nature. 
+Another noteworthy feature is the \textit{asymptotic freedom} \cite{freedom1, freedom2}, which is the property that dictates that the QCD interaction between colored particles becomes asymptotically weaker at higher energies (smaller distances). 
+This means that quarks bounded in protons and neutrons, for example, behave asymptotically as free particles. 
 
 \section{The Electroweak Theory of Glashow-Weinberg-Salam}
 
-Through observations that date back to the early XX century, the electroweak interactions were built upon a set of experimental fundaments:
+Through observations that date back to the early twentieth century, the electroweak interactions were built upon a set of experimental fundaments:
 
 \begin{description}
 \item[Universality] The weak interactions are blind with respect to quarks and leptons generations. This means that the coupling strength is the same to any of the three families described previously.
 \item[Massless and Left-Handed Neutrinos] For the energy regime to which the SM addresses, the neutrinos are idealized as massless (even though experiments have proved that they do have mass, even if below eV scale), and they only exist (or only interact with the SM) in their left-handed chirality.
-\item[Chirality] The electroweak interactions are not chiral, i.e., the structure of the theory should treat right-handed and left-handed particles differently.
+\item[Chirality] The electroweak interactions are a chiral: the structure of the theory should treat right-handed and left-handed particles differently, thus breaking parity symmetry.
 \item[Mixing] The electroweak eigenstates of quarks is not the same as their mass eigenstates. Therefore, the electroweak interaction acts on mixed states of quarks mass eigenstates. This quark mixing is described by the CKM matrix.
 \end{description}
 
 The unified electroweak theory is based on the $SU(2)_{L}\otimes U(1)_{Y}$ gauge group. 
 The indices $L$ and $Y$ address the fact that the $SU(2)$ gauge bosons ($\vec{B}_{\mu}$) will only act upon left-handed particles, while the $U(1)$ gauge boson ($A_{\mu}$) will couple to particles that contain weak hypercharge. 
 After the spontaneous symmetry breaking, these four gauge bosons will become the three weak bosons and the photon. 
-We can write a lagrangean, symmetric under this gauge group, as:
+We can write a lagrangian, symmetric under this gauge group, as:
 
 \begin{eqnarray} 
 \label{eq_lag_lep_quark}
-\mathcal{L}_{GWS} & = & \mathcal{L}_{Fermions}+\mathcal{L}_{Gauge}\nonumber \\
+\mathcal{L}_{\text{GWS}} & = & \mathcal{L}_{Fermions}+\mathcal{L}_{Gauge}\nonumber \\
  & = & \left\{ \bar{R}i\gamma^{\mu}\left(\partial_{\mu}+i\frac{a}{2}A_{\mu}Y\right)R+\bar{L}i\gamma^{\mu}\left(\partial_{\mu}+i\frac{a}{2}A_{\mu}Y+i\frac{b}{2}\vec{\sigma}\cdot\vec{B}_{\mu}\right)L\right\} \label{eq:lag_YM}\\
  &  & -\frac{1}{4}\left\{ F_{\mu\nu}^{M}F_{M}^{\mu\nu}+f_{\mu\nu}f^{\mu\nu}\right\}, \nonumber 
 \end{eqnarray}
@@ -90,7 +106,7 @@ where $R$ and $L$ represents the right-handed and left-handed fermions, respecti
 
 \subsection{Spontaneous Symmetry Breaking and Mass Generation}
 
-One important detail of the lagrangean in Equation \ref{eq_lag_lep_quark} is the fact that mass terms to the electroweak bosons are forbidden by gauge invariance. 
+One important detail of the lagrangian in Equation \ref{eq_lag_lep_quark} is the fact that mass terms for the electroweak bosons are forbidden by gauge invariance. 
 Particularly, classical mass terms such as $m_{B}^{2}\vec{B}_{\mu}\cdot\vec{B}^{\mu}$ violate the model's gauge symmetry given that $\vec{B}_{\mu}$ transforms as:
 
 \begin{eqnarray}
@@ -98,7 +114,7 @@ B_{\mu}^{M} & \rightarrow & B_{\mu}^{M}+\frac{1}{b}\partial_{\mu}\alpha^{M}\left
 \end{eqnarray}
 
 The Higgs mechanism is the way the SM generates these mass terms while keeping the gauge invariance intact. 
-In its non-Abelian form, it adds an $SU(2)_{L}$ scalar doublet field $\Phi$ and a quartic potential $V(\Phi)$ to the SM lagrangean described previously:
+In its non-Abelian form, it adds an $SU(2)_{L}$ scalar doublet field $\Phi$ and a quartic potential $V(\Phi)$ to the SM lagrangian described previously:
 
 \begin{eqnarray}
 \Phi & = & \left(\begin{array}{c}
@@ -127,7 +143,7 @@ First, $V\left(\Phi\right)$ must not have a global minimum at $|\Phi| \rightarro
 Second, in order to properly generate the gauge boson masses, the $V\left(\Phi\right)$ minimum must not be at zero. 
 This is accomplished by setting $\mu^{2} < 0$, which creates a $V\left(\Phi\right)$ minimum at $|\Phi|=\sqrt{-\frac{\mu^2}{\lambda}}\equiv v$, also known as the electroweak vacuum expectation value. 
 The found vacuum is spherically symmetric, meaning it remains unchanged by rotations such as $\Phi_{min}\rightarrow\exp\left(i\frac{\vec{\sigma}}{2}\cdot\vec{\xi}\right)\Phi_{min}$. 
-With this fact, we can expand the Higgs field around its vacuum as:
+With this fact, we can expand the Higgs field around its vacuum expectation value as:
 
 \begin{eqnarray}
 \Phi & \rightarrow & \frac{1}{\sqrt{2}}\left(\begin{array}{c}
@@ -159,9 +175,9 @@ Using these new field definitions, we can expand $\left(v+H\left(x\right)\right)
 \end{eqnarray}
 
 The first two terms in the equation above are canonical mass terms to the $Z^0$ and $W^\pm$ fields, but the field $\mathcal{A}$ remains massless. 
-This takes the model back exactly to standard views on the weak interactions, with one massive neutral boson and two massive charged bosons, and on the electromagnetic interaction, with one massless neutral boson. 
+This takes the model back exactly to standard views of the weak interactions, with one massive neutral boson and two massive charged bosons, and on the electromagnetic interaction, with one massless neutral boson. 
 The mass of the $Z^0$ and $W^\pm$ bosons can then be expressed based on the electroweak vacuum expectation value and on the electroweak couplings, the latter being well known experimentally, as: $m_{W}^{2}=\frac{v^{2}b^{2}}{4}$ and $m_{Z}^{2}=\frac{v^2}{4}\left(b^2+a^2\right)$. 
-We can express $v^{2}$ as a function of $m_{W}$ and related it to the Fermi coupling constant ($G_F$), such that $v=\sqrt{\frac{-\mu^2}{\lambda}}=\left(\sqrt{2}G_{F}\right)^{1/2}\approx246\unit{GeV}$
+We can express $v^{2}$ as a function of $m_{W}$ and relate it to the Fermi coupling constant ($G_F$), such that $v=\sqrt{\frac{-\mu^2}{\lambda}}=\left(\sqrt{2}G_{F}\right)^{1/2}\approx246\unit{GeV}$
 \cite{pdg}, where $G_{F}$ is precisely obtained through muon lifetime measurements.
 
 We can also investigate the shape of the Higgs potential after the vacuum has been fixed. 
@@ -173,10 +189,10 @@ V\left(\Phi\right) & = & \frac{-v\lambda}{2}\left(v+H\left(x\right)\right)^{2}+\
 \end{eqnarray}
 
 The first important term in the equation above, $\lambda v^{2}H^{2}\left(x\right)$, can be interpreted as a mass term for a scalar field. 
-This means that perturbations on the Higgs field around the vacuum will be realized as a scalar boson, the Higgs boson, with mass equal to  $m_{H}^{2}=2\lambda v^{2}$.
+This means that perturbations of the Higgs field around the vacuum will be realized as a scalar boson, the Higgs boson, with mass equal to  $m_{H}^{2}=2\lambda v^{2}$.
 The following terms describe how the Higgs boson interacts with itself via triple and quartic couplings. 
-It is interesting to note that the Higgs boson can be understood as an excitation on a transversal section of the original potential. 
-The other degrees of freedom present in the theory, namely the longitudinal excitations along the direction in which the vacuum is symmetric, were "eaten" by the massless fields  $\vec{B}$ e $A$, as new degrees of freedom related to their masses.
+It is interesting to note that the Higgs boson can be understood as an excitation in the transverse direction to the direction in which the vacuum of the Higgs potential is symmetric. 
+The other degrees of freedom present in the theory, namely the longitudinal excitations along the direction in which the vacuum is symmetric, were "eaten" by the massless fields  $\vec{B}$ and $A$, as new degrees of freedom related to their masses.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -187,7 +203,7 @@ The other degrees of freedom present in the theory, namely the longitudinal exci
 
 In the previous section, the Higgs mechanism was used to break electroweak symmetry and give mass to three of the four gauge bosons present in the theory. 
 However, the SM fermion sector also presents problems when dealing with canonical mass terms. 
-Namely, knowing that left-handed and right-handed fermions are, respectively, doubles and singlets under the electroweak interaction, their gauge transformations will be different, and terms such as $m_f  \bar{f} f = m_f  \left( \bar{f}_L f _R + \bar{f}_R f _L \right)$ will break the gauge invariance.
+Namely, knowing that left-handed and right-handed fermions are, respectively, doublets and singlets under the electroweak interaction, their gauge transformations will be different, and terms such as $m_f  \bar{f} f = m_f  \left( \bar{f}_L f _R + \bar{f}_R f _L \right)$ will break the gauge invariance.
 
 However, we can note that terms such as $\bar{f}_L \Phi$ are an electroweak singlet and $\bar{f}_R \Phi^\dagger$ are a doublet (meaning that the Higgs interaction with fermions changes their chirality). 
 Therefore, one can construct a new type of mass term based on fermionic Yukawa interactions with the Higgs field:
@@ -195,7 +211,6 @@ Therefore, one can construct a new type of mass term based on fermionic Yukawa i
 \begin{equation}
 g_f \left[ \bar{f}_L \Phi f_R + \bar{f}_R \Phi ^\dagger f_L \right] \label{eq_yuk}
 \end{equation}
-
 which preserves the $SU(2)$ gauge invariance.
 
 Using the choice of vacuum from the previous section, we can write an example of this mass term applied to the bottom quark:
@@ -212,13 +227,12 @@ In order to give mass also to the top quark, we must use the charge conjugate to
 \begin{equation}
 \Phi ^c = i \sigma ^2 \Phi ^* = \frac{1}{\sqrt{2}} \left( \begin{array}{c} v + H\left( x \right) \\ 0  \end{array} \right),
 \end{equation}
-
 which rotates the original Higgs doublet preserving the vacuum symmetry.
 
 The same mechanism can be applied to the leptons. 
 However, due to the non-existence of right-handed neutrinos, it cannot be applied to give mass to the left-handed neutrinos. 
 As of today, we know neutrinos indeed have mass, albeit small, and specific mechanisms have been developed to address this issue. 
-But, given that the neutrino masses are several orders of magnitude smaller than the characteristic scale of the electroweak interactions (vacuum expectation value), the approximation that the neutrinos are massless is well justified. 
+But, given that the neutrino masses are several orders of magnitude smaller than the characteristic scale of the electroweak interactions (vacuum expectation value), the approximation that the neutrinos are massless is well justified in the SM. 
 
 %Um ponto interessante de se notar é como o mecanismo se encaixa com os elementos do Modelo Padrão. Por exemplo, os números quânticos dos férmions são sempre tais que tornam possível construções invariantes por $SU\left( 2 \right)_L \otimes U\left( 1 \right)_Y$ envolvendo $\Phi$. Caso os férmions tivessem cargas elétricas diferentes, seria necessário outra estrutura para torná-los massivos. O que acontece, porém, é a unificação do mecanismo de geração de massas para todas as partículas do Modelo Padrão através da interação com o bóson de Higgs.
 
@@ -246,16 +260,13 @@ For other types of colliders, this picture might be different, such as for the T
 
 While the Higgs boson, and the electroweak symmetry breaking mechanism applied to the SM itself, was predicted in the 60s, it wasn't until 2012 that it was experimentally verified. 
 The CMS and ATLAS experiments, working at the Large Hadron Collider at CERN, detected statistically significant signals compatible with the SM predictions for the Higgs boson, using approximately 5 fb$^{-1}$ of 7 TeV and 8 TeV data \cite{higgs_cms, higgs_atlas}. 
+The discovery of the SM-like Higgs boson in 2012 led to the Nobel prize to be awarded to some of the leading theorists behind the electroweak symmetry breaking mechanism: Peter Higgs and François Englert. Robert Brout, Englert's long-time collaborator and also an important contributor to the model, unfortunately passed in 2011, before the discovery and the award. 
 
 In 2012, it was not possible to say with certainty that this anomaly was, without a doubt, the SM Higgs. 
 However, five years later, the data that has been analyzed by the LHC experiments has confirmed the SM predictions for this new particle, with a mass measured as about $125$ GeV, including its spin (scalar) and CP eigenvalue (even) \cite{spin_cms, spin_atlas}. 
 
-The Higgs boson decays to electroweak bosons, $H\rightarrow WW$, $H\rightarrow ZZ$ and $H\rightarrow \gamma\gamma$, have been measured and these branching fractions, assuming SM-like cross section, match the expected values. 
-The Higgs decay modes to pairs of fermions have yet to be detected with the statistical significance seen in its bosonic modes. 
-However, decays involving the third generation of quarks and leptons, $H\rightarrow b\bar{b}$ and $H\rightarrow \tau\tau$, have seen evidence of such processes when combining searches in different production channels. 
-The latest results summary published by CMS and ATLAS can bee seen in Figure \ref{fig:hig_run1_summary} in terms of signal strengths ($\mu$), defined as the ratio of the measured Higgs boson rate to its SM prediction \cite{higgs_pros_cms_atlas}.
 
-\begin{figure}[H]        
+\begin{figure}[h]        
 \centering                
 {\includegraphics[width=0.45\textwidth]{figures/higgs_prod_run1}}
 {\includegraphics[width=0.45\textwidth]{figures/higgs_decay_run1}}
@@ -263,15 +274,14 @@ The latest results summary published by CMS and ATLAS can bee seen in Figure \re
 \label{fig:hig_run1_summary}      
 \end{figure}    
 
-Other than measuring signal strengths, an important part of studying the Higgs boson is understanding its differential properties. 
-Measuring kinematic distributions related to the Higgs candidates, such as the transverse momentum and pseudo-rapidity profiles, can indicate possible corrections and beyond the SM contributions to the production mechanisms. 
-For example, new particles appearing in the gluon fusion loop can have different coupling structures that induce kinematic correlations not present in the SM. 
-In Figure \ref{fig:hig_diff}, the CMS differential Higgs boson measurements using the $H\rightarrow\gamma\gamma$ channel in terms of the Higgs transverse momentum and rapidity using 8 TeV data \cite{higgs_diff}. 
+The Higgs boson decays to electroweak bosons, $H\rightarrow WW$, $H\rightarrow ZZ$ and $H\rightarrow \gamma\gamma$, have been measured and these branching fractions, assuming SM-like cross section, match the expected values. 
+The Higgs decay modes to pairs of fermions have yet to be detected with the statistical significance seen in its bosonic modes. 
+However, decays involving the third generation of quarks and leptons, $H\rightarrow b\bar{b}$ and $H\rightarrow \tau\tau$, have seen evidence of such processes when combining searches in different production channels. 
+The latest results summary published by CMS and ATLAS can bee seen in Figure \ref{fig:hig_run1_summary} in terms of signal strengths ($\mu$), defined as the ratio of the measured Higgs boson rate to its SM prediction \cite{higgs_pros_cms_atlas}.
 
-
-\begin{figure}[H]        
+\begin{figure}[h]        
 \centering                
-{\includegraphics[width=0.45\textwidth]{figures/higgs_diff_pt}}
+{\includegraphics[width=0.4\textwidth]{figures/higgs_diff_pt}}
 {\includegraphics[width=0.45\textwidth]{figures/higgs_diff_rap}}
 \caption{ CMS differential Higgs boson measurements using the $H\rightarrow\gamma\gamma$ channel in terms of the Higgs transverse momentum (left) and rapidity (right) using 8 TeV data. The measurements are compared to different Monte Carlo generators. }
 \label{fig:hig_diff}      
@@ -279,16 +289,24 @@ In Figure \ref{fig:hig_diff}, the CMS differential Higgs boson measurements usin
 
 
 
+Other than measuring signal strengths, an important part of studying the Higgs boson is understanding its differential properties. 
+Measuring kinematic distributions related to the Higgs candidates, such as the transverse momentum and pseudo-rapidity profiles, can indicate possible corrections and beyond the SM contributions to the production mechanisms. 
+For example, new particles appearing in the gluon fusion loop can have different coupling structures that induce kinematic correlations not present in the SM. 
+In Figure \ref{fig:hig_diff}, the CMS differential Higgs boson measurements using the $H\rightarrow\gamma\gamma$ channel in terms of the Higgs transverse momentum and rapidity using 8 TeV data \cite{higgs_diff}. 
+
+
+
+
 \section{Higgs as a Probe of New Physics}
 
 The experimental confirmation of the Higgs boson marks another success of the SM. 
-However, the measured mass of the Higgs boson poses a naturalness conundrum: being a scalar, the Higgs mass is subject to higher order corrections from loops that contain spin 0, 1/2 and 1 particles, which diverge as a function os the energy scale.  
+However, the measured mass of the Higgs boson poses a naturalness conundrum: being a scalar, the Higgs mass is subject to higher order corrections from loops that contain spin 0, 1/2 and 1 particles, which diverge as a function of the energy scale.  
 If the SM is valid for all energy scales, these corrections would take the Higgs mass to its highest possible energy scale, the Planck scale ($\approx 10^{19}$ GeV), which is in clear contrast with the Higgs mass value known today. 
 In principle, it is possible that the higher order corrections to the Higgs mass cancel out in a way to leave $m_{H} = 125$ GeV, however, such an "accidental" fine tuning is not well motivated within the theory. 
-The presence of these two distinct and far apart energy scales in the electroweak theory (Higgs mass and electroweak vacuum versus the Planck scale) is called the Hierarchy problem. 
+The presence of these two distinct and far apart energy scales in the electroweak theory (Higgs mass and electroweak vacuum versus the Planck scale) is called the hierarchy problem. 
 
 Several models and extensions to the SM have been proposed to solve the Hierarchy problem. 
-Among them, and perhaps the most famous, is Supersymmetry (SUSY) \cite{GGMa,GGMd2,GGMd3,GGMd4,GGMd5,GGMd1,GGMd}. 
+Among them, and perhaps the most famous, is supersymmetry (SUSY) \cite{GGMa,GGMd2,GGMd3,GGMd4,GGMd5,GGMd1,GGMd}. 
 SUSY explains the higher order cancelations by postulating a new symmetry of nature that correlates bosons and fermions. 
 By symmetrizing the bosonic and fermionic contributions to the Higgs mass corrections, the higher order terms are canceled out naturally (since fermion loops contribute with an overall minus sign relative to boson loops). 
 
@@ -297,7 +315,7 @@ However, this has not been observed, which means that, if SUSY exists, it must b
 In order to still address the Hierarchy problem, the SUSY breaking scale must be such that the superpartner masses should not exceed $\mathcal{O}(1$ TeV$)$. 
 This requirement also has the feature that it unifies the QCD and electroweak coupling constants at $\mathcal{O}(10^{16}$ GeV$)$.
 
-The simplest supersymmetric extension of the SM, known as the Minimal Supersymmetric SM (MSSM), adds the minimal amount of extra fields to the current model to realized SUSY - in the MSSM, each SM fermion/boson will have one boson/fermion superpartner. 
+The simplest supersymmetric extension of the SM, known as the Minimal Supersymmetric SM (MSSM), adds the minimal amount of extra fields to the current model to realize SUSY - in the MSSM, each SM fermion/boson will have one boson/fermion superpartner. 
 It also introduces changes to the Higgs sector: two Higgs doublets are required in order to perform the electroweak symmetry breaking, and give masses to both up and down type quarks and leptons. 
 The existence of this extra doublet now implies that, instead of one Higgs boson mass state, five new bosons exist: two neutral CP-even bosons: $h$, $H$ (one of which is usually identified as the particle discovered in 2012); one neutral CP-odd boson (pseudoscalar): $A$; and two charged charged bosons: $H^{\pm}$. 
 
@@ -307,8 +325,8 @@ These models are also characterized by new phenomena related to the SM-like Higg
 For the first case to happen, at least one of the new resonances in the model, $H$ for example, must be heavier than the SM-like Higgs ($h$), which then allows decays such as $H\rightarrow h+X$, where $X$ can either be a $Z$, an $A$ or even another $h$. 
 Alternatively, if $A$, for example, is lighter than $m_{h}/2 \approx 62.5$ GeV, decays such as $h\rightarrow AA$ become possible. 
 
-These specific models serve as illustrations of how a modification to the SM can lead to exotic physics to appear in the Higgs sector. 
-More generally, looking for new physics with the Higgs boson is a justifiable ansatz in both phenomenological terms - most extensions to the SM predict specific modifications of the Higgs sector - and in theoretical terms - the Higgs sector is intimately tied to some of the most undesirable features of the SM, such as the Hierarchy problem. 
+These specific models serve as illustrations of how a modification to the SM can lead to exotic physics appearing in the Higgs sector. 
+More generally, looking for new physics with the Higgs boson is a justifiable ansatz in both phenomenological terms - most extensions to the SM predict specific modifications of the Higgs sector - and in theoretical terms - the Higgs sector is intimately tied to some of the most undesirable features of the SM, such as the hierarchy problem. 
 Another one of these undesirable features is the electroweak vacuum stability problem.
 
 The electroweak vacuum in the SM is defined as the vacuum expectation value given by the Higgs potential minimum: $v \approx 246$ GeV. 
@@ -316,15 +334,15 @@ Even though the Higgs potential has one global minimum associated to this vacuum
 The impact of these corrections are mostly dominated by the Higgs-top quark Yukawa coupling, and so, the stability of the electroweak vacuum depends on the Higgs mass and on the top quark mass, as seen in Figure \ref{fig:hig_stab} \cite{vacuum_stab}. 
 
 Given the current values for the Higgs boson and the top quark masses, our universe currently lies at a meta-stable point. 
-These instabilities in the electroweak vacuum can have catastrophic consequences to the fate of the universe, since the vector boson masses, and therefore the strength of the weak interactions, are tied to this value. 
+These instabilities in the electroweak vacuum can have catastrophic consequences for the fate of the universe, since the vector boson masses, and therefore the strength of the weak interactions, are tied to this value. 
 If it is indeed confirmed that we live in such a state, with more precise measurements for the mass parameters, new mechanisms must be in place to safeguard the universe against these features.
 
 
  \begin{figure}[h]        
 \centering                
-{\includegraphics[align=c,width=0.45\textwidth]{figures/higgs_vac_stab}}
+{\includegraphics[align=c,width=0.4\textwidth]{figures/higgs_vac_stab}}
 {\includegraphics[align=c,width=0.45\textwidth]{figures/higgs_pot_mod}}
-\caption{ CMS differential Higgs boson measurements using the $H\rightarrow\gamma\gamma$ channel in terms of the Higgs transverse momentum (left) and rapidity (right) using 8 TeV data. The measurements are compared to different Monte Carlo generators. }
+\caption{ (Left) Stability of the Higgs potential after radiative corrections, as a function of the Higgs boson mass and the top quark mass. (Right) The effect of radiative corrections on the shape of the Higgs potential. }
 \label{fig:hig_stab}      
 \end{figure}    
 

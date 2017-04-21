@@ -3,7 +3,7 @@
 After the cuts for QCD-like events are applied, the background that arises from electrons-faking-photons becomes the dominant for the kinematic range of this analysis. We have developed a data-driven method to obtain an accurate estimation of the electron-faking-photon background.
 The main physical process behind this background is the $W\rightarrow e \nu$ production, which has a kinematic signature (fake photon \et, transverse mass, etc) very similar to the signal sample and large production cross section.
 
-The method for estimating the electron-faking-photon contamination in the signal sample was done by constructing a control sample, similar to the signal sample, but enriched by electrons and not signal photons. This was achieved by reverting the pixel seed veto (PSV) in the photon ID requirements. The pixel seed veto cut is not the standard electron rejection tool in the $e-\gamma$ POG recommended photon ID; however, it has been shown to have a much smaller fake rate compared to the official electron rejection cut, the conversion safe electron veto. The PSV has been used in other photon-related analyses, such as the SUSY Photon and Exotica High Pt Monophoton analysis, in which the electron-faking-photon background is a dominant one.
+The method for estimating the electron-faking-photon contamination in the signal sample was done by constructing a control sample, similar to the signal sample, but enriched by electrons and not signal photons. This was achieved by inverting the pixel seed veto (PSV) in the photon ID requirements. The pixel seed veto cut is not the standard electron rejection tool recommended by CMS; however, it has been shown to have a much smaller fake rate compared to the official electron rejection cut, the conversion safe electron veto. The PSV has been used in other photon-related analyses, such as the search for SUSY in final states involving photons and the high $E_{T}$ monophoton analysis, in which the electron-faking-photon background is a dominant one.
 
 After the control sample is created, it needs to be normalized by the number of expected electrons-faking-photons in the signal sample. This normalization can be obtained by the calculation of the fake rate of the PSV regarding electrons-faking-photons. It should be noted that this is not the fake rate of the full set of photon ID requirements, but only of the PSV cut. 
 
@@ -33,7 +33,7 @@ Therefore,
 F_{e \rightarrow \gamma} = \frac{R}{1+R}.
 \end{eqnarray}
 
-The ratio and the fake rate can be measured using a tag-and-probe method. This method was applied to the SinglePhotonParked signal dataset. Analyzing events in which the $Z$ decays to electrons, we can reconstruct the number of events in four different cases:
+The ratio and the fake rate can be measured using a tag-and-probe method. This method was applied to the signal dataset used in the analysis. Analyzing events in which the $Z$ decays to electrons, we can reconstruct the number of events in four different cases:
 
 \begin{itemize}
 \item $Z_{e\gamma}$: one of the electrons of the $Z$ decay is identified an electron and the other is reconstructed as a photon object;
@@ -56,8 +56,8 @@ With that system, we can infer that the calculation of the ratio can be performe
 R  = \frac{F_{e\rightarrow \gamma}}{\epsilon_{\gamma_e}} = \frac{N_{e\gamma}}{N_{e\gamma_e}} = \frac{1}{2} \frac{N_{\gamma_e \gamma}}{N_{\gamma_e \gamma_e }}
 \end{eqnarray}
 
-The $Z$ shape was obtained from the template of a DY$\to ee$ MC at generator level. This template was then convoluted with a Gaussian to simulate detector resolution effects. The parameters of the Gaussian were then fitted to the obtained invariant mass distribution from the different categories detailed above. For the calculation of $N_{xy}$, the signal function was  integrated in the $\pm 2\sigma$ region to obtain the number of signal events. The fits for the $Z\rightarrow e \gamma$ and $Z \rightarrow e \gamma_e$ cases can be seen in Fig. \ref{Zep} and \ref{Zek}.
-The background shape for the fit was estimated by the convolution of an error function and a decaying exponential function (RooCMSShape). The background in the Fig. \ref{Zep} is originated form the combinatorics of the electron plus non-resonant photon-like objects, such as real photons, jets faking photons and electrons faking photons originated from other interactions. Because the electron is most likely coming from the resonant Z production, the yield drops at lower values of $M_{e\gamma}$. The small disagreement between the fits and the data aroung $85$ GeV comes from the trigger and selection acceptances, since our trigger photon object selection is $30$ GeV and our probe selection \pt for this study is $35$ GeV. 
+The $Z$ shape was obtained from the template of a DY$\to ee$ MC at generator level. This template was then convoluted with a Gaussian to simulate detector resolution effects. The parameters of the Gaussian were then fitted to the obtained invariant mass distribution from the different categories detailed above. For the calculation of $N_{xy}$, the signal function was  integrated in the $\pm 2\sigma$ region to obtain the number of signal events. The fits for the $Z\rightarrow e \gamma$ and $Z \rightarrow e \gamma_e$ cases can be seen in Figures \ref{Zeall}.
+The background shape for the fit was estimated by the convolution of an error function and a decaying exponential function (RooCMSShape). The background in the Figures \ref{Zeall} originates from the combinatorics of the electron plus non-resonant photon-like objects, such as real photons, jets faking photons and electrons faking photons originated from other interactions. Because the electron is most likely coming from  resonant Z production, the yield drops at lower values of $M_{e\gamma}$. The small disagreement between the fits and the data aroung $85$ GeV comes from the trigger and selection acceptances, since our trigger photon object selection is $30$ GeV and our probe selection \pt for this study is $35$ GeV. 
 
 %\begin{table}[H]
 %\begin{center}
@@ -73,10 +73,15 @@ The background shape for the fit was estimated by the convolution of an error fu
 
 \begin{figure}[H]
 \begin{center}
-{\label{Zep}\includegraphics[width=0.45\textwidth]{efake_figs/Zep_FullMass.pdf}}
-{\label{Zek}\includegraphics[width=0.45\textwidth]{efake_figs/Zek_FullMass.pdf}}
+\includegraphics[trim={0 0 0 0.78cm},clip,width=0.45\textwidth]{efake_figs/Zep_FullMass.pdf}
+\includegraphics[trim={0 0 0 0.78cm},clip,width=0.45\textwidth]{efake_figs/Zek_FullMass.pdf}
 %\includegraphics[scale=0.5]{efake_figs/Zep_FullMass.pdf}
-\caption{Fit of the $Z$ invariant mass for the $Z\rightarrow e \gamma$ case and the $Z\rightarrow e \gamma_e$ case.}
+\caption{Fit of the $Z$ invariant mass for the $Z\rightarrow e \gamma$ case (left) and the $Z\rightarrow e \gamma_e$ case (right). The fit parameters refer to the background shape, a convolution of an error function and an exponential function, and the gaussian smearing of the Z shape from MC.}
+\begin{picture}(0,0)
+\put(-73,191){\rotatebox{0}{\rlap{\makebox[2.38cm]{\hrulefill}}}}
+\put(129,191){\rotatebox{0}{\rlap{\makebox[2.38cm]{\hrulefill}}}}
+\end{picture}
+
 \label{Zeall}
 \end{center}
 \end{figure}
@@ -104,7 +109,7 @@ F_{e\rightarrow \gamma} &=& \left( 2.32\pm 0.03 \right)\%.
 
 \subsubsection{Electron $\rightarrow$ Photon Fake Rate Dependencies on \pt, $N_{Vtx}$, $N_{Trk}$}
 
-It has been shown before, in the environment of the SUSY Photon analysis, that the PSV fake rate is dependent on variables such as the probe $p_T$, the number of tracks associated with the primary vertex and the number of reconstructed primary vertices in the event. The nature of the two last dependencies are deeply rooted in the track reconstruction and matching algorithm. 
+It has been shown before, for example in the SUSY photon analysis, that the PSV fake rate is dependent on variables such as the probe $p_T$, the number of tracks associated with the primary vertex and the number of reconstructed primary vertices in the event. The nature of the two last dependencies are rooted in the track reconstruction and matching algorithm. 
 
 To check the dependency of the fake rate in the three variables mentioned, the fake rate was calculated in exclusive bins. In each bin, the signal template used was the corresponding bin in the MC signal sample. Each fit was done individually for every bin.
 
@@ -116,14 +121,14 @@ In the plots in Figure \ref{fig:FR_all}, we see how the PSV fake rate depends on
 {\includegraphics[width=0.45\textwidth]{efake_figs/FakeRate_Pt.pdf}}
 {\includegraphics[width=0.45\textwidth]{efake_figs/FakeRate_PU.pdf}}
 {\includegraphics[width=0.45\textwidth]{efake_figs/FakeRate_Trk.pdf}}
-\caption{Fake rate vs. probe $p_T$, number of primary vertices and track multiplicity.}
+\caption{Fake rate vs. probe $p_T$ (top left), number of primary vertices (top right) and track multiplicity (bottom).}
 \label{fig:FR_all}
 \end{center}
 \end{figure}
 
-As shown in the plots, there is a non-trivial dependency of the fake rate on the variables probed. There are different ways to solve this feature. The most complete one would be to achieve a multi-parameter description of the fake rate, including a 3-dimensional function with dependencies of the fake rate on each variable. That, however, demands a thorough study of these dependencies and a functional form to perform this task. A second way would be to choose one of the parametrizations, including the flat one, and prescribe a systematical error to that assumption. To know how much one choice impacts the fake rate, we can look at the final result and observe how much the yields change with each assumption.
+As shown in the plots, there is a non-trivial dependency of the fake rate on the variables probed. There are different ways to solve this feature. The most complete one would be to achieve a multi-parameter description of the fake rate, including a 3-dimensional function with dependencies of the fake rate on each variable. That, however, demands a thorough study of these dependencies and a functional form to perform this task. A second way would be to choose one of the parametrizations, including the flat one, and assign a systematic error to that assumption. To know how much one choice impacts the fake rate, we can look at the final result and observe how much the yields change with each assumption.
 
-In our case, the final result is the control sample of photon-like objects that fail the pixel seed veto normalized by the fake rate, which represents the estimation of our electron faking photon contamination in the signal region. The plots in Figure \ref{CS_params} show the shape and yields of this control sample when normalized by the different parametrizations of the fake rate. When checking the differences in number of events of each bin, we see that they are all within $5\%$ of each other, being higher around the $p_T$ peak and approaching $0$ for higher values. Therefore, it is safe to choose any specific parametrization and assume a systematic error of $5\%$ on the number of events to make sure that the different assumptions are compatible. With these assumptions, we choose to use the flat parametrization, since it only involves one fit and it has been shown to be much more stable with respect to different fit functions, for signal and background.
+In our case, the final result is the control sample of photon-like objects that fail the pixel seed veto normalized by the fake rate, which represents the estimation of our electron faking photon contamination in the signal region. The plots in Figure \ref{CS_params} show the shape and yields of this control sample when normalized by the different parametrizations of the fake rate. When checking the differences in number of events of each bin, we see that they are all within $5\%$ of each other, being higher around the $p_T$ peak and approaching zero for higher values. Therefore, it is safe to choose any specific parametrization and assume a systematic error of $5\%$ on the number of events to make sure that the different assumptions are compatible. With these assumptions, we choose to use the flat parametrization, since it only involves one fit and it has been shown to be much more stable with respect to different fit functions, for signal and background.
 
 
 \begin{figure}[H]
@@ -132,7 +137,7 @@ In our case, the final result is the control sample of photon-like objects that 
   {\includegraphics[width=0.45\textwidth]{efake_figs/CS_param_eta.pdf}}
 \\
   {\includegraphics[width=0.45\textwidth]{efake_figs/CS_param_phi.pdf}}
-\caption{Control sample distribution of photon $p_T$, $\eta$ and $\phi$.}
+\caption{Control sample distribution of photon $p_T$ (top left), $\eta$ (top right) and $\phi$ (bottom).}
 \label{CS_params}
 \end{center}
 \end{figure}
@@ -149,7 +154,7 @@ The generator-level fake rate is defined as:
 F_{gen} = \frac{\textrm{\#Medium ID Photons \&\& Matched to Gen Electrons \&\& Pass the PSV}}{\textrm{\#Medium ID Photons \&\& Matched to Gen Electrons}}. \label{gen_fake}
 \end{eqnarray}
 
-Here, the Medium photon ID is the one used on the analysis, including all the shower shape cuts to remove spikes and other contributions.
+Here, the Medium photon ID is the one used in the analysis, including all the shower shape cuts to remove spikes and other contributions.
 
 We compare the results of the two measurements, generator-level and reco-level, on the plots in Figure \ref{closure_old}.
 
@@ -159,7 +164,7 @@ We compare the results of the two measurements, generator-level and reco-level, 
 {\includegraphics[width=0.45\textwidth]{efake_figs/closure_old_pu.pdf}}
 \\
 {\includegraphics[width=0.45\textwidth]{efake_figs/closure_old_trk.pdf}}
-\caption{Closure test in probe $p_T$,number of reconstructeed primary vertices and track multiplicity .}
+\caption{Closure test in probe $p_T$ (top left) ,number of reconstructeed primary vertices (top right) and track multiplicity (bottom). The filled dots represent the fake rate calculated with the $Z\rightarrow ee$ method described previously. The open dots represent the fake rate calculated using the generator information described here. In order for the $Z\rightarrow ee$ method to close, those two distributions should be the same. }
 \label{closure_old}
 \end{center}
 \end{figure}
@@ -180,21 +185,21 @@ We compare the results of the two measurements, generator-level and reco-level, 
 %\end{center}
 %\end{figure}
 
-The lines represent the fake rate results from the flat assumption. For the generator-level fake rate, that is just the ratio on equation \ref{gen_fake} on all events, while the parametrized fake rate is the ratio in each bin. As shown, there is a significant discrepancy between the two measurements. With those results, we can only say that the method is closed within 20\%. The 20\% number comes from the difference between the flat fake rates on generator-level and reco-level results.
+The lines represent the fake rate results from the flat assumption. For the generator-level fake rate, that is just the ratio from equation \ref{gen_fake} on all events, while the parametrized fake rate is the ratio in each bin. As shown, there is a significant discrepancy between the two measurements. With those results, we can only say that the method is closed within 20\%. The 20\% comes from the difference between the flat fake rates from generator-level and reco-level results.
 
-We investigated the cause of this result and noticed that it comes about because of a "hidden" primary vertex matching on the tag-and-probe method. When using the tag and probe for electrons as tag and photons as probe, the photon ends up being matched to the hardest primary vertex because the electron, in the electron ID requirements, is indeed matched. When we require the invariant mass of the pair to be close to the $Z$ peak, the electron PV matching is indirectly passed to the probe photon, since they must come from the same source. This requirement does not exist on the gen-level fake rate, which is basically a counting experiment.
+We investigated the cause of this result and noticed that it arises from a "hidden" primary vertex matching in the tag-and-probe method. When using the tag-and-probe for electrons as tag and photons as probe, the photon ends up being matched to the hardest primary vertex because the electron, in the electron ID requirements, is indeed matched. When we require the invariant mass of the pair to be close to the $Z$ peak, the electron PV matching is indirectly passed to the probe photon, since they must come from the same source. This requirement does not exist on the gen-level fake rate, which is basically a counting experiment.
 
-The importance of the PV matching requirement comes about because of the nature of the DY$\to ee$ process. Since it is a low multiplicity process, i.e., there will not be many objects naturally from the hard scatter process, the $Z$ might not come from the hardest reconstructed primary vertex of the event. Therefore, when that happens, we measure the fake rate from a  primary vertex that is not the hardest and, therefore, has fewer tracks than the primary vertex assumed. Since we know that the fake rate increases sharply when there are few tracks in the primary vertex, that explains why, in plot \ref{closure_old}, there is an increase in higher values of NTrack - those are actually hard scatter events with few tracks that were mistakenly matched to the hardest PV.
+The importance of the PV matching requirement comes about because of the nature of the DY$\to ee$ process. Since it is a low multiplicity process, i.e., there will not be many objects naturally from the hard scatter process, the $Z$ might not come from the hardest reconstructed primary vertex of the event. Therefore, when that happens, we measure the fake rate from a  primary vertex that is not the hardest and, therefore, has fewer tracks than the primary vertex assumed. Since we know that the fake rate increases sharply when there are few tracks in the primary vertex, that explains why, in Figure \ref{closure_old}, there is an increase in higher values of NTrack - those are actually hard scatter events with few tracks that were mistakenly matched to the hardest PV.
 
 To overcome these problems, we match the gen-level particles used for the gen-level fake rate to the hardest reconstructed primary vertex with the following cuts (from the muon ID POG recommendations):
 
 \begin{itemize}
-\item $Dz < 0.5$;
-\item $Dxy < 0.2$.
+\item $D_z < 0.5$;
+\item $D_{xy} < 0.2$.
 \end{itemize}
 
-These variables are obtained directly from methods of the RECO::Candidate class inherited by the RECO::GenParticle.
-With that, we have the plots on Figure \ref{closure_all}.
+%These variables are obtained directly from methods of the RECO::Candidate class inherited by the RECO::GenParticle.
+With those requirements, we have the plots on Figure \ref{closure_all}.
 
 \begin{figure}[H]
 \begin{center}
@@ -223,7 +228,7 @@ With that, we have the plots on Figure \ref{closure_all}.
 %\end{center}
 %\end{figure}
 
-We can see that the agreement between the gen-level and reco-level fake rates improves and the method closes within 4\%.
+We can see that the agreement between the gen-level and reco-level fake rates improves and the method closes within 4\%. This means that the fake rate measured in data and MC agree with an uncertainty of $4\%$.
 
 \subsubsection{Systematic Uncertainty on the Electron $\rightarrow$ Photon Fake Rate Measurement}
 Two of the main systematic errors have been discussed in the previous section:

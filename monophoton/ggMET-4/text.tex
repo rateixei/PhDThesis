@@ -10,7 +10,7 @@ The Feynman diagrams for the non-resonant and resonant decays can be seen in Fig
 
 Previous searches for the $\gamma\gamma+\MET$ final state in the low energy regime include searches for the non-resonant decay in the supersymmetric scenario described above. CMS and ATLAS have set upper limits on the branching ratio of this decay, with the Higgs boson produced in association with a $Z$ boson \cite{lowmonophoton} and through vector boson fusion \cite{ATLAS:2015bra}.
 
-In this study, we devise a search strategy for the $\gamma\gamma+\MET$ final state, motivated by the exotic decays of the Higgs described above. We estimate the sensitivity of this search for $100$ fb$^{-1}$ of $\sqrt{s}=14$ TeV $pp$ data from the LHC.
+In this study, we devise a search strategy for the $\gamma\gamma+\MET$ final state, motivated by the exotic decays of the Higgs described above. We estimate the sensitivity of this search for $100$ fb$^{-1}$ of $\sqrt{s}=14$ TeV $pp$ data from the LHC. This study was produced for the LHC Higgs Cross-Section Working Group's CERN Yellow Report 4, titled "Handbook of LHC Higgs cross sections: 4. Deciphering the nature of the Higgs sector" \cite{lhchxswg_yr4}. 
 
 
 %%
@@ -30,7 +30,7 @@ Signal and background Monte Carlo (MC) samples were generated with Madgraph 5~\c
 %The detector card used in DELPHES was based on the CMS detector card, but updated to currently used parameters, such as isolation cone sizes and jet algorithm parameters.
 The samples were produced at $\sqrt{s} = 14$ TeV.
 
-The object reconstruction and identification are performed with DELPHES, according to the information provided in the detector configuration card. For the photons reconstruction and identification, we assume an efficiency of $95\%$ in the electromagnetic calorimeter barrel ($|\eta| < 1.5$) and $85\%$ in the endcap ($1.5 < |\eta| < 2.5$). We also impose an isolation cut on the photons by requiring all particle flow candidates within a cone of $\Delta R < 0.3$ to have an energy ratio less than 0.1 with respect to the photon candidate. For muons, we assume an efficiency of $95\%$ for the whole detector acceptance ($|\eta| < 2.5$). An isolation cut similar to the photons is also applied. Jets are reconstructed with the anti-$k_T$ algorithm with $R = 0.4$, similar to the Run 2 analyses at CMS.
+The object reconstruction and identification are performed with DELPHES, according to the information provided in the detector configuration card. For the photon reconstruction and identification, we assume an efficiency of $95\%$ in the electromagnetic calorimeter barrel ($|\eta| < 1.5$) and $85\%$ in the endcap ($1.5 < |\eta| < 2.5$). We also impose an isolation cut on the photons by requiring all particle flow candidates within a cone of $\Delta R < 0.3$ to have an energy ratio less than 0.1 with respect to the photon candidate. For muons, we assume an efficiency of $95\%$ for the whole detector acceptance ($|\eta| < 2.5$). An isolation cut similar to the photons is also applied. Jets are reconstructed with the anti-$k_t$ algorithm with $R = 0.4$, similar to the Run 2 analyses at CMS.
 
 \vspace{0.2cm} \textbf{Signal MC Samples}
 
@@ -48,7 +48,7 @@ A branching ratio of ${B}(H\to\gamma\gamma+\MET) = 10\%$ is assumed for the sign
 
 Although this analysis is not guaranteed to be entirely free from QCD multi-jet backgrounds, it has been shown in similar analyses (such as \cite{lowmonophoton}) that it is possible to reduce the QCD to a sub-dominant contribution. As such, the remaining backgrounds for this analysis arise predominantly from the single boson ($\gamma$/$Z$/$W$) plus jets and diboson processes.
 
-The background samples were modeled using the Snowmass LHE simulation samples~\cite{Anderson:2013kxz}. They consist of single boson samples ($\gamma/Z/W$) with at least one jet and inclusive diboson ($\gamma\gamma/Z\gamma/W\gamma/$ $WW/ZZ/WZ$) samples. No pure QCD sample was produced for this study. The samples include both hadronic and leptonic decays of the $W$ and $Z$ bosons. The cross subsections used for normalizing the single boson samples were estimated with MCFM~\cite{MCFM}, assuming an efficiency of $15\%$ for the 1 jet requirement (obtained with Madgraph). For the diboson samples, the cross subsections used were estimated from the reference \cite{Campbell:2011bn}. The cross subsections and number of events in the samples are shown in Table \ref{tab:sel_eff}.
+The background samples were modeled using the Snowmass LHE simulation samples~\cite{Anderson:2013kxz}. They consist of single boson samples ($\gamma/Z/W$) with at least one jet and inclusive diboson ($\gamma\gamma/Z\gamma/W\gamma/$ $WW/ZZ/WZ$) samples. No pure QCD sample was produced for this study. The samples include both hadronic and leptonic decays of the $W$ and $Z$ bosons. The cross sections used for normalizing the single boson samples were estimated with MCFM~\cite{MCFM}, assuming an efficiency of $15\%$ for the 1 jet requirement (obtained with Madgraph). For the diboson samples, the cross sections used were estimated from the reference \cite{Campbell:2011bn}. The cross sections and number of events in the samples are shown in Table \ref{tab:sel_eff}.
 
 
 \subsubsection{Event Selection}
@@ -63,7 +63,7 @@ On the other hand, triggering is one of the main challenges for the gluon fusion
 
 \begin{itemize}
 \item Asymmetric Diphoton Trigger: This trigger requires two photons with different $E_{T}$ and trigger-level identification requirements, plus a diphoton invariant mass cut. This type of trigger usually has a non-negligible turn-on curve in the leading and subleading photon  $E_{T}$.
-\item Symmetric Diphoton Trigger: This trigger requires two photons with the same $E_{T}$ requirement, without any extra requirement.
+\item Symmetric Diphoton Trigger: This trigger requires two photons with the same $E_{T}$ requirement, without any other requirements.
 \item $\gamma+\MET$ Trigger: This trigger requires only one barrel photon passing identification requirements and a $E_{T}$ requirement that is usually higher than the previous two triggers. In addition, there is a calorimetric \MET requirement. We expect non-negligible turn-on curves with respect to both photon and \MET for this trigger.
 \end{itemize}
 
@@ -101,7 +101,7 @@ The $ZH$-produced signal events are tagged through the decay of the $Z$ boson to
 The photon selection is chosen to maximize the signal acceptance in the $ZH$ case, with $E_{T}$ thresholds as low as possible. 
 %The final $ZH$ event selection is show in Table \ref{tab:sel_zh}.
 %
-The final event selection requirements for the gluon fusion  and $ZH$ channels are summarized in Table~\ref{tab:sel_all}. On this table, we use the following definitions for transverse mass:
+The final event selection requirements for the gluon fusion  and $ZH$ channels are summarized in Table~\ref{tab:sel_all}. In this table, we use the following definitions for transverse mass:
 %\begin{equation}
 \begin{align}
 M_{T}(\gamma\gamma,\MET) &= \sqrt{2E_{T}(\gamma\gamma)\MET(1-\cos(\Delta\phi(\gamma\gamma,\MET))}, \\
@@ -188,7 +188,7 @@ $M_{T}(\gamma\gamma+\MET, \mu\mu)$ & - & - & - & $> 400$ GeV\\
 
 To exploit the topology of the resonant signature, we apply an additional requirement of a $\pm10$ GeV mass window, in the diphoton invariant mass distribution ($M(\gamma\gamma)$), around the signal mass ($M_1$). The efficiencies for each individual process and the different searches, after the full selection (without the $M(\gamma\gamma)$ mass window requirement), are shown in Table \ref{tab:sel_eff}.
 
-For the ZH case, we also explore the strategy performed by CMS in their Run I result \cite{lowmonophoton}, in which one or more photons are required in the event, instead of two or more. In this case, we gain back the efficiency that is lost due to the inefficiency in reconstructing the subleading photon, which can have very low $E_T$. The selection is similar to what is described in Table \ref{tab:sel_all}, but without the $M(\gamma\gamma)$ cut or the mass window requirement for the non resonant topology. The other variables that use the diphoton information are instead reconstructed with the leading photon in the event.
+For the ZH case, we also explore the strategy performed by CMS in Run I \cite{lowmonophoton}, in which one or more photons are required in the event, instead of two or more. In this case, we gain back the efficiency that is lost due to the inefficiency in reconstructing the subleading photon, which can have very low $E_T$. The selection is similar to what is described in Table \ref{tab:sel_all}, but without the $M(\gamma\gamma)$ cut or the mass window requirement for the non resonant topology. The other variables that use the diphoton information are instead reconstructed with the leading photon in the event.
 
 \begin{table}[]
 \centering
@@ -248,10 +248,10 @@ We present the expected sensitivity of this search in terms of the necessary $h\
 
 In Figure \ref{fig:triggers} (left), we shown the signal efficiency for the different trigger selections presented and (right) the sensitivity plot for the gluon fusion case.
 %$5\sigma$ branching ratios for the different trigger scenarios in the gluon fusion analysis, in the resonant (left) and non-resonant (right) final states. 
-This plot shows that, after the full selection, the performance of the triggers is comparable. Although it's safe to assume that a diphoton trigger with a low $M(\gamma\gamma)$ cut will be present in the future trigger menus of CMS and ATLAS, we choose to perform the analysis in the $\gamma+\MET$ case. We make this choice as an effort to make the case for the existence of such a trigger strategy for the future LHC runs. While the diphoton triggers are designed with specific usages that are already well stablished, the $h\rightarrow\gamma\gamma+\MET$ analysis could be viewed as a benchmark for the $\gamma+\MET$ trigger for three reasons:
+This plot shows that, after the full selection, the performance of the triggers is comparable. Although it's safe to assume that a diphoton trigger with a low $M(\gamma\gamma)$ cut will be present in the future trigger menus of CMS and ATLAS, we choose to perform the analysis in the $\gamma+\MET$ case. We make this choice as an effort to make the case for the existence of such a trigger strategy for the future LHC runs. While the diphoton triggers are designed with specific usages that are already well established, the $h\rightarrow\gamma\gamma+\MET$ analysis could be viewed as a benchmark for the $\gamma+\MET$ trigger for three reasons:
 \begin{itemize}
     \item It's a trigger that is already present at the LHC experiments, but can be retuned with a specific analysis as benchmark;
-    \item A dedicated trigger for this analysis requiring two photons might not be as efficient at trigger legel, given the soft spectrum of the second photon;
+    \item A dedicated trigger for this analysis requiring two photons might not be as efficient at trigger level, given the soft spectrum of the second photon;
     \item This trigger can also be used for other exotic searches, such as the extension to low energies of the dark matter searches in the monophoton channel.
 \end{itemize}
 %assumption to have the diphoton trigger in the future trigger menus for CMS and ATLAS for different searches that involve low energy diphotons, the \gamma+\MET trigger outperforms the other two possibilities, for both resonant and non-resonant topologies. This is due to the fact that the subleading photon $E_{T}$ requirement can be very low since we trigger on the leading photon and there is no trigger-level requirement on the subleading photon.
@@ -265,10 +265,10 @@ This plot shows that, after the full selection, the performance of the triggers 
 \end{figure}
 
 
-Plots of some of the discriminating variables can be seen on subsection \ref{extrafigs} for both gluon fusion and ZH cases. The normalization reflects the expected number of events at $\sqrt{s} = 14 \TeV$ with a target luminosity of $100$ fb$^{-1}$. The distributions are shown after the full selection, without the transverse mass and $\Delta\phi(\gamma\gamma,\MET)$ cuts. For the ZH case, the plots are also before the $M_{T}(\gamma\gamma+\MET, \mu\mu)$ and $M(\mu\mu)$ cuts. For the gluon fusion channel, the single photon selection was used.
+%Plots of some of the discriminating variables can be seen on subsection \ref{extrafigs} for both gluon fusion and ZH cases. The normalization reflects the expected number of events at $\sqrt{s} = 14 \TeV$ with a target luminosity of $100$ fb$^{-1}$. The distributions are shown after the full selection, without the transverse mass and $\Delta\phi(\gamma\gamma,\MET)$ cuts. For the ZH case, the plots are also before the $M_{T}(\gamma\gamma+\MET, \mu\mu)$ and $M(\mu\mu)$ cuts. For the gluon fusion channel, the single photon selection was used.
 
 
-In Figure \ref{fig:branching_5sigma}, on the left, we show the branching ratio of $h\rightarrow\gamma\gamma+\MET$ needed for a significance of $5\sigma$, assuming the Standard Model Higgs cross subsection, for the gluon fusion analysis (assuming the $\gamma+\MET$ trigger strategy and selection). On the right, we show the branching ratio $h\rightarrow\gamma\gamma+\MET$ needed for a significance of $2\sigma$, which represents the $95\%$ confidence level for exclusion, assuming SM $ZH$ production. For the ZH case, we show the results for the strategies requiring at least one ($N(\gamma) \geq 1$) and at least two ($N(\gamma) \geq 2$) photons. %We assume the channel in which the Z decays to electrons to have efficiencies and background composition that are similar to the muon case, therefore, we multiply the significance by a factor of $1.4$ to obtain the full reach of the $Z\rightarrow ll$ channel.
+In Figure \ref{fig:branching_5sigma}, on the left, we show the branching ratio of $h\rightarrow\gamma\gamma+\MET$ needed for a significance of $5\sigma$, assuming the Standard Model Higgs cross section, for the gluon fusion analysis (assuming the $\gamma+\MET$ trigger strategy and selection). On the right, we show the branching ratio $h\rightarrow\gamma\gamma+\MET$ needed for a significance of $2\sigma$, which represents the $95\%$ confidence level for exclusion, assuming SM $ZH$ production. For the ZH case, we show the results for the strategies requiring at least one ($N(\gamma) \geq 1$) and at least two ($N(\gamma) \geq 2$) photons. %We assume the channel in which the Z decays to electrons to have efficiencies and background composition that are similar to the muon case, therefore, we multiply the significance by a factor of $1.4$ to obtain the full reach of the $Z\rightarrow ll$ channel.
 
 %For the $ZH$ case, we also show the analysis strategy done by CMS for Run I, requiring only one photon. The selection on table \ref{tab:sel_all} remains the same, except for the subleading photon requirement and $M(\gamma\gamma)$ cut. Variables reconstructed with the diphoton information, such as $M_{T}(\gamma\gamma,\MET)$, are then reconstructed with the single photon information.
 
@@ -289,8 +289,8 @@ Figure \ref{fig:branching_5sigma} shows the effect on the $5\sigma$ branching ra
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.45\textwidth]{finalresults/branchingratio_ggh.pdf}
-\includegraphics[width=0.45\textwidth]{finalresults/exclusion_zh.pdf}
+\includegraphics[width=0.75\textwidth]{finalresults/branchingratio_ggh.pdf}
+\includegraphics[width=0.75\textwidth]{finalresults/exclusion_zh.pdf}
 \caption{(Left) $5\sigma$ branching ratios for the gluon fusion channel, for resonant and non-resonant final states, using the $\gamma+\MET$ trigger. (Right) Branching ratios for 95$\%$ confidence level exclusion in the ZH case, resonant and non-resonant topologies, requiring at least one photon ($N(\gamma) \geq 1$) and at least two photons ($N(\gamma) \geq 2$). The shaded areas correspond to a variation in systematics up to $10\%$.}
 \label{fig:branching_5sigma}
 \end{figure}

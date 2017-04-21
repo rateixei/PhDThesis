@@ -126,6 +126,53 @@
   \null\vfill
 \end{alwayssingle}}
 
+\newcommand{\maketitleneu}{%
+\begin{alwayssingle}
+    \renewcommand{\footnotesize}{\small}
+    \renewcommand{\footnoterule}{\relax}
+    \thispagestyle{empty}
+%  \null\vfill
+  \begin{center}
+%    { \Huge {\bfseries {\@title}} \par}
+    {\large \vspace*{0mm} 
+%       {\logo \par} 
+       { \Huge {\bfseries {\@title}} \par}
+    \vspace*{15mm}}
+    {{\huge by \@author} \par}
+{\large \vspace*{1ex}
+    %{{\@college} \par}
+\vspace*{1ex}
+    {\Large B.Sc. in Physics, Universidade Federal de Pernambuco - Brazil \par}
+\vspace*{1ex}
+    {\Large M.S. in Physics, Brazilian Center for Physics Research \par}
+\vspace*{10ex}
+    {\large A thesis submitted to \par}
+\vspace*{1ex}
+    {\large The faculty of \par}
+\vspace*{1ex}
+    {\large the College of Science of \par}
+\vspace*{1ex}
+    {\large Northeastern University \par}
+\vspace*{1ex}
+    {\large in partial fulfillment of the requirements \par}
+\vspace*{1ex}
+    {\large for the degree of Doctor of Philosophy \par}
+
+\vspace*{10ex}
+    {\large \@degreedate}}
+    
+\vspace*{10ex}
+    {\large Thesis directed by \par}
+\vspace*{3ex}
+    {\Large Toyoko Orimoto \par}
+\vspace*{1ex}
+    {\Large Professor of Physics \par}
+    
+    
+  \end{center}
+  \null\vfill
+\end{alwayssingle}}
+
 % DEDICATION
 %
 % The dedication environment makes sure the dedication gets its
@@ -133,10 +180,10 @@
 
 \newenvironment{dedication}
 {\begin{alwayssingle}
-  \thispagestyle{empty}
+  \thispagestyle{plain}
   \begin{center}
   \vspace*{1.5cm}
-  {\LARGE }
+  {\Large \bfseries Dedication}
   \end{center}
   \vspace{0.5cm}
   \begin{verse}\begin{center}}
@@ -165,7 +212,7 @@
 % does not appears in a quote environment so you can get more in.
 
 \newenvironment{acknowledgementslong}
-{\begin{alwayssingle} \thispagestyle{empty}
+{\begin{alwayssingle} \thispagestyle{plain}
 \begin{center}
 \vspace*{1.5cm}
 {\Large \bfseries Acknowledgements}
@@ -179,6 +226,16 @@
 % "Statement of originality" label at the top of the page. The statement 
 % of originality itself appears in a quote environment, i.e. tabbed in at 
 % both sides, and on its own page.
+
+\newenvironment{copyrightEnv}
+{\begin{alwayssingle} \thispagestyle{empty}
+\begin{center}
+\vspace*{17.5cm}
+{\large Copyright \textcopyright ~ 2017 by Rafael Teixeira de Lima \\ All Rights Reserved}
+\end{center}
+
+\end{alwayssingle} }
+
 
 \newenvironment{originality}
 {\begin{alwayssingle} \thispagestyle{empty}
@@ -211,7 +268,7 @@
 %the top of the page. The abstract itself appears in a quote environment,
 %i.e. tabbed in at both sides, and on its own page.
 
-\renewenvironment{abstract} {\begin{alwayssingle} \thispagestyle{empty}
+\renewenvironment{abstract} {\begin{alwayssingle} \thispagestyle{plain}
   \begin{center}
   \vspace*{1.5cm}
   {\Large \bfseries  Abstract}
@@ -224,7 +281,7 @@
 %the top of the page. The abstract itself does not appears in a quote
 %environment so you can get more in.
 
-\newenvironment{abstractlong} {\begin{alwayssingle} \thispagestyle{empty}
+\newenvironment{abstractlong} {\begin{alwayssingle} \thispagestyle{plain}
   \begin{center}
   \vspace*{1.5cm}
   {\Large \bfseries  Abstract}
@@ -235,7 +292,7 @@
 %The abstractseparate environment is for running of a page with the abstract
 %on including title and author etc as required to be handed in separately
 
-\newenvironment{abstractseparate} {\begin{alwayssingle} \thispagestyle{empty}
+\newenvironment{abstractseparate} {\begin{alwayssingle} \thispagestyle{plain}
   \vspace*{-1in}
  \begin{center}
     { \Large {\bfseries {\@title}} \par}

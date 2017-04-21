@@ -1,7 +1,7 @@
 \section{MVA Based Categorization}
 \label{sec:cats}
 
-During the analysis, it has been noticed that different kinematic variables could potentially contribute to tightening the signal region without cutting too much on the signal efficiency. 
+During the analysis, it has been noticed that different kinematic variables could potentially contribute to constraining the background contribution in the signal region without cutting too much on the signal efficiency. 
 However, this large-dimensional optimization procedure (all investigated variables) was not optimal. 
 Instead, we have developed a multivariate analysis (MVA), combining these different variables, into a single discriminant. 
 This discriminant is used to categorize the events in High Purity, Medium Purity categories and a control region, similarly to the cut based categorization. 
@@ -13,7 +13,7 @@ The input variables investigated for this MVA were:
 \item $p_{T}(\gamma\gamma)/M(jj\gamma\gamma)$ and $p_{T}(jj)/M(jj\gamma\gamma)$
 \end{itemize}
 
-The training was performed in the photon control region, as described in \ref{sec:PCR}, modeling our background. 
+The training was performed in the photon control region, as described in \ref{sec:PCR}. 
 Plots comparing the input variables in the photon control region and the blinded signal region are shown in Figure \ref{fig:inputmva}. 
 As our signal in the training, we sum the 14 non-resonant HH samples available (box only, SM, and 12 BSM points). 
 Thus, we have a training that is not specific to a single region in the parameter space, maintaining the sensitivities comparable between the benchmark points (as it is with the cut based categorization). 
@@ -31,19 +31,20 @@ Thus, we have a training that is not specific to a single region in the paramete
   \label{fig:inputmva}
 \end{figure*}
 
-To improve the training, we split the training into two regions: Low Mass and High Mass. 
+To improve the training, we split the training into two regions: low mass and high mass. 
 The low mass training is performed with events with $\tilde{M}_{X}$ below 350 GeV, while the high mass training uses the complementary region. 
 The training is based on a decision tree boosted with the gradient algorithm, with the trees randomized between iterations to decrease overtraining. 
 To implement the training the TMVA package was used. 
-The TMVA output plots are shown for both trainings in Figures \ref{fig:mva_hm} and \ref{fig:mva_lm}. 
-From now on, we will refer to the trainings discriminant variable as HHTagger.
+%The TMVA output plots are shown for both trainings in Figures \ref{fig:mva_hm} and \ref{fig:mva_lm}. 
+From now on, we will refer to the training discriminant variable as HHTagger.
 
 With the HHTagger discriminant, we build our two signal categories based on the optimization of the expected SM HH limit, separately in the high mass and in the low mass regions. 
+These categories are called high purity category (HPC) and medium purity category (MPC); their names refer to their signal and background content. 
 As signal, we use the SM HH sample to calculate the sensitivity. 
-The outcome of this study was the categorization in table \ref{tab:catmva}. 
+The outcome of this study was the categorization in Table \ref{tab:catmva}. 
 The expected number of background events, when comparing MPC and HPC between cut based and MVA approaches, is comparable and consistent, while for the number of signal events, the performance is better for the HHTagger categorization. 
 
-We have also to insure that the HHTagger selection does not shape our variables of interest, $\Mjj$ and $\Mgg$. 
+We also have to ensure that the HHTagger selection does not distort our variables of interest, $\Mjj$ and $\Mgg$. 
 We demonstrate that there is no appreciable shaping by comparing the $\Mjj$ and $\Mgg$ shapes in different bins of the HHTagger discriminant. 
 This can be seen in Figure \ref{fig:mva_mggmjj}. 
 
@@ -60,47 +61,47 @@ This can be seen in Figure \ref{fig:mva_mggmjj}.
 \end{table}
 
 
-\begin{figure*}[h]
-  \centering
-  \includegraphics[width=0.45\textwidth]{figures/sec-cats/mva/vars1_hm400}\hfil
-  \includegraphics[width=0.45\textwidth]{figures/sec-cats/mva/vars2_hm400}\hfil
-  \includegraphics[width=0.45\textwidth]{figures/sec-cats/mva/corsS_hm400}\hfil
-  \includegraphics[width=0.45\textwidth]{figures/sec-cats/mva/corsB_hm400}\hfil
-  \includegraphics[width=0.45\textwidth]{figures/sec-cats/mva/ROC_hm400}\hfil
-  \includegraphics[width=0.45\textwidth]{figures/sec-cats/mva/discr_hm400}\hfil
-  \caption{TMVA output plots for the High Mass Training.}
-  \label{fig:mva_hm}
-\end{figure*}
+%\begin{figure*}[h]
+%  \centering
+%  \includegraphics[width=0.45\textwidth]{figures/sec-cats/mva/vars1_hm400}\hfil
+%  \includegraphics[width=0.45\textwidth]{figures/sec-cats/mva/vars2_hm400}\hfil
+%  \includegraphics[width=0.45\textwidth]{figures/sec-cats/mva/corsS_hm400}\hfil
+%  \includegraphics[width=0.45\textwidth]{figures/sec-cats/mva/corsB_hm400}\hfil
+%  \includegraphics[width=0.45\textwidth]{figures/sec-cats/mva/ROC_hm400}\hfil
+%  \includegraphics[width=0.45\textwidth]{figures/sec-cats/mva/discr_hm400}\hfil
+%  \caption{TMVA output plots for the High Mass Training.}
+%  \label{fig:mva_hm}
+%\end{figure*}
 
-\begin{figure*}[h]
-  \centering
-  \includegraphics[width=0.45\textwidth]{figures/sec-cats/mva/vars1_lm400}\hfil
-  \includegraphics[width=0.45\textwidth]{figures/sec-cats/mva/vars2_lm400}\hfil
-  \includegraphics[width=0.45\textwidth]{figures/sec-cats/mva/corsS_lm400}\hfil
-  \includegraphics[width=0.45\textwidth]{figures/sec-cats/mva/corsB_lm400}\hfil
-  \includegraphics[width=0.45\textwidth]{figures/sec-cats/mva/ROC_lm400}\hfil
-  \includegraphics[width=0.45\textwidth]{figures/sec-cats/mva/discr_lm400}\hfil
-  \caption{TMVA output plots for the Low Mass Training.}
-  \label{fig:mva_lm}
-\end{figure*}
+%\begin{figure*}[h]
+%  \centering
+%  \includegraphics[width=0.45\textwidth]{figures/sec-cats/mva/vars1_lm400}\hfil
+%  \includegraphics[width=0.45\textwidth]{figures/sec-cats/mva/vars2_lm400}\hfil
+%  \includegraphics[width=0.45\textwidth]{figures/sec-cats/mva/corsS_lm400}\hfil
+%  \includegraphics[width=0.45\textwidth]{figures/sec-cats/mva/corsB_lm400}\hfil
+%  \includegraphics[width=0.45\textwidth]{figures/sec-cats/mva/ROC_lm400}\hfil
+%  \includegraphics[width=0.45\textwidth]{figures/sec-cats/mva/discr_lm400}\hfil
+%  \caption{TMVA output plots for the Low Mass Training.}
+%  \label{fig:mva_lm}
+%\end{figure*}
 
 \begin{figure*}[h]
   \centering
   \includegraphics[width=0.45\textwidth]{figures/sec-cats/mva/hhtag_mgg}\hfil
   \includegraphics[width=0.45\textwidth]{figures/sec-cats/mva/hhtag_mjj}\hfil
-  \caption{$\Mgg$ and $\Mjj$ in bins of HHTagger. Although the slope changes between bins, this effect does not influence the limit setting.}
+  \caption{Photon control region distributions of $\Mgg$ (left) and $\Mjj$ (right) in bins of HHTagger. Although the slope changes between bins, this effect does not influence the limit setting.}
   \label{fig:mva_mggmjj}
 \end{figure*}
 
 \subsubsection{Performance Cross-Checks}
 
-We have performed several cross checks to look for possible improvements on the categorization MVA. 
+We have performed several cross checks to look for possible improvements on the MVA categorization. 
 
 \begin{itemize}
 \item \textbf{Signal Hypothesis}
 \end{itemize}
 
-In the standard training, the sum of all non-resonant samples are used as signal hypothesis. 
+In the standard training, the sum of all non-resonant samples are used as the signal hypothesis. 
 However, this might not be the optimal training for the SM HH case. 
 To test this, we compare the performance of different trainings assuming the SM HH signal. 
 The signal hypotheses tested are:
@@ -108,15 +109,15 @@ The signal hypotheses tested are:
 \item All non-resonant (standard);
 \item SM HH;
 \item SM HH, with separate training for the high mass and low mass region (similar to standard);
-\item SM HH + Benchmark 3 (this benchmark point refers to the node that contains the SM point);
-\item SM HH + Benchmark 3, with separate training for the high mass and low mass region (similar to standard).
+\item SM HH + Node 3 (this node, as defined in Table \ref{tab:bench_old}, contains the SM point);
+\item SM HH + Node 3, with separate training for the high mass and low mass region (similar to standard).
 \end{itemize}
 The background hypothesis for this test is the photon control region, in the high mass region. 
 
 \begin{figure*}[h]
   \centering
   \includegraphics[width=0.7\textwidth]{figures/sec-cats/mva/ROC}\hfil
-  \caption{ROC curves with different signal hypotheses for training. The performance is evaluated on the high mass region, with the photon control region as background and SM HH as signal.}
+  \caption{ROC curves with different signal hypotheses for training. The performance is evaluated in the high mass region, with the photon control region as background and SM HH as signal.}
   \label{fig:mva_cc_signal}
 \end{figure*}
 
@@ -129,19 +130,19 @@ Since no significant improvement is seen in the high purity region (for backgrou
 \end{itemize}
 
 In the standard training, the photon control region is used as a background model, avoiding MC reliance. 
-However, this might not be the optimal because the photon control region might have different correlation between the MVA variables with respect to the signal region. 
+However, this might not be optimal because the photon control region might have different correlations between the MVA variables with respect to the signal region. 
 To test this, we compare the performance of different trainings assuming different background hypotheses: 
 \begin{itemize}
 \item Photon control region (standard);
 \item Blinded signal region;
-\item Blinded control region (to insure that the difference between the two previous trainings does not come from blinding).
+\item Blinded control region (to ensure that the difference between the two previous trainings does not come from blinding).
 \end{itemize}
 The background hypothesis for this test is the blinded signal region, in the high mass region, and the signal hypothesis is SM HH. 
 
 \begin{figure*}[h]
   \centering
   \includegraphics[width=0.7\textwidth]{figures/sec-cats/mva/ROC_BCR}\hfil
-  \caption{ROC curves with different background hypotheses for training. The performance is evaluated on the high mass region, with the blinded signal region as background and SM HH as signal.}
+  \caption{ROC curves with different background hypotheses for training. The performance is evaluated in the high mass region, with the blinded signal region as background and SM HH as signal.}
   \label{fig:mva_cc_background}
 \end{figure*}
 
@@ -161,7 +162,7 @@ The second issue is that, optimally, training on a dataset that is statistically
 \begin{figure*}[h]
   \centering
   \includegraphics[width=0.7\textwidth]{figures/sec-cats/mva/ROC_res}\hfil
-  \caption{ROC curves with different signal hypotheses for training. The performance is evaluated on the high mass region, with the photon control region as background and Radion 300 GeV as signal.}
+  \caption{ROC curves with different signal hypotheses for training. The performance is evaluated in the low mass region, with the photon control region as background and the 300 GeV radion sample as signal.}
   \label{fig:mva_cc_res}
 \end{figure*}
 

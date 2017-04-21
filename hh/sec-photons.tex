@@ -1,7 +1,7 @@
 \subsection{Photons}
 \label{sec:photons}
 
-The kinematic requirements applied on the photons, after the diphoton candidates have passed through the event pre-selection (see Section ~\ref{sec:trigger}), is similar to the ones used in the SM $\Hgg$ analysis. The selection is as follows:
+The kinematic requirements applied on the photons, after the diphoton candidates have passed through the event pre-selection (see Section ~\ref{sec:trigger}), are similar to the ones used in the SM $\Hgg$ analysis. The selection is as follows:
 \begin{itemize}
 \item Leading photon $E_{T} > 30 \GeV$, trailing photon $E_{T}>20 \GeV$;
 \item Leading photon $E_{T}/\Mgg > 1/3$, trailing photon $E_{T}/\Mgg > 1/4$;
@@ -9,24 +9,10 @@ The kinematic requirements applied on the photons, after the diphoton candidates
 \end{itemize}
 Additionally, a photon identification requirement is applied to the photons.
 
-In the 13\TeV run of 2016 we have at least three different identification algorithms for
-photons:
-\begin{itemize}
-\item General purpose cut-based ID developed by the CMS EGamma
-  group~\cite{PhotonCutBasedID-twiki}. The ID makes use only of a few variables: H/E,
-  $\sieie$ and isolation. This type of ID was used in Run-I analysis.
-\item General purpose MVA ID developed within the EGamma
-  group~\cite{PhotonMvaID-twiki}. It utilizes the information from many shower shape
-  variables at ECAL, as well as isolation information.
-\item MVA ID developed by the $\Hgg$ search group~\cite{HggMvaID-slides} (ref to be
-  updated). It is similar to the one developed in EGamma group, but uses a slightly
-  different set of input variables.
-\end{itemize}
-
-We have chosen to use the EGM MVA photon ID on this analysis. 
-The WP chosen is one that provides $90\%$ signal efficiency for the photon selection (provided centrally). 
-The scale factors used to ensure data/MC agreement in the selection efficiency are also applied (provided centrally).
-Additionally, an electron veto is applied to avoid background with electrons faking photons (scale factors provided centrally also applied).
+The photon identification requirement is based on a multivariate algorithm that combines information from the photon cluster shape in ECAL, as well as isolation variables. 
+This requirement provides a signal-like photon efficiency of $90\%$ for photons both on the ECAL barrel and endcaps. 
+The scale factors used to ensure data/MC agreement in the selection efficiency are also applied; these scale factors are calculated centrally at CMS. 
+Additionally, an electron veto is applied to avoid background with electrons faking photons, with corresponding scale factors and uncertainties.
 
 %=========== OLD ===========
 
@@ -100,48 +86,50 @@ Additionally, an electron veto is applied to avoid background with electrons fak
 %\end{figure*}
 
 \subsubsection{Fake Photon Control Region}\label{sec:PCR}
-A control region is created by selecting diphoton candidates with one photon that passed the ID requirement and one that didn't. All the other selections remain the same, and the procedure to select such diphoton candidate is the same as in the signal region.
-
-This control region is used on the analysis to perform the closure test on the background modeling.
+A control region is created by selecting diphoton candidates with one photon that passed the ID requirement and one that didn't. All the other selections remain the same, and the procedure to select such diphoton candidates is the same as in the signal region. This control region is used in the analysis to perform closure tests on the background modeling.
 
 \subsubsection{Vertex}
 Inheriting from the main $\Hgg$ analysis, we use the vertex that gives the highest $\Hgg$ vertex MVA score. 
-Because there are additional jets in the event, picking picking this vertex has a very small mismatch efficiency. 
-Only in less than $0.1\%$ of the events, the chosen vertex is different from the vertex associated to the simulated event. 
+Because there are additional jets in the event,  picking this vertex has a very small mismatch efficiency. 
+Only in less than $0.1\%$ of the events, the chosen vertex is different from the vertex associated to the true vertex in the simulation. 
 
 The $\Hgg$ vertex MVA score is based on three variables calculated for each reconstructed vertex: the sum of the squared transverse momenta of the charged particle tracks associated with the vertex, and two variables that quantify the vector and scalar balance of $p_{T}$ between the diphoton system and the charged particle tracks associated with the vertex. 
-In addition, if either photon is associated with any charged particle track that has been identified as resulting from conversion, also the conversion information is used. 
+In addition, if either photon is associated with any charged particle track that has been identified as resulting from conversion, the conversion information is also used. 
 The variables are used as the inputs to a multivariate classifier based on a boosted decision tree (BDT) to choose the reconstructed vertex to be associated with the diphoton system. 
 The average vertex finding efficiency of this algorithm in the SM $\Hgg$ analysis is $80\%$.
 
 \subsubsection{Gain Switch}
 
-Due to the ECAL slew rate issue discovered during the 2016 data taking, we investiaged the fraction of selected events in our blinded signal region with photons that go through gain switches. 
+In 2016, it was observed that high energy deposits in ECAL had their energies reconstructed with a certain bias, due to the shaping of the pulses in the ECAL VFE electronics. 
+This shaping became a problem in Run 2 because we assume a certain shape for the signal amplitude from the crystals when measuring this amplitude, as described in the Multifit method. 
+It has been observed that this bias occurs when an energy deposit is high enough to cause a gain switch in the ECAL multi-gain amplifier.
+
+We investigated the fraction of selected events in our blinded signal region with photons that go through gain switches. 
 The plots on Figure \ref{fig:gain_switch}  show, in bins of $\tilde{M}_{X}$, the fraction of events with at least one of the photon candidates going through gain switches (to gain 1, gain 6 or both). 
 These results show that, for the high mass region, around $20\%$ of our events are affected by gain switches. 
-This non-negligible rate means that the analysis needs to use the re-MiniAOD Moriond17 campaign, which has the slew rate effect mitigated.
+This non-negligible rate means that the analysis needs to use the new CMS re-processed data in which the issue has been fixed.
 
 \begin{figure*}[thb]
   \centering
-  \includegraphics[width=0.3\textwidth]{figures/sec-photons/rg1}\hfil
-  \includegraphics[width=0.3\textwidth]{figures/sec-photons/rg6}\hfil
-  \includegraphics[width=0.3\textwidth]{figures/sec-photons/rg16}\hfil
+%  \includegraphics[width=0.3\textwidth]{figures/sec-photons/rg1}\hfil
+%  \includegraphics[width=0.3\textwidth]{figures/sec-photons/rg6}\hfil
+  \includegraphics[width=0.5\textwidth]{figures/sec-photons/rg16}
   \caption{Fraction of events with photon candidates going through gain switch.}
   \label{fig:gain_switch}
 \end{figure*}
 
 \subsubsection{Regression}
 
-A new version of the photon energy regression has been trained (with 80X MC and 2016 data taking conditions). 
+A new version of the photon energy regression has been trained with the Run 2 data taking conditions. 
 This regression aims to correct the photon super cluster energy, as described in previous sections.  
-We compared this new regression to the previous training (74X), as seen in the plots of Figure \ref{fig:pho_reg} for three different resonance mass points. 
-The difference observed is not large enough for this analysis to be affected, so the regression version used is 74X (following main $\Hgg$ analysis).
+We compared this new regression to the previous training, as seen in the plots of Figure \ref{fig:pho_reg} for three different resonance mass points. 
+The difference observed is not large enough for this analysis to be affected, so the previous regression version is used (following main $\Hgg$ analysis).
 
 \begin{figure*}[thb]
   \centering
-  \includegraphics[width=0.3\textwidth]{figures/sec-photons/mgg_Rad300_13TeV_EBHighR9.pdf}\hfil
-  \includegraphics[width=0.3\textwidth]{figures/sec-photons/mgg_Rad600_13TeV_EBHighR9.pdf}\hfil
-  \includegraphics[width=0.3\textwidth]{figures/sec-photons/mgg_Rad900_13TeV_EBHighR9.pdf}\hfil
-  \caption{$M(\gamma\gamma)$ reconstructed with different versions of the photon energy regression.}
+  \includegraphics[trim={0 0 0 0.95cm},clip,width=0.3\textwidth]{figures/sec-photons/mgg_Rad300_13TeV_EBHighR9.pdf}\hfil
+  \includegraphics[trim={0 0 0 0.95cm},clip,width=0.3\textwidth]{figures/sec-photons/mgg_Rad600_13TeV_EBHighR9.pdf}\hfil
+  \includegraphics[trim={0 0 0 0.95cm},clip,width=0.3\textwidth]{figures/sec-photons/mgg_Rad900_13TeV_EBHighR9.pdf}\hfil
+  \caption{$M(\gamma\gamma)$ reconstructed with different versions of the photon energy regression for resonance masses of 300, 600 and 900 GeV, from left to right. Distributions normalized to unity.}
   \label{fig:pho_reg}
 \end{figure*}

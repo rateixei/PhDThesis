@@ -25,6 +25,22 @@ G.~S. Guralnik, C.~R. Hagen, and T.~W.~B. Kibble, {\it Global conservation laws
 P.~W. Higgs, {\it Broken symmetries and the masses of gauge bosons},  {\em
   Phys. Rev. Lett.} {\bf 13} (Oct, 1964) 508--509.
 
+\bibitem{qcd}
+H.~Fritzsch, M.~Gell-Mann, and H.~Leutwyler, {\it {Advantages of the Color
+  Octet Gluon Picture}},  {\em Phys. Lett.} {\bf B47} (1973) 365--368.
+
+\bibitem{confinement}
+K.~G. Wilson, {\it Confinement of quarks},  {\em Phys. Rev. D} {\bf 10} (Oct,
+  1974) 2445--2459.
+
+\bibitem{freedom1}
+D.~J. Gross and F.~Wilczek, {\it Ultraviolet behavior of non-abelian gauge
+  theories},  {\em Phys. Rev. Lett.} {\bf 30} (Jun, 1973) 1343--1346.
+
+\bibitem{freedom2}
+H.~D. Politzer, {\it Reliable perturbative results for strong interactions?},
+  {\em Phys. Rev. Lett.} {\bf 30} (Jun, 1973) 1346--1349.
+
 \bibitem{pdg}
 {Beringer, J. at all}, {\it {Review of Particle Physics}},  {\em {Phys. Rev.
   D}} {\bf 86} (2012).
@@ -184,6 +200,11 @@ M.~Anfreville et~al., {\it {Laser monitoring system for the CMS lead tungstate
   Collisions at ?s = 8 TeV}},  {\em JINST} {\bf 10} (2015), no.~06 P06005,
   [\href{http://xxx.lanl.gov/abs/1502.0270}{{\tt arXiv:1502.0270}}].
 
+\bibitem{ecal_tb}
+P.~Adzic, {\it Energy resolution of the barrel of the cms electromagnetic
+  calorimeter},  {\em Journal of Instrumentation} {\bf 2} (2007), no.~04
+  P04004.
+
 \bibitem{cms_hgg_15}
 {\bf CMS Collaboration} Collaboration, {\it {First results on Higgs to
   gammagamma at 13 TeV}},  Tech. Rep. CMS-PAS-HIG-15-005, CERN, Geneva, 2016.
@@ -211,6 +232,12 @@ C.~Petersson, A.~Romagnoni, and R.~Torre, {\it {Higgs Decay with Monophoton +
   MET Signature from Low Scale Supersymmetry Breaking}},  {\em JHEP} {\bf 10}
   (2012) 016, [\href{http://xxx.lanl.gov/abs/1203.4563}{{\tt
   arXiv:1203.4563}}].
+
+\bibitem{grav_prob}
+T.~Asaka, K.~Hamaguchi, and K.~Suzuki, {\it {Cosmological gravitino problem in
+  gauge mediated supersymmetry breaking models}},  {\em Phys. Lett.} {\bf B490}
+  (2000) 136--146, [\href{http://xxx.lanl.gov/abs/hep-ph/0005136}{{\tt
+  hep-ph/0005136}}].
 
 \bibitem{Chatrchyan:2012tea}
 {CMS Collaboration}, {\it {Search for Dark Matter and Large Extra Dimensions in
@@ -346,6 +373,11 @@ J.~D. Mason, D.~E. Morrissey, and D.~Poland, {\it {Higgs Boson Decays to
   momentum, and two forward jets produced in $\sqrt{s}$ = 8 TeV
   $\boldsymbol{pp}$ collisions with the ATLAS detector}}, .
 
+\bibitem{lhchxswg_yr4}
+D.~E. De~Florian~Sabaris, C.~Grojean, F.~Maltoni, C.~Mariotti, A.~Nikitenko,
+  M.~Pieri, P.~Savard, M.~Schumacher, and R.~Tanaka, {\it {Handbook of LHC
+  Higgs cross sections: 4. Deciphering the nature of the Higgs sector}}, .
+
 \bibitem{madgraph}
 J.~Alwall, R.~Frederix, S.~Frixione, V.~Hirschi, F.~Maltoni, O.~Mattelaer,
   H.~S. Shao, T.~Stelzer, P.~Torrielli, and M.~Zaro, {\it {The automated
@@ -395,6 +427,10 @@ t.~p. We, {\it The search in run-i},  CMS Note 2013/075, 2013.
 \bibitem{AN-14-118}
 t.~p. We, {\it The search in run-i},  CMS Note 2014/118, 2014.
 
+\bibitem{bbgg_2015}
+{\bf CMS Collaboration} Collaboration, {\it {Search for H(bb)H(gammagamma)
+  decays at 13TeV}},  Tech. Rep. CMS-PAS-HIG-16-032, CERN, Geneva, 2016.
+
 \bibitem{Dawson:2015oha}
 S.~Dawson, A.~Ismail, and I.~Low, {\it {What is in the loop? The anatomy of
   double Higgs production}},  {\em Phys. Rev.} {\bf D91} (2015), no.~11 115008,
@@ -437,14 +473,14 @@ K.~Agashe, H.~Davoudiasl, G.~Perez, and A.~Soni, {\it {Warped Gravitons at the
   LHC and Beyond}},  {\em Phys.Rev.} {\bf D76} (2007) 036006,
   [\href{http://xxx.lanl.gov/abs/hep-ph/0701186}{{\tt hep-ph/0701186}}].
 
+\bibitem{MelladoGarcia:2150771}
+B.~Mellado~Garcia, P.~Musella, M.~Grazzini, and R.~Harlander, {\it {CERN Report
+  4: Part I Standard Model Predictions}}, .
+
 \bibitem{Dall'Osso:2015aia}
 M.~Dall'Osso, T.~Dorigo, C.~A. Gottardo, A.~Oliveira, M.~Tosi, and F.~Goertz,
   {\it {Higgs Pair Production: Choosing Benchmarks With Cluster Analysis}},
   \href{http://xxx.lanl.gov/abs/1507.0224}{{\tt arXiv:1507.0224}}.
-
-\bibitem{MelladoGarcia:2150771}
-B.~Mellado~Garcia, P.~Musella, M.~Grazzini, and R.~Harlander, {\it {CERN Report
-  4: Part I Standard Model Predictions}}, .
 
 \bibitem{Carrazza:2015hva}
 S.~Carrazza, J.~I. Latorre, J.~Rojo, and G.~Watt, {\it {A compression algorithm
@@ -543,28 +579,24 @@ J.~C. Collins and D.~E. Soper, {\it Angular distribution of dileptons in
   high-energy hadron collisions},  {\em Phys. Rev. D} {\bf 16} (1977)
   2219--2225.
 
-\bibitem{PhotonCutBasedID-twiki}
-``Cut based photon id for run 2.''
-  \url{https://twiki.cern.ch/twiki/bin/view/CMS/CutBasedPhotonIdentificationRun2}.
-\newblock Revision r31 of the twiki page.
-
-\bibitem{PhotonMvaID-twiki}
-``General purpose mva-based photon identification.''
-  \url{https://twiki.cern.ch/twiki/bin/view/CMS/MultivariatePhotonIdentificationRun2}.
-\newblock Revision r16 of the twiki page.
-
-\bibitem{HggMvaID-slides}
-``Hgg id mva training with run2 preselection cuts.''
-  \url{https://indico.cern.ch/event/435398/session/0/contribution/14/attachments/1135458/1624505/Hgg_030815.pdf}.
-\newblock Presentation in Hgg meeting on Aug 03, 2015.
-
 \bibitem{jetID-twiki}
 ``Jet identification.'' \url{https://twiki.cern.ch/twiki/bin/view/CMS/JetID}.
 \newblock Revision r94 of the twiki page.
+
+\bibitem{bukin}
+A.~D. {Bukin}, {\it {Fitting function for asymmetric peaks}},  {\em ArXiv
+  e-prints} (Nov., 2007) [\href{http://xxx.lanl.gov/abs/0711.4449}{{\tt
+  arXiv:0711.4449}}].
 
 \bibitem{btag-twiki}
 ``Cms b-tagging offline guide.''
   \url{https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideBTagging}.
 \newblock Revision r63 of the twiki page.
+
+\bibitem{asimov_dataset}
+G.~Cowan, K.~Cranmer, E.~Gross, and O.~Vitells, {\it {Asymptotic formulae for
+  likelihood-based tests of new physics}},  {\em Eur. Phys. J.} {\bf C71}
+  (2011) 1554, [\href{http://xxx.lanl.gov/abs/1007.1727}{{\tt
+  arXiv:1007.1727}}]. [Erratum: Eur. Phys. J.C73,2501(2013)].
 
 \end{thebibliography}\endgroup

@@ -97,8 +97,11 @@
 %and uncomment the next line)
 %\include{mymacros}
 
-\title{Shedding a light: \\[1ex]
-         Beyond the Standard Model Higgs Physics with Photons at CMS}
+%\title{Shedding a light: \\[1ex]
+%         Beyond the Standard Model Higgs Physics with Photons at CMS}
+
+\title{Beyond the Standard Model Higgs Physics with Photons with the CMS Detector}
+
 
 %\title{Searches for Di-Higgs Production in the $b\bar{b}\gamma\gamma$ Final State\\[1ex]     %your thesis title,
 %        with the CMS Run-2 Dataset}   %note \\[1ex] is a line break in the title
@@ -108,7 +111,7 @@
 
 %\renewcommand{\submittedtext}{change the default text here if needed}
 \degree{Doctor of Philosophy}     %the degree
-\degreedate{April, 2017}         %the degree date
+\degreedate{April 11, 2017}         %the degree date
 %\usepackage[applemac]{inputenc}
 \usepackage[portuges,brazilian,french,english]{babel}
 \usepackage[T1]{fontenc}
@@ -116,7 +119,9 @@
 
 %end the preamble and start the document
 \begin{document}
-\maketitle                  % create a title page from the preamble info
+\begin{romanpages}          % start roman page numbering
+\maketitleneu                  % create a title page from the preamble info
+%\begin{copyrightEnv}\end{copyrightEnv}
 
 %%Path to figures
 %\graphicspath{{./hh/figures/}}
@@ -136,8 +141,6 @@
 \include{intro/abstract}          % include the abstract
 
 
-
-\begin{romanpages}          % start roman page numbering
 \tableofcontents            % generate and include a table of contents
 %\listoffigures              % generate and include a list of figures
 \end{romanpages}            % end roman page numbering
