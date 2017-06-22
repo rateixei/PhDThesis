@@ -136,18 +136,18 @@
 %    { \Huge {\bfseries {\@title}} \par}
     {\large \vspace*{0mm} 
 %       {\logo \par} 
-       { \Huge {\bfseries {\@title}} \par}
+       { \large { {\@title}} \par}
     \vspace*{15mm}}
-    {{\huge by \@author} \par}
+    {{\large by \@author} \par}
 {\large \vspace*{1ex}
     %{{\@college} \par}
+\vspace*{5ex}
+    {\large B.Sc. in Physics, Universidade Federal de Pernambuco - Brazil \par}
 \vspace*{1ex}
-    {\Large B.Sc. in Physics, Universidade Federal de Pernambuco - Brazil \par}
-\vspace*{1ex}
-    {\Large M.S. in Physics, Brazilian Center for Physics Research \par}
-\vspace*{10ex}
-    {\large A thesis submitted to \par}
-\vspace*{1ex}
+    {\large M.S. in Physics, Brazilian Center for Physics Research \par}
+\vspace*{13ex}
+    {\large A dissertation submitted to \par}
+\vspace*{13ex}
     {\large The faculty of \par}
 \vspace*{1ex}
     {\large the College of Science of \par}
@@ -158,19 +158,18 @@
 \vspace*{1ex}
     {\large for the degree of Doctor of Philosophy \par}
 
-\vspace*{10ex}
+\vspace*{13ex}
     {\large \@degreedate}}
     
-\vspace*{10ex}
+\vspace*{13ex}
     {\large Thesis directed by \par}
-\vspace*{3ex}
-    {\Large Toyoko Orimoto \par}
+\vspace*{5ex}
+    {\large Toyoko Orimoto \par}
 \vspace*{1ex}
-    {\Large Professor of Physics \par}
+    {\large Professor of Physics \par}
     
     
   \end{center}
-  \null\vfill
 \end{alwayssingle}}
 
 % DEDICATION
@@ -271,7 +270,7 @@
 \renewenvironment{abstract} {\begin{alwayssingle} \thispagestyle{plain}
   \begin{center}
   \vspace*{1.5cm}
-  {\Large \bfseries  Abstract}
+  {\Large \bfseries  Abstract of Dissertation}
   \end{center}
   \vspace{0.5cm}
    \begin{quote}}
@@ -284,7 +283,7 @@
 \newenvironment{abstractlong} {\begin{alwayssingle} \thispagestyle{plain}
   \begin{center}
   \vspace*{1.5cm}
-  {\Large \bfseries  Abstract}
+  {\Large \bfseries  Abstract of Dissertation}
   \end{center}
   \vspace{0.5cm}}
 {\end{alwayssingle}}
